@@ -14426,6 +14426,7 @@ input {
 
 .img-responsive img {
     width: 100%;
+    height: 500px;
 }
 
 .pos-relitive {
