@@ -1,3 +1,9 @@
+<?php
+//if (session_status() !== PHP_SESSION_ACTIVE) {session_start();}
+if(session_id() == '' || !isset($_SESSION)){session_start();}
+include 'db.php';
+?>
+
 <!DOCTYPE html>
 <html lang="zxx">
 
@@ -476,6 +482,7 @@
                     <div class="col-12">
                         <div class="table_desc">
                             <div class="table_page table-responsive">
+                                
                                 <table>
                                     <!-- Start Cart Table Head -->
                                     <thead>
