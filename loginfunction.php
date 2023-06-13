@@ -15,7 +15,7 @@ session_start();
 
 //include "db.php";
 
-if (isset($_POST['uname']) && isset($_POST['email']) && isset($_POST['password'])) {
+if (isset($_POST['uname']) && isset($_POST['password'])) {
 
     function validate($data){
 
@@ -30,8 +30,6 @@ if (isset($_POST['uname']) && isset($_POST['email']) && isset($_POST['password']
     }
 
     $uname = validate($_POST['uname']);
-
-    $email = validate($_POST['email']);
 
     $pass = validate($_POST['password']);
 
@@ -49,7 +47,7 @@ if (isset($_POST['uname']) && isset($_POST['email']) && isset($_POST['password']
 
     }else{
 
-        $sql = "SELECT * FROM register WHERE username ='$uname' AND email ='$email' AND pasword ='$pass'";
+        $sql = "SELECT * FROM register WHERE username ='$uname' AND pasword ='$pass'";
 
         $result = mysqli_query($conn, $sql);
 
@@ -57,7 +55,7 @@ if (isset($_POST['uname']) && isset($_POST['email']) && isset($_POST['password']
 
             $row = mysqli_fetch_assoc($result);
 
-            if (($row['username'] === $uname && $row['pasword'] === $pass) || ($row['email'] === $email && $row['pasword'] === $pass)) {
+            if ($row['username'] === $uname && $row['pasword'] === $pass) {
 
                 $_SESSION['username'] = $row['username'];
 
@@ -72,7 +70,7 @@ if (isset($_POST['uname']) && isset($_POST['email']) && isset($_POST['password']
             }
             else{
 
-                header("Location: login.php?error=Incorect Username/email or password");
+                header("Location: login.php?error=Incorect User name or password");
         
                 exit();
         
@@ -81,7 +79,7 @@ if (isset($_POST['uname']) && isset($_POST['email']) && isset($_POST['password']
         }
         else{
 
-            header("Location: indexlogin.php?error=Incorect Username/email or password");
+            header("Location: login.php?error=Incorect User name or password");
     
             exit();
     
