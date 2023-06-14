@@ -1,9 +1,3 @@
-<?php
-//if (session_status() !== PHP_SESSION_ACTIVE) {session_start();}
-if(session_id() == '' || !isset($_SESSION)){session_start();}
-include 'db.php';
-?>
-
 <!DOCTYPE html>
 <html lang="zxx">
 
@@ -13,7 +7,7 @@ include 'db.php';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Vanilla's Shop</title>
+    <title>HONO - Multi Purpose HTML Template</title>
 
     <!-- ::::::::::::::Favicon icon::::::::::::::-->
     <link rel="shortcut icon" href="assets/images/favicon.ico" type="image/png">
@@ -134,13 +128,13 @@ include 'db.php';
             <div class="container">
                 <div class="row">
                     <div class="col-12">
-                        <h3 class="breadcrumb-title">Cart</h3>
+                        <h3 class="breadcrumb-title">Login</h3>
                         <div class="breadcrumb-nav breadcrumb-nav-color--black breadcrumb-nav-hover-color--golden">
                             <nav aria-label="breadcrumb">
                                 <ul>
                                     <li><a href="index-2.php">Home</a></li>
-                                    <li><a href="#">Side Bar</a></li>
-                                    <li class="active" aria-current="page">cart</li>
+                                    <li><a href="shop-grid-sidebar-left.php">Sidebar</a></li>
+                                    <li class="active" aria-current="page">Checkout</li>
                                 </ul>
                             </nav>
                         </div>
@@ -152,7 +146,6 @@ include 'db.php';
     </header>
     <!-- Start Header Area -->
 
-    <!-- Start Mobile Header -->
     <div class="mobile-header breadcrumb-bg-color--golden section-fluid d-lg-block d-xl-none">
         <div class="container">
             <div class="row">
@@ -242,27 +235,27 @@ include 'db.php';
                         <li><a href="login.php">Login</a></li>
                     </ul>
                 </div> <!-- End Mobile Menu Nav -->
-            </div> <!-- End Mobile Menu -->
+            </div><!-- End Mobile Menu -->
 
             <!-- Start Mobile contact Info -->
             <div class="mobile-contact-info">
                 <div class="logo">
                     <a href="index-2.php"><img src="assets/images/vanillalogo.jpg" alt=""></a>
                 </div>
-
+    
                 <address class="address">
                     <span>Address: Bamenda, Cameroon.</span>
                     <span>Call Us: +237676723201, +237681718702</span>
                     <span>Email: alombangwingche@gmail.com</span>
                 </address>
-
+    
                 <ul class="social-link">
-                    <li><a href="https://github.com/Alomba-epongseh"><i class="fa fa-github"></i></a></li>
-                    <li><a href="https://twitter.com/alomba_vanilla"><i class="fa fa-twitter"></i></a></li>
-                    <li><a href="https://instagram.com/alombaepong?igshid=MjEwN2IyYWYwYw=="><i class="fa fa-instagram"></i></a></li>
-                    <li><a href="https://linkedin.com/Epongseh Alomba"><i class="fa fa-linkedin"></i></a></li>
+                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                    <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                    <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
                 </ul>
-
+    
                 <ul class="user-link">
                     <li><a href="wishlist.php">Wishlist</a></li>
                     <li><a href="cart.php">Cart</a></li>
@@ -473,125 +466,333 @@ include 'db.php';
     <!-- Offcanvas Overlay -->
     <div class="offcanvas-overlay"></div>
 
-    <!-- ...:::: Start Cart Section:::... -->
-    <div class="cart-section">
-        <!-- Start Cart Table -->
-        <div class="cart-table-wrapper" data-aos="fade-up" data-aos-delay="0">
-            <div class="container">
+    <!-- ...:::: Start Breadcrumb Section:::... -->
+
+    <!-- ...:::: Start Checkout Section:::... -->
+    <div class="checkout-section">
+        <div class="container">
+            <div class="row">
+                <!-- User Quick Action Form -->
+                <div class="col-12">
+                    <div class="user-actions accordion" data-aos="fade-up" data-aos-delay="0">
+                        <h3>
+                            <i class="fa fa-file-o" aria-hidden="true"></i>
+                            Returning customer?
+                            <a class="Returning" href="#" data-bs-toggle="collapse" data-bs-target="#checkout_login"
+                                aria-expanded="true">Click here to login</a>
+                        </h3>
+                        <div id="checkout_login" class="collapse" data-parent="#checkout_login">
+                            <div class="checkout_info">
+                                <p>If you have shopped with us before, please enter your details in the boxes below. If
+                                    you are a new customer please proceed to the Billing &amp; Shipping section.</p>
+                                <form action="#">
+                                    <div class="form_group default-form-box">
+                                        <label>Username or email <span>*</span></label>
+                                        <input type="text">
+                                    </div>
+                                    <div class="form_group default-form-box">
+                                        <label>Password <span>*</span></label>
+                                        <input type="password">
+                                    </div>
+                                    <div class="form_group group_3 default-form-box">
+                                        <button class="btn btn-md btn-black-default-hover" type="submit">Login</button>
+                                        <label class="checkbox-default">
+                                            <input type="checkbox">
+                                            <span>Remember me</span>
+                                        </label>
+                                    </div>
+                                    <a href="#">Lost your password?</a>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="user-actions accordion" data-aos="fade-up" data-aos-delay="200">
+                        <h3>
+                            <i class="fa fa-file-o" aria-hidden="true"></i>
+                            Returning customer?
+                            <a class="Returning" href="#" data-bs-toggle="collapse" data-bs-target="#checkout_coupon"
+                                aria-expanded="true">Click here to enter your code</a>
+
+                        </h3>
+                        <div id="checkout_coupon" class="collapse checkout_coupon" data-parent="#checkout_coupon">
+                            <div class="checkout_info">
+                                <form action="#">
+                                    <input placeholder="Coupon code" type="text">
+                                    <button class="btn btn-md btn-black-default-hover" type="submit">Apply
+                                        coupon</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- User Quick Action Form -->
+            </div>
+            <!-- Start User Details Checkout Form -->
+            <div class="checkout_form" data-aos="fade-up" data-aos-delay="400">
                 <div class="row">
-                    <div class="col-12">
-                        <div class="table_desc">
-                            <div class="table_page table-responsive">
-                                
+                    <div class="col-lg-6 col-md-6">
+                        <form action="#">
+                            <h3>Billing Details</h3>
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="default-form-box">
+                                        <label>First Name <span>*</span></label>
+                                        <input type="text">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="default-form-box">
+                                        <label>Last Name <span>*</span></label>
+                                        <input type="text">
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="default-form-box">
+                                        <label>Company Name</label>
+                                        <input type="text">
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="default-form-box">
+                                        <label for="country">country <span>*</span></label>
+                                        <select class="country_option nice-select wide" name="country" id="country">
+                                            <option value="2">Bangladesh</option>
+                                            <option value="3">Algeria</option>
+                                            <option value="4">Afghanistan</option>
+                                            <option value="5">Ghana</option>
+                                            <option value="6">Albania</option>
+                                            <option value="7">Bahrain</option>
+                                            <option value="8">Colombia</option>
+                                            <option value="9">Dominican Republic</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="default-form-box">
+                                        <label>Street address <span>*</span></label>
+                                        <input placeholder="House number and street name" type="text">
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="default-form-box">
+                                        <input placeholder="Apartment, suite, unit etc. (optional)" type="text">
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="default-form-box">
+                                        <label>Town / City <span>*</span></label>
+                                        <input type="text">
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="default-form-box">
+                                        <label>State / County <span>*</span></label>
+                                        <input type="text">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="default-form-box">
+                                        <label>Phone<span>*</span></label>
+                                        <input type="text">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="default-form-box">
+                                        <label> Email Address <span>*</span></label>
+                                        <input type="text">
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <label class="checkbox-default" for="newAccount" data-bs-toggle="collapse"
+                                        data-bs-target="#newAccountPassword">
+                                        <input type="checkbox" id="newAccount">
+                                        <span>Create an account?</span>
+                                    </label>
+                                    <div id="newAccountPassword" class="collapse mt-3"
+                                        data-parent="#newAccountPassword">
+                                        <div class="card-body1 default-form-box">
+                                            <label> Account password <span>*</span></label>
+                                            <input placeholder="password" type="password">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <label class="checkbox-default" for="newShipping" data-bs-toggle="collapse"
+                                        data-bs-target="#anotherShipping">
+                                        <input type="checkbox" id="newShipping">
+                                        <span>Ship to a different address?</span>
+                                    </label>
+
+                                    <div id="anotherShipping" class="collapse mt-3" data-parent="#anotherShipping">
+                                        <div class="row">
+                                            <div class="col-lg-6">
+                                                <div class="default-form-box">
+                                                    <label>First Name <span>*</span></label>
+                                                    <input type="text">
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <div class="default-form-box">
+                                                    <label>Last Name <span>*</span></label>
+                                                    <input type="text">
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <div class="default-form-box">
+                                                    <label>Company Name</label>
+                                                    <input type="text">
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <div class="select_form_select default-form-box">
+                                                    <label for="countru_name">country <span>*</span></label>
+                                                    <select class="niceselect_option wide" name="cuntry"
+                                                        id="countru_name">
+                                                        <option value="2">Bangladesh</option>
+                                                        <option value="3">Algeria</option>
+                                                        <option value="4">Afghanistan</option>
+                                                        <option value="5">Ghana</option>
+                                                        <option value="6">Albania</option>
+                                                        <option value="7">Bahrain</option>
+                                                        <option value="8">Colombia</option>
+                                                        <option value="9">Dominican Republic</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-12">
+                                                <div class="default-form-box">
+                                                    <label>Street address <span>*</span></label>
+                                                    <input placeholder="House number and street name" type="text">
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <div class="default-form-box">
+                                                    <input placeholder="Apartment, suite, unit etc. (optional)"
+                                                        type="text">
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <div class="default-form-box">
+                                                    <label>Town / City <span>*</span></label>
+                                                    <input type="text">
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <div class="default-form-box">
+                                                    <label>State / County <span>*</span></label>
+                                                    <input type="text">
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <div class="default-form-box">
+                                                    <label>Phone<span>*</span></label>
+                                                    <input type="text">
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <div class="default-form-box">
+                                                    <label> Email Address <span>*</span></label>
+                                                    <input type="text">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 mt-3">
+                                    <div class="order-notes">
+                                        <label for="order_note">Order Notes</label>
+                                        <textarea id="order_note"
+                                            placeholder="Notes about your order, e.g. special notes for delivery."></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-lg-6 col-md-6">
+                        <form action="#">
+                            <h3>Your order</h3>
+                            <div class="order_table table-responsive">
                                 <table>
-                                    <!-- Start Cart Table Head -->
                                     <thead>
                                         <tr>
-                                            <th class="product_remove">Delete</th>
-                                            <th class="product_thumb">Image</th>
-                                            <th class="product_name">Product</th>
-                                            <th class="product-price">Price</th>
-                                            <th class="product_quantity">Quantity</th>
-                                            <th class="product_total">Total</th>
+                                            <th>Product</th>
+                                            <th>Total</th>
                                         </tr>
-                                    </thead> <!-- End Cart Table Head -->
+                                    </thead>
                                     <tbody>
-                                        <!-- Start Cart Single Item-->
                                         <tr>
-                                            <td class="product_remove"><a href="#"><i class="fa fa-trash-o"></i></a>
-                                            </td>
-                                            <td class="product_thumb"><a href="product-details-default.php"><img
-                                                        src="assets/images/product/default/home-1/default-1.jpg"
-                                                        alt=""></a></td>
-                                            <td class="product_name"><a href="product-details-default.php">Handbag
-                                                    fringilla</a></td>
-                                            <td class="product-price">$65.00</td>
-                                            <td class="product_quantity"><label>Quantity</label> <input min="1"
-                                                    max="100" value="1" type="number"></td>
-                                            <td class="product_total">$130.00</td>
-                                        </tr> <!-- End Cart Single Item-->
-                                        <!-- Start Cart Single Item-->
+                                            <td> Handbag fringilla <strong> × 2</strong></td>
+                                            <td> $165.00</td>
+                                        </tr>
                                         <tr>
-                                            <td class="product_remove"><a href="#"><i class="fa fa-trash-o"></i></a>
-                                            </td>
-                                            <td class="product_thumb"><a href="product-details-default.php"><img
-                                                        src="assets/images/product/default/home-1/default-2.jpg"
-                                                        alt=""></a></td>
-                                            <td class="product_name"><a href="product-details-default.php">Handbags
-                                                    justo</a></td>
-                                            <td class="product-price">$90.00</td>
-                                            <td class="product_quantity"><label>Quantity</label> <input min="1"
-                                                    max="100" value="1" type="number"></td>
-                                            <td class="product_total">$180.00</td>
-                                        </tr> <!-- End Cart Single Item-->
-                                        <!-- Start Cart Single Item-->
+                                            <td> Handbag justo <strong> × 2</strong></td>
+                                            <td> $50.00</td>
+                                        </tr>
                                         <tr>
-                                            <td class="product_remove"><a href="#"><i class="fa fa-trash-o"></i></a>
-                                            </td>
-                                            <td class="product_thumb"><a href="product-details-default.php"><img
-                                                        src="assets/images/product/default/home-1/default-3.jpg"
-                                                        alt=""></a></td>
-                                            <td class="product_name"><a href="product-details-default.php">Handbag
-                                                    elit</a></td>
-                                            <td class="product-price">$80.00</td>
-                                            <td class="product_quantity"><label>Quantity</label> <input min="1"
-                                                    max="100" value="1" type="number"></td>
-                                            <td class="product_total">$160.00</td>
-                                        </tr> <!-- End Cart Single Item-->
+                                            <td> Handbag elit <strong> × 2</strong></td>
+                                            <td> $50.00</td>
+                                        </tr>
+                                        <tr>
+                                            <td> Handbag Rutrum <strong> × 1</strong></td>
+                                            <td> $50.00</td>
+                                        </tr>
                                     </tbody>
+                                    <tfoot>
+                                        <tr>
+                                            <th>Cart Subtotal</th>
+                                            <td>$215.00</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Shipping</th>
+                                            <td><strong>$5.00</strong></td>
+                                        </tr>
+                                        <tr class="order_total">
+                                            <th>Order Total</th>
+                                            <td><strong>$220.00</strong></td>
+                                        </tr>
+                                    </tfoot>
                                 </table>
                             </div>
-                            <div class="cart_submit">
-                                <button class="btn btn-md btn-golden" type="submit">update cart</button>
+                            <div class="payment_method">
+                                <div class="panel-default">
+                                    <label class="checkbox-default" for="currencyCod" data-bs-toggle="collapse"
+                                        data-bs-target="#methodCod">
+                                        <input type="checkbox" id="currencyCod">
+                                        <span>Cash on Delivery</span>
+                                    </label>
+
+                                    <div id="methodCod" class="collapse" data-parent="#methodCod">
+                                        <div class="card-body1">
+                                            <p>Please send a check to Store Name, Store Street, Store Town, Store State
+                                                / County, Store Postcode.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel-default">
+                                    <label class="checkbox-default" for="currencyPaypal" data-bs-toggle="collapse"
+                                        data-bs-target="#methodPaypal">
+                                        <input type="checkbox" id="currencyPaypal">
+                                        <span>PayPal</span>
+                                    </label>
+                                    <div id="methodPaypal" class="collapse " data-parent="#methodPaypal">
+                                        <div class="card-body1">
+                                            <p>Pay via PayPal; you can pay with your credit card if you don’t have a
+                                                PayPal account.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="order_button pt-3">
+                                    <button class="btn btn-md btn-black-default-hover" type="submit">Proceed to
+                                        PayPal</button>
+                                </div>
                             </div>
-                        </div>
+                        </form>
                     </div>
                 </div>
-            </div>
-        </div> <!-- End Cart Table -->
-
-        <!-- Start Coupon Start -->
-        <div class="coupon_area">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-6 col-md-6">
-                        <div class="coupon_code left" data-aos="fade-up" data-aos-delay="200">
-                            <h3>Coupon</h3>
-                            <div class="coupon_inner">
-                                <p>Enter your coupon code if you have one.</p>
-                                <input class="mb-2" placeholder="Coupon code" type="text">
-                                <button type="submit" class="btn btn-md btn-golden">Apply coupon</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-6">
-                        <div class="coupon_code right" data-aos="fade-up" data-aos-delay="400">
-                            <h3>Cart Totals</h3>
-                            <div class="coupon_inner">
-                                <div class="cart_subtotal">
-                                    <p>Subtotal</p>
-                                    <p class="cart_amount">$215.00</p>
-                                </div>
-                                <div class="cart_subtotal ">
-                                    <p>Shipping</p>
-                                    <p class="cart_amount"><span>Flat Rate:</span> $255.00</p>
-                                </div>
-                                <a href="#">Calculate shipping</a>
-
-                                <div class="cart_subtotal">
-                                    <p>Total</p>
-                                    <p class="cart_amount">$215.00</p>
-                                </div>
-                                <div class="checkout_btn">
-                                    <a href="#" class="btn btn-md btn-golden">Proceed to Checkout</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div> <!-- End Coupon Start -->
-    </div> <!-- ...:::: End Cart Section:::... -->
+            </div> <!-- Start User Details Checkout Form -->
+        </div>
+    </div><!-- ...:::: End Checkout Section:::... -->
 
     <!-- Start Footer Section -->
     <footer class="footer-section footer-bg section-top-gap-100">

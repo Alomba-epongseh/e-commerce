@@ -1,14 +1,8 @@
-<?php
-//if (session_status() !== PHP_SESSION_ACTIVE) {session_start();}
-if(session_id() == '' || !isset($_SESSION)){session_start();}
-include 'db.php';
-?>
-
 <!DOCTYPE html>
 <html lang="zxx">
 
 
-<meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -134,13 +128,12 @@ include 'db.php';
             <div class="container">
                 <div class="row">
                     <div class="col-12">
-                        <h3 class="breadcrumb-title">Cart</h3>
+                        <h3 class="breadcrumb-title">Blog</h3>
                         <div class="breadcrumb-nav breadcrumb-nav-color--black breadcrumb-nav-hover-color--golden">
                             <nav aria-label="breadcrumb">
                                 <ul>
                                     <li><a href="index-2.php">Home</a></li>
-                                    <li><a href="#">Side Bar</a></li>
-                                    <li class="active" aria-current="page">cart</li>
+                                    <li class="active" aria-current="page">Blog</li>
                                 </ul>
                             </nav>
                         </div>
@@ -309,6 +302,7 @@ include 'db.php';
         <!-- End Mobile contact Info -->
     </div> <!-- ...:::: End Offcanvas Mobile Menu Section:::... -->
 
+
     <!-- Start Offcanvas Addcart Section -->
     <div id="offcanvas-add-cart" class="offcanvas offcanvas-rightside offcanvas-add-cart-section">
         <!-- Start Offcanvas Header -->
@@ -473,125 +467,222 @@ include 'db.php';
     <!-- Offcanvas Overlay -->
     <div class="offcanvas-overlay"></div>
 
-    <!-- ...:::: Start Cart Section:::... -->
-    <div class="cart-section">
-        <!-- Start Cart Table -->
-        <div class="cart-table-wrapper" data-aos="fade-up" data-aos-delay="0">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12">
-                        <div class="table_desc">
-                            <div class="table_page table-responsive">
-                                
-                                <table>
-                                    <!-- Start Cart Table Head -->
-                                    <thead>
-                                        <tr>
-                                            <th class="product_remove">Delete</th>
-                                            <th class="product_thumb">Image</th>
-                                            <th class="product_name">Product</th>
-                                            <th class="product-price">Price</th>
-                                            <th class="product_quantity">Quantity</th>
-                                            <th class="product_total">Total</th>
-                                        </tr>
-                                    </thead> <!-- End Cart Table Head -->
-                                    <tbody>
-                                        <!-- Start Cart Single Item-->
-                                        <tr>
-                                            <td class="product_remove"><a href="#"><i class="fa fa-trash-o"></i></a>
-                                            </td>
-                                            <td class="product_thumb"><a href="product-details-default.php"><img
-                                                        src="assets/images/product/default/home-1/default-1.jpg"
-                                                        alt=""></a></td>
-                                            <td class="product_name"><a href="product-details-default.php">Handbag
-                                                    fringilla</a></td>
-                                            <td class="product-price">$65.00</td>
-                                            <td class="product_quantity"><label>Quantity</label> <input min="1"
-                                                    max="100" value="1" type="number"></td>
-                                            <td class="product_total">$130.00</td>
-                                        </tr> <!-- End Cart Single Item-->
-                                        <!-- Start Cart Single Item-->
-                                        <tr>
-                                            <td class="product_remove"><a href="#"><i class="fa fa-trash-o"></i></a>
-                                            </td>
-                                            <td class="product_thumb"><a href="product-details-default.php"><img
-                                                        src="assets/images/product/default/home-1/default-2.jpg"
-                                                        alt=""></a></td>
-                                            <td class="product_name"><a href="product-details-default.php">Handbags
-                                                    justo</a></td>
-                                            <td class="product-price">$90.00</td>
-                                            <td class="product_quantity"><label>Quantity</label> <input min="1"
-                                                    max="100" value="1" type="number"></td>
-                                            <td class="product_total">$180.00</td>
-                                        </tr> <!-- End Cart Single Item-->
-                                        <!-- Start Cart Single Item-->
-                                        <tr>
-                                            <td class="product_remove"><a href="#"><i class="fa fa-trash-o"></i></a>
-                                            </td>
-                                            <td class="product_thumb"><a href="product-details-default.php"><img
-                                                        src="assets/images/product/default/home-1/default-3.jpg"
-                                                        alt=""></a></td>
-                                            <td class="product_name"><a href="product-details-default.php">Handbag
-                                                    elit</a></td>
-                                            <td class="product-price">$80.00</td>
-                                            <td class="product_quantity"><label>Quantity</label> <input min="1"
-                                                    max="100" value="1" type="number"></td>
-                                            <td class="product_total">$160.00</td>
-                                        </tr> <!-- End Cart Single Item-->
-                                    </tbody>
-                                </table>
+    <!-- ...:::: Start Blog List Section:::... -->
+    <div class="blog-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="blog-wrapper">
+                        <div class="row mb-n6">
+                            <div class="col-xl-4 col-md-6 col-12 mb-6">
+                                <!-- Start Product Default Single Item -->
+                                <div class="blog-list blog-grid-single-item blog-color--golden" data-aos="fade-up"
+                                    data-aos-delay="0">
+                                    <div class="image-box">
+                                        <a href="blog-single-sidebar-left.php" class="image-link">
+                                            <img class="img-fluid" src="assets/images/blog/blog-grid-home-1-img-1.jpg"
+                                                alt="">
+                                        </a>
+                                    </div>
+                                    <div class="content">
+                                        <ul class="post-meta">
+                                            <li>POSTED BY : <a href="#" class="author">Admin</a></li>
+                                            <li>ON : <a href="#" class="date">JUNE 09, 2023</a></li>
+                                        </ul>
+                                        <h6 class="title"><a href="blog-single-sidebar-left.php"> Natural and Effective DIY Face Masks for Clear Skin
+                                        </a>
+                                        </h6>
+                                        <p>Achieving clear, healthy-looking skin doesn't have to be expensive or complicated. Sometimes the best solutions are the simplest ones! With a few natural ingredients found in your kitchen cabinets, you can whip up some effective and affordable DIY face masks that can give you a clear complexion in no time.</p>
+                                        <a href="#" class="read-more-btn icon-space-left">Read More <span class="icon"><i
+                                                    class="ion-ios-arrow-thin-right"></i></span></a>
+                                    </div>
+                                </div>
+                                <!-- End Product Default Single Item -->
                             </div>
-                            <div class="cart_submit">
-                                <button class="btn btn-md btn-golden" type="submit">update cart</button>
+                            <div class="col-xl-4 col-md-6 col-12 mb-6">
+                                <!-- Start Product Default Single Item -->
+                                <div class="blog-list blog-grid-single-item blog-color--golden" data-aos="fade-up"
+                                    data-aos-delay="200">
+                                    <div class="blog-list-slider-arrow">
+                                        <!-- Slider main container -->
+                                        <div class="blog-list-slider swiper-container">
+                                            <!-- Additional required wrapper -->
+                                            <div class="swiper-wrapper">
+                                                <!-- Slides -->
+                                                <div class="blog-list-slider-img swiper-slide"><img class="img-fluid"
+                                                        src="assets/images/blog/blog-grid-home-1-img-4.jpg" alt="">
+                                                </div>
+                                                <div class="blog-list-slider-img swiper-slide"><img class="img-fluid"
+                                                        src="assets/images/blog/blog-grid-home-1-img-2.jpg" alt="">
+                                                </div>
+                                                <div class="blog-list-slider-img swiper-slide"><img class="img-fluid"
+                                                        src="assets/images/blog/blog-grid-home-1-img-3.jpg" alt="">
+                                                </div>
+                                                <div class="blog-list-slider-img swiper-slide"><img class="img-fluid"
+                                                        src="assets/images/blog/blog-grid-home-1-img-1.jpg" alt="">
+                                                </div>
+                                                <div class="blog-list-slider-img swiper-slide"><img class="img-fluid"
+                                                        src="assets/images/blog/blog-grid-home-1-img-5.jpg" alt="">
+                                                </div>
+                                            </div>
+
+                                            <!-- If we need navigation buttons -->
+                                            <div class="swiper-button-prev"></div>
+                                            <div class="swiper-button-next"></div>
+                                        </div>
+                                    </div>
+                                    <div class="content">
+                                        <ul class="post-meta">
+                                            <li>POSTED BY : <a href="#" class="author">Admin</a></li>
+                                            <li>ON : <a href="#" class="date">JUNE 10, 2023</a></li>
+                                        </ul>
+                                        <h6 class="title"><a href="blog-single-sidebar-left.php"> Top 5 Must-Have Beauty Essentials for Summer Vacation</a>
+                                        </h6>
+                                        <p>Summer vacations are all about relaxation and taking a break from everyday routines. But, don't leave your beauty routine behind to suffer! We've rounded up the top 10 must-have beauty essentials to bring with you on your summer vacation. Let's dive in!</p>
+                                        <a href="#" class="read-more-btn icon-space-left">Read More <span class="icon"><i
+                                                    class="ion-ios-arrow-thin-right"></i></span></a>
+                                    </div>
+                                </div>
+                                <!-- End Product Default Single Item -->
+                            </div>
+                            <div class="col-xl-4 col-md-6 col-12 mb-6">
+                                <!-- Start Product Default Single Item -->
+                                <div class="blog-list blog-grid-single-item blog-color--golden" data-aos="fade-up"
+                                    data-aos-delay="400">
+                                    <div class="blog-video-box">
+                                        <img class="img-fluid" src="assets/images/blog/blog-grid-home-1-img-5.jpg"
+                                            alt="">
+                                        <a href="https://youtu.be/MKjhBO2xQzg" class="video-play-btn"
+                                            data-autoplay="true" data-vbtype="video">
+                                            <i class="fa fa-youtube-play"></i>
+                                        </a>
+                                    </div>
+                                    <div class="content">
+                                        <ul class="post-meta">
+                                            <li>POSTED BY : <a href="#" class="author">Admin</a></li>
+                                            <li>ON : <a href="#" class="date">MAY 24, 2023</a></li>
+                                        </ul>
+                                        <h6 class="title"><a href="blog-single-sidebar-left.php"> 10 Tips for Flawless Makeup Application</a>
+                                        </h6>
+                                        <p>Makeup application can be difficult and time-consuming, but with these 10 tips, you'll be a pro in no time. From prepping your skin to choosing the right shades, we've got you covered.</p>
+                                        <a href="#" class="read-more-btn icon-space-left">Read More <span class="icon"><i
+                                                    class="ion-ios-arrow-thin-right"></i></span></a>
+                                    </div>
+                                </div>
+                                <!-- End Product Default Single Item -->
+                            </div>
+                            <div class="col-xl-4 col-md-6 col-12 mb-6">
+                                <!-- Start Product Default Single Item -->
+                                <div class="blog-list blog-grid-single-item blog-color--golden" data-aos="fade-up"
+                                    data-aos-delay="0">
+                                    <div class="image-box">
+                                        <a href="blog-single-sidebar-left.php" class="image-link">
+                                            <img class="img-fluid" src="assets/images/blog/blog-grid-home-1-img-2.jpg"
+                                                alt="">
+                                        </a>
+                                    </div>
+                                    <div class="content">
+                                        <ul class="post-meta">
+                                            <li>POSTED BY : <a href="#" class="author">Admin</a></li>
+                                            <li>ON : <a href="#" class="date">APRIL 24, 2023</a></li>
+                                        </ul>
+                                        <h6 class="title"><a href="blog-single-sidebar-left.php"> Secret Skin Care Tips for Beautiful, Youthful-looking Skin</a>
+                                        </h6>
+                                        <p>Everyone wants beautiful, youthful-looking skin that glows, but it's not always easy to achieve. That's why we’ve put together a list of secret skin care tips that will transform your skin health. Let's get started.</p>
+                                        <a href="#" class="read-more-btn icon-space-left">Read More <span class="icon"><i
+                                                    class="ion-ios-arrow-thin-right"></i></span></a>
+                                    </div>
+                                </div>
+                                <!-- End Product Default Single Item -->
+                            </div>
+                            <div class="col-xl-4 col-md-6 col-12 mb-6">
+                                <!-- Start Product Default Single Item -->
+                                <div class="blog-list blog-grid-single-item blog-color--golden" data-aos="fade-up"
+                                    data-aos-delay="200">
+                                    <div class="image-box">
+                                        <a href="blog-single-sidebar-left.php" class="image-link">
+                                            <img class="img-fluid" src="assets/images/blog/blog-grid-home-1-img-5.jpg"
+                                                alt="">
+                                        </a>
+                                    </div>
+                                    <div class="content">
+                                        <ul class="post-meta">
+                                            <li>POSTED BY : <a href="#" class="author">Admin</a></li>
+                                            <li>ON : <a href="#" class="date">APRIL 24, 2018</a></li>
+                                        </ul>
+                                        <h6 class="title"><a href="blog-single-sidebar-left.php"> Amazing Beauty techniques</a>
+                                        </h6>
+                                        <p>Donec vitae hendrerit arcu, sit amet faucibus nisl. Cras pretium arcu ex.
+                                            Aenean posuere libero eu augue condimentum rhoncus. Praesent</p>
+                                        <a href="#" class="read-more-btn icon-space-left">Read More <span class="icon"><i
+                                                    class="ion-ios-arrow-thin-right"></i></span></a>
+                                    </div>
+                                </div>
+                                <!-- End Product Default Single Item -->
+                            </div>
+                            <div class="col-xl-4 col-md-6 col-12 mb-6">
+                                <!-- Start Product Default Single Item -->
+                                <div class="blog-list blog-grid-single-item blog-color--golden" data-aos="fade-up"
+                                    data-aos-delay="400">
+                                    <div class="blog-list-slider-arrow">
+                                        <!-- Slider main container -->
+                                        <div class="blog-list-slider swiper-container">
+                                            <!-- Additional required wrapper -->
+                                            <div class="swiper-wrapper">
+                                                <!-- Slides -->
+                                                <div class="blog-list-slider-img swiper-slide"><img class="img-fluid"
+                                                        src="assets/images/blog/blog-grid-home-1-img-5.jpg" alt="">
+                                                </div>
+                                                <div class="blog-list-slider-img swiper-slide"><img class="img-fluid"
+                                                        src="assets/images/blog/blog-grid-home-1-img-2.jpg" alt="">
+                                                </div>
+                                                <div class="blog-list-slider-img swiper-slide"><img class="img-fluid"
+                                                        src="assets/images/blog/blog-grid-home-1-img-3.jpg" alt="">
+                                                </div>
+                                                <div class="blog-list-slider-img swiper-slide"><img class="img-fluid"
+                                                        src="assets/images/blog/blog-grid-home-1-img-1.jpg" alt="">
+                                                </div>
+                                                <div class="blog-list-slider-img swiper-slide"><img class="img-fluid"
+                                                        src="assets/images/blog/blog-grid-home-1-img-4.jpg" alt="">
+                                                </div>
+                                            </div>
+
+                                            <!-- If we need navigation buttons -->
+                                            <div class="swiper-button-prev"></div>
+                                            <div class="swiper-button-next"></div>
+                                        </div>
+                                    </div>
+                                    <div class="content">
+                                        <ul class="post-meta">
+                                            <li>POSTED BY : <a href="#" class="author">Admin</a></li>
+                                            <li>ON : <a href="#" class="date">APRIL 24, 2018</a></li>
+                                        </ul>
+                                        <h6 class="title"><a href="blog-single-sidebar-left.php"> Top 5 beauty brands to try out</a>
+                                        </h6>
+                                        <p>Donec vitae hendrerit arcu, sit amet faucibus nisl. Cras pretium arcu ex.
+                                            Aenean posuere libero eu augue condimentum rhoncus. Praesent</p>
+                                        <a href="#" class="read-more-btn icon-space-left">Read More <span class="icon"><i
+                                                    class="ion-ios-arrow-thin-right"></i></span></a>
+                                    </div>
+                                </div>
+                                <!-- End Product Default Single Item -->
                             </div>
                         </div>
                     </div>
+
+                    <!-- Start Pagination -->
+                    <div class="page-pagination text-center" data-aos="fade-up" data-aos-delay="0">
+                        <ul>
+                            <li><a class="active" href="#">1</a></li>
+                            <li><a href="#">2</a></li>
+                            <li><a href="#">3</a></li>
+                            <li><a href="#"><i class="ion-ios-skipforward"></i></a></li>
+                        </ul>
+                    </div> <!-- End Pagination -->
                 </div>
             </div>
-        </div> <!-- End Cart Table -->
-
-        <!-- Start Coupon Start -->
-        <div class="coupon_area">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-6 col-md-6">
-                        <div class="coupon_code left" data-aos="fade-up" data-aos-delay="200">
-                            <h3>Coupon</h3>
-                            <div class="coupon_inner">
-                                <p>Enter your coupon code if you have one.</p>
-                                <input class="mb-2" placeholder="Coupon code" type="text">
-                                <button type="submit" class="btn btn-md btn-golden">Apply coupon</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-6">
-                        <div class="coupon_code right" data-aos="fade-up" data-aos-delay="400">
-                            <h3>Cart Totals</h3>
-                            <div class="coupon_inner">
-                                <div class="cart_subtotal">
-                                    <p>Subtotal</p>
-                                    <p class="cart_amount">$215.00</p>
-                                </div>
-                                <div class="cart_subtotal ">
-                                    <p>Shipping</p>
-                                    <p class="cart_amount"><span>Flat Rate:</span> $255.00</p>
-                                </div>
-                                <a href="#">Calculate shipping</a>
-
-                                <div class="cart_subtotal">
-                                    <p>Total</p>
-                                    <p class="cart_amount">$215.00</p>
-                                </div>
-                                <div class="checkout_btn">
-                                    <a href="#" class="btn btn-md btn-golden">Proceed to Checkout</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div> <!-- End Coupon Start -->
-    </div> <!-- ...:::: End Cart Section:::... -->
+        </div>
+    </div> <!-- ...:::: End Blog List Section:::... -->
 
     <!-- Start Footer Section -->
     <footer class="footer-section footer-bg section-top-gap-100">
@@ -714,6 +805,7 @@ include 'db.php';
         </div>
     </footer>
     <!-- End Footer Section -->
+
 
     <!-- material-scrolltop button -->
     <button class="material-scrolltop" type="button"></button>
@@ -962,6 +1054,7 @@ include 'db.php';
     <!-- Main JS -->
     <script src="assets/js/main.js"></script>
 </body>
+
 
 
 </html>

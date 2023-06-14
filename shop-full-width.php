@@ -48,7 +48,7 @@
                             <!-- Start Header Logo -->
                             <div class="header-logo">
                                 <div class="logo">
-                                    <a href="index-2.html"><img src="assets/images/vanillalogo.jpg" alt=""></a>
+                                    <a href="index-2.php"><img src="assets/images/vanillalogo.jpg" alt=""></a>
                                 </div>
                             </div>
                             <!-- End Header Logo -->
@@ -58,34 +58,34 @@
                                 <nav>
                                     <ul>
                                         <li class="has-dropdown">
-                                            <a class="active main-menu-link" href="index-2.html">Home </a>
+                                            <a class="active main-menu-link" href="index-2.php">Home </a>
                                         </li>
                                         <li class="dropdown has-dropdown has-megaitem">
                                             <a href="#">Shop <i
                                                 class="fa fa-angle-down"></i></a>
                                             <!-- Sub Menu -->
                                                 <ul class="sub-menu">
-                                                    <li><a href="shop-full-width.html" >Product</a></li>
-                                                    <li><a href="product-details-default.html" >Product Details</a></li>
+                                                    <li><a href="shop-full-width.php" >Product</a></li>
+                                                    <li><a href="product-details-default.php" >Product Details</a></li>
                                                 </ul>
                                         </li>
                                         <li class="has-dropdown">
                                             <a href="#">Pages <i class="fa fa-angle-down"></i></a>
                                             <!-- Sub Menu -->
                                             <ul class="sub-menu">
-                                                <li><a href="my-account.html">My Account</a></li>
-                                                <li><a href="faq.html">Frequently Questions</a></li>
-                                                <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                                                <li><a href="my-account.php">My Account</a></li>
+                                                <li><a href="faq.php">Frequently Questions</a></li>
+                                                <li><a href="privacy-policy.php">Privacy Policy</a></li>
                                             </ul>
                                         </li>
-                                        <li><a href="blog-full-width.html">Blog</a></li>
+                                        <li><a href="blog-full-width.php">Blog</a></li>
                                         <li>
-                                            <a href="about-us.html">About Us</a>
+                                            <a href="about-us.php">About Us</a>
                                         </li>
                                         <li>
-                                            <a href="contact-us.html">Contact Us</a>
+                                            <a href="contact-us.php">Contact Us</a>
                                         </li>
-                                        <li><a href="login.html">Login</a></li>
+                                        <li><a href="login.php">Login</a></li>
                                     </ul>
                                 </nav>
                             </div>
@@ -132,8 +132,8 @@
                         <div class="breadcrumb-nav breadcrumb-nav-color--black breadcrumb-nav-hover-color--golden">
                             <nav aria-label="breadcrumb">
                                 <ul>
-                                    <li><a href="index-2.html">Home</a></li>
-                                    <li><a href="product-details-default.html">Shop</a></li>
+                                    <li><a href="index-2.php">Home</a></li>
+                                    <li><a href="product-details-default.php">Shop</a></li>
                                     <li class="active" aria-current="page">Product</li>
                                 </ul>
                             </nav>
@@ -155,7 +155,7 @@
                     <div class="mobile-header-left">
                         <ul class="mobile-menu-logo">
                             <li>
-                                <a href="index-2.html">
+                                <a href="index-2.php">
                                     <div class="logo">
                                         <img src="assets/images/vanillalogo.jpg" alt="">
                                     </div>
@@ -213,27 +213,27 @@
                 <div class="offcanvas-menu">
                     <ul>
                         <li>
-                            <a href="index-2.html"><span>Home</span></a>
+                            <a href="index-2.php"><span>Home</span></a>
                         </li>
                         <li>
                             <a href="#"><span>Shop</span></a>
                             <ul class="mobile-sub-menu">
-                                <li><a href="shop-full-width.html">Products</a></li>
-                                <li><a href="product-details-default.html" >Product Details</a></li>
+                                <li><a href="shop-full-width.php">Products</a></li>
+                                <li><a href="product-details-default.php" >Product Details</a></li>
                             </ul>
                         </li>
                         <li>
                             <a href="#"><span>Pages</span></a>
                             <ul class="mobile-sub-menu">
-                                <li><a href="my-account.html">My Account</a></li>
-                                <li><a href="faq.html">Frequently Questions</a></li>
-                                <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                                <li><a href="my-account.php">My Account</a></li>
+                                <li><a href="faq.php">Frequently Questions</a></li>
+                                <li><a href="privacy-policy.php">Privacy Policy</a></li>
                             </ul>
                         </li>
-                        <li><a href="blog-full-width.html">Blog</a></li>
-                        <li><a href="about-us.html">About Us</a></li>
-                        <li><a href="contact-us.html">Contact Us</a></li>
-                        <li><a href="login.html">Login</a></li>
+                        <li><a href="blog-full-width.php">Blog</a></li>
+                        <li><a href="about-us.php">About Us</a></li>
+                        <li><a href="contact-us.php">Contact Us</a></li>
+                        <li><a href="login.php">Login</a></li>
                     </ul>
                 </div> <!-- End Mobile Menu Nav -->
             </div> <!-- End Mobile Menu -->
@@ -241,7 +241,7 @@
             <!-- Start Mobile contact Info -->
             <div class="mobile-contact-info">
                 <div class="logo">
-                    <a href="index-2.html"><img src="assets/images/vanillalogo.jpg" alt=""></a>
+                    <a href="index-2.php"><img src="assets/images/vanillalogo.jpg" alt=""></a>
                 </div>
 
                 <address class="address">
@@ -258,9 +258,9 @@
                 </ul>
 
                 <ul class="user-link">
-                    <li><a href="wishlist.html">Wishlist</a></li>
-                    <li><a href="cart.html">Cart</a></li>
-                    <li><a href="checkout.html">Checkout</a></li>
+                    <li><a href="wishlist.php">Wishlist</a></li>
+                    <li><a href="cart.php">Cart</a></li>
+                    <li><a href="checkout.php">Checkout</a></li>
                 </ul>
             </div>
             <!-- End Mobile contact Info -->
@@ -278,7 +278,7 @@
         <!-- Start Mobile contact Info -->
         <div class="mobile-contact-info">
             <div class="logo">
-                <a href="index-2.html"><img src="assets/images/vanillalogo.jpg" alt=""></a>
+                <a href="index-2.php"><img src="assets/images/vanillalogo.jpg" alt=""></a>
             </div>
 
             <address class="address">
@@ -295,9 +295,9 @@
             </ul>
 
             <ul class="user-link">
-                <li><a href="wishlist.html">Wishlist</a></li>
-                <li><a href="cart.html">Cart</a></li>
-                <li><a href="checkout.html">Checkout</a></li>
+                <li><a href="wishlist.php">Wishlist</a></li>
+                <li><a href="cart.php">Cart</a></li>
+                <li><a href="checkout.php">Checkout</a></li>
             </ul>
         </div>
         <!-- End Mobile contact Info -->
@@ -374,8 +374,8 @@
                 <span class="offcanvas-cart-total-price-value">$170.00</span>
             </div>
             <ul class="offcanvas-cart-action-button">
-                <li><a href="cart.html" class="btn btn-block btn-golden">View Cart</a></li>
-                <li><a href="compare.html" class=" btn btn-block btn-golden mt-5">Checkout</a></li>
+                <li><a href="cart.php" class="btn btn-block btn-golden">View Cart</a></li>
+                <li><a href="compare.php" class=" btn btn-block btn-golden mt-5">Checkout</a></li>
             </ul>
         </div> <!-- End  Offcanvas Addcart Wrapper -->
 
@@ -575,7 +575,7 @@
                                 <ul class="footer-nav">
                                     <li><a href="#">Delivery Information</a></li>
                                     <li><a href="#">Terms & Conditions</a></li>
-                                    <li><a href="contact-us.html">Contact</a></li>
+                                    <li><a href="contact-us.php">Contact</a></li>
                                     <li><a href="#">Returns</a></li>
                                 </ul>
                             </div>
@@ -587,10 +587,10 @@
                                 data-aos-delay="200">
                                 <h5 class="title">MY ACCOUNT</h5>
                                 <ul class="footer-nav">
-                                    <li><a href="my-account.html">My account</a></li>
-                                    <li><a href="wishlist.html">Wishlist</a></li>
-                                    <li><a href="privacy-policy.html">Privacy Policy</a></li>
-                                    <li><a href="faq.html">Frequently Questions</a></li>
+                                    <li><a href="my-account.php">My account</a></li>
+                                    <li><a href="wishlist.php">Wishlist</a></li>
+                                    <li><a href="privacy-policy.php">Privacy Policy</a></li>
+                                    <li><a href="faq.php">Frequently Questions</a></li>
                                     <!--<li><a href="#">Order History</a></li>-->
                                 </ul>
                             </div>
@@ -658,7 +658,7 @@
                         class="row justify-content-between align-items-center align-items-center flex-column flex-md-row mb-n6">
                         <div class="col-auto mb-6">
                             <div class="footer-copyright">
-                                <p class="copyright-text">&copy; 2023 <a href="index-2.html">vanilla</a>. Made with <i
+                                <p class="copyright-text">&copy; 2023 <a href="index-2.php">vanilla</a>. Made with <i
                                         class="fa fa-heart text-danger"></i> by <a href="https://github.com/Alomba-epongseh/e-commerce"
                                         target="_blank">vanilla</a> </p>
 
@@ -712,8 +712,8 @@
                                         <div class="modal-add-cart-info"><i class="fa fa-check-square"></i>Added to cart
                                             successfully!</div>
                                         <div class="modal-add-cart-product-cart-buttons">
-                                            <a href="cart.html">View Cart</a>
-                                            <a href="checkout.html">Checkout</a>
+                                            <a href="cart.php">View Cart</a>
+                                            <a href="checkout.php">Checkout</a>
                                         </div>
                                     </div>
                                 </div>

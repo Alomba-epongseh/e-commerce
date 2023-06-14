@@ -1,14 +1,9 @@
-<?php
-//if (session_status() !== PHP_SESSION_ACTIVE) {session_start();}
-if(session_id() == '' || !isset($_SESSION)){session_start();}
-include 'db.php';
-?>
-
 <!DOCTYPE html>
 <html lang="zxx">
 
 
-<meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -134,13 +129,12 @@ include 'db.php';
             <div class="container">
                 <div class="row">
                     <div class="col-12">
-                        <h3 class="breadcrumb-title">Cart</h3>
+                        <h3 class="breadcrumb-title">About Us</h3>
                         <div class="breadcrumb-nav breadcrumb-nav-color--black breadcrumb-nav-hover-color--golden">
                             <nav aria-label="breadcrumb">
                                 <ul>
                                     <li><a href="index-2.php">Home</a></li>
-                                    <li><a href="#">Side Bar</a></li>
-                                    <li class="active" aria-current="page">cart</li>
+                                    <li class="active" aria-current="page">About Us</li>
                                 </ul>
                             </nav>
                         </div>
@@ -473,125 +467,134 @@ include 'db.php';
     <!-- Offcanvas Overlay -->
     <div class="offcanvas-overlay"></div>
 
-    <!-- ...:::: Start Cart Section:::... -->
-    <div class="cart-section">
-        <!-- Start Cart Table -->
-        <div class="cart-table-wrapper" data-aos="fade-up" data-aos-delay="0">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12">
-                        <div class="table_desc">
-                            <div class="table_page table-responsive">
-                                
-                                <table>
-                                    <!-- Start Cart Table Head -->
-                                    <thead>
-                                        <tr>
-                                            <th class="product_remove">Delete</th>
-                                            <th class="product_thumb">Image</th>
-                                            <th class="product_name">Product</th>
-                                            <th class="product-price">Price</th>
-                                            <th class="product_quantity">Quantity</th>
-                                            <th class="product_total">Total</th>
-                                        </tr>
-                                    </thead> <!-- End Cart Table Head -->
-                                    <tbody>
-                                        <!-- Start Cart Single Item-->
-                                        <tr>
-                                            <td class="product_remove"><a href="#"><i class="fa fa-trash-o"></i></a>
-                                            </td>
-                                            <td class="product_thumb"><a href="product-details-default.php"><img
-                                                        src="assets/images/product/default/home-1/default-1.jpg"
-                                                        alt=""></a></td>
-                                            <td class="product_name"><a href="product-details-default.php">Handbag
-                                                    fringilla</a></td>
-                                            <td class="product-price">$65.00</td>
-                                            <td class="product_quantity"><label>Quantity</label> <input min="1"
-                                                    max="100" value="1" type="number"></td>
-                                            <td class="product_total">$130.00</td>
-                                        </tr> <!-- End Cart Single Item-->
-                                        <!-- Start Cart Single Item-->
-                                        <tr>
-                                            <td class="product_remove"><a href="#"><i class="fa fa-trash-o"></i></a>
-                                            </td>
-                                            <td class="product_thumb"><a href="product-details-default.php"><img
-                                                        src="assets/images/product/default/home-1/default-2.jpg"
-                                                        alt=""></a></td>
-                                            <td class="product_name"><a href="product-details-default.php">Handbags
-                                                    justo</a></td>
-                                            <td class="product-price">$90.00</td>
-                                            <td class="product_quantity"><label>Quantity</label> <input min="1"
-                                                    max="100" value="1" type="number"></td>
-                                            <td class="product_total">$180.00</td>
-                                        </tr> <!-- End Cart Single Item-->
-                                        <!-- Start Cart Single Item-->
-                                        <tr>
-                                            <td class="product_remove"><a href="#"><i class="fa fa-trash-o"></i></a>
-                                            </td>
-                                            <td class="product_thumb"><a href="product-details-default.php"><img
-                                                        src="assets/images/product/default/home-1/default-3.jpg"
-                                                        alt=""></a></td>
-                                            <td class="product_name"><a href="product-details-default.php">Handbag
-                                                    elit</a></td>
-                                            <td class="product-price">$80.00</td>
-                                            <td class="product_quantity"><label>Quantity</label> <input min="1"
-                                                    max="100" value="1" type="number"></td>
-                                            <td class="product_total">$160.00</td>
-                                        </tr> <!-- End Cart Single Item-->
-                                    </tbody>
-                                </table>
-                            </div>
-                            <div class="cart_submit">
-                                <button class="btn btn-md btn-golden" type="submit">update cart</button>
-                            </div>
+    <!-- Start About Top -->
+    <div class="about-top">
+        <div class="container">
+            <div class="row d-flex align-items-center justify-content-between d-sm-column">
+                <div class="col-md-6">
+                    <div class="about-img" data-aos="fade-up" data-aos-delay="0">
+                        <div class="img-responsive">
+                            <img src="assets/images/hero-slider/home-2/hero-slider-2.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="content" data-aos="fade-up" data-aos-delay="200">
+                        <h3 class="title">ABOUT OUR BEAUTY STORE</h3>
+                        <h5 class="semi-title">We believe that beauty especially facial beauty is the biggest and greatest gift of a lady.</h5>
+                        <p>At our store, we strive to provide our customers with high quality products and natural skin care products. We understand that 
+                            everyone's beauty needs are unique so we offer a wide range of products that cater for the different skin tones , types and 
+                            preference. <br>
+                            Our team is passionate about beauty and is dedicated to staying up to date with the lastest trends and innovations in the 
+                            beauty industry. We work tirelessly to curate a selection of products which not only offers exceptional quality but also 
+                            performance. <br>
+                            We believe that beauty is meant for everyone and should be accessible to everyone, which is why we offer our products at affordable
+                            prices without compromising on quality. Whether you are a skincare novice or a makeup enthusiast, we have something for everyone.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End About Top -->
+
+    <!-- Start Slill Progress -->
+    <div class="progressbar-section section-top-gap-100 section-inner-bg">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <div class="content" data-aos="fade-up" data-aos-delay="0">
+                        <h4 class="title">Functionality meets perfection</h4>
+                        <p>In today’s day and age, its not only about the effectiveness in archieving the final result. It is all about how the products
+                            look and feel good on the skin of the user. So we offer you only brands that deliver both quality and beauty in their products. 
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="custom-progress m-t-40">
+                        <div class="skill-progressbar" data-aos="fade-up" data-aos-delay="0">
+                            <h6 class="font--semi-bold m-b-15">Quality</h6>
+                            <div class="line-progressbar" data-percentage="95" data-progress-color="#b19361"></div>
+                        </div>
+                        <div class="skill-progressbar" data-aos="fade-up" data-aos-delay="200">
+                            <h6 class="font--semi-bold m-b-15">Price</h6>
+                            <div class="line-progressbar" data-percentage="76" data-progress-color="#b19361"></div>
+                        </div>
+                        <div class="skill-progressbar" data-aos="fade-up" data-aos-delay="400">
+                            <h6 class="font--semi-bold m-b-15">Looks</h6>
+                            <div class="line-progressbar" data-percentage="87" data-progress-color="#b19361"></div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div> <!-- End Cart Table -->
+        </div>
+    </div>
+    <!-- End Slill Progress -->
 
-        <!-- Start Coupon Start -->
-        <div class="coupon_area">
+    <!-- Start Service Section -->
+    <div class="service-promo-section section-top-gap-100">
+        <div class="service-wrapper">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-6 col-md-6">
-                        <div class="coupon_code left" data-aos="fade-up" data-aos-delay="200">
-                            <h3>Coupon</h3>
-                            <div class="coupon_inner">
-                                <p>Enter your coupon code if you have one.</p>
-                                <input class="mb-2" placeholder="Coupon code" type="text">
-                                <button type="submit" class="btn btn-md btn-golden">Apply coupon</button>
+                    <!-- Start Service Promo Single Item -->
+                    <div class="col-lg-3 col-sm-6 col-12">
+                        <div class="service-promo-single-item" data-aos="fade-up" data-aos-delay="0">
+                            <div class="image">
+                                <img src="assets/images/icons/service-promo-5.png" alt="">
+                            </div>
+                            <div class="content">
+                                <h6 class="title">FREE SHIPPING</h6>
+                                <p>Get 10% cash back, free shipping, free returns, and more at 1000+ top retailers!</p>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-6 col-md-6">
-                        <div class="coupon_code right" data-aos="fade-up" data-aos-delay="400">
-                            <h3>Cart Totals</h3>
-                            <div class="coupon_inner">
-                                <div class="cart_subtotal">
-                                    <p>Subtotal</p>
-                                    <p class="cart_amount">$215.00</p>
-                                </div>
-                                <div class="cart_subtotal ">
-                                    <p>Shipping</p>
-                                    <p class="cart_amount"><span>Flat Rate:</span> $255.00</p>
-                                </div>
-                                <a href="#">Calculate shipping</a>
-
-                                <div class="cart_subtotal">
-                                    <p>Total</p>
-                                    <p class="cart_amount">$215.00</p>
-                                </div>
-                                <div class="checkout_btn">
-                                    <a href="#" class="btn btn-md btn-golden">Proceed to Checkout</a>
-                                </div>
+                    <!-- End Service Promo Single Item -->
+                    <!-- Start Service Promo Single Item -->
+                    <div class="col-lg-3 col-sm-6 col-12">
+                        <div class="service-promo-single-item" data-aos="fade-up" data-aos-delay="200">
+                            <div class="image">
+                                <img src="assets/images/icons/service-promo-6.png" alt="">
+                            </div>
+                            <div class="content">
+                                <h6 class="title">30 DAYS MONEY BACK</h6>
+                                <p>100% satisfaction guaranteed, or get your money back within 30 days!</p>
                             </div>
                         </div>
                     </div>
+                    <!-- End Service Promo Single Item -->
+                    <!-- Start Service Promo Single Item -->
+                    <div class="col-lg-3 col-sm-6 col-12">
+                        <div class="service-promo-single-item" data-aos="fade-up" data-aos-delay="400">
+                            <div class="image">
+                                <img src="assets/images/icons/service-promo-7.png" alt="">
+                            </div>
+                            <div class="content">
+                                <h6 class="title">SAFE PAYMENT</h6>
+                                <p>Pay with the world’s most popular and secure payment methods.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Service Promo Single Item -->
+                    <!-- Start Service Promo Single Item -->
+                    <div class="col-lg-3 col-sm-6 col-12">
+                        <div class="service-promo-single-item" data-aos="fade-up" data-aos-delay="600">
+                            <div class="image">
+                                <img src="assets/images/icons/service-promo-8.png" alt="">
+                            </div>
+                            <div class="content">
+                                <h6 class="title">LOYALTY CUSTOMER</h6>
+                                <p>Card for the other 30% of their purchases at a rate of 1% cash back.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Service Promo Single Item -->
                 </div>
             </div>
-        </div> <!-- End Coupon Start -->
-    </div> <!-- ...:::: End Cart Section:::... -->
+        </div>
+    </div>
+    <!-- End Service Section -->
+
+
 
     <!-- Start Footer Section -->
     <footer class="footer-section footer-bg section-top-gap-100">
@@ -718,222 +721,6 @@ include 'db.php';
     <!-- material-scrolltop button -->
     <button class="material-scrolltop" type="button"></button>
 
-    <!-- Start Modal Add cart -->
-    <div class="modal fade" id="modalAddcart" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog  modal-dialog-centered modal-xl" role="document">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <div class="container-fluid">
-                        <div class="row">
-                            <div class="col text-right">
-                                <button type="button" class="close modal-close" data-bs-dismiss="modal"
-                                    aria-label="Close">
-                                    <span aria-hidden="true"> <i class="fa fa-times"></i></span>
-                                </button>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-7">
-                                <div class="row">
-                                    <div class="col-md-4">
-                                        <div class="modal-add-cart-product-img">
-                                            <img class="img-fluid"
-                                                src="assets/images/product/default/home-1/default-1.jpg" alt="">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-8">
-                                        <div class="modal-add-cart-info"><i class="fa fa-check-square"></i>Added to cart
-                                            successfully!</div>
-                                        <div class="modal-add-cart-product-cart-buttons">
-                                            <a href="cart.php">View Cart</a>
-                                            <a href="checkout.php">Checkout</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-5 modal-border">
-                                <ul class="modal-add-cart-product-shipping-info">
-                                    <li> <strong><i class="icon-shopping-cart"></i> There Are 5 Items In Your
-                                            Cart.</strong></li>
-                                    <li> <strong>TOTAL PRICE: </strong> <span>$187.00</span></li>
-                                    <li class="modal-continue-button"><a href="#" data-bs-dismiss="modal">CONTINUE
-                                            SHOPPING</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> <!-- End Modal Add cart -->
-
-    <!-- Start Modal Quickview cart -->
-    <div class="modal fade" id="modalQuickview" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog  modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <div class="container-fluid">
-                        <div class="row">
-                            <div class="col text-right">
-                                <button type="button" class="close modal-close" data-bs-dismiss="modal"
-                                    aria-label="Close">
-                                    <span aria-hidden="true"> <i class="fa fa-times"></i></span>
-                                </button>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="product-details-gallery-area mb-7">
-                                    <!-- Start Large Image -->
-                                    <div class="product-large-image modal-product-image-large swiper-container">
-                                        <div class="swiper-wrapper">
-                                            <div class="product-image-large-image swiper-slide img-responsive">
-                                                <img src="assets/images/product/default/home-1/default-1.jpg" alt="">
-                                            </div>
-                                            <div class="product-image-large-image swiper-slide img-responsive">
-                                                <img src="assets/images/product/default/home-1/default-2.jpg" alt="">
-                                            </div>
-                                            <div class="product-image-large-image swiper-slide img-responsive">
-                                                <img src="assets/images/product/default/home-1/default-3.jpg" alt="">
-                                            </div>
-                                            <div class="product-image-large-image swiper-slide img-responsive">
-                                                <img src="assets/images/product/default/home-1/default-4.jpg" alt="">
-                                            </div>
-                                            <div class="product-image-large-image swiper-slide img-responsive">
-                                                <img src="assets/images/product/default/home-1/default-5.jpg" alt="">
-                                            </div>
-                                            <div class="product-image-large-image swiper-slide img-responsive">
-                                                <img src="assets/images/product/default/home-1/default-6.jpg" alt="">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- End Large Image -->
-                                    <!-- Start Thumbnail Image -->
-                                    <div
-                                        class="product-image-thumb modal-product-image-thumb swiper-container pos-relative mt-5">
-                                        <div class="swiper-wrapper">
-                                            <div class="product-image-thumb-single swiper-slide">
-                                                <img class="img-fluid"
-                                                    src="assets/images/product/default/home-1/default-1.jpg" alt="">
-                                            </div>
-                                            <div class="product-image-thumb-single swiper-slide">
-                                                <img class="img-fluid"
-                                                    src="assets/images/product/default/home-1/default-2.jpg" alt="">
-                                            </div>
-                                            <div class="product-image-thumb-single swiper-slide">
-                                                <img class="img-fluid"
-                                                    src="assets/images/product/default/home-1/default-3.jpg" alt="">
-                                            </div>
-                                            <div class="product-image-thumb-single swiper-slide">
-                                                <img class="img-fluid"
-                                                    src="assets/images/product/default/home-1/default-4.jpg" alt="">
-                                            </div>
-                                            <div class="product-image-thumb-single swiper-slide">
-                                                <img class="img-fluid"
-                                                    src="assets/images/product/default/home-1/default-5.jpg" alt="">
-                                            </div>
-                                            <div class="product-image-thumb-single swiper-slide">
-                                                <img class="img-fluid"
-                                                    src="assets/images/product/default/home-1/default-6.jpg" alt="">
-                                            </div>
-                                        </div>
-                                        <!-- Add Arrows -->
-                                        <div class="gallery-thumb-arrow swiper-button-next"></div>
-                                        <div class="gallery-thumb-arrow swiper-button-prev"></div>
-                                    </div>
-                                    <!-- End Thumbnail Image -->
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="modal-product-details-content-area">
-                                    <!-- Start  Product Details Text Area-->
-                                    <div class="product-details-text">
-                                        <h4 class="title">Nonstick Dishwasher PFOA</h4>
-                                        <div class="price"><del>$70.00</del>$80.00</div>
-                                    </div> <!-- End  Product Details Text Area-->
-                                    <!-- Start Product Variable Area -->
-                                    <div class="product-details-variable">
-                                        <!-- Product Variable Single Item -->
-                                        <div class="variable-single-item">
-                                            <span>Color</span>
-                                            <div class="product-variable-color">
-                                                <label for="modal-product-color-red">
-                                                    <input name="modal-product-color" id="modal-product-color-red"
-                                                        class="color-select" type="radio" checked>
-                                                    <span class="product-color-red"></span>
-                                                </label>
-                                                <label for="modal-product-color-tomato">
-                                                    <input name="modal-product-color" id="modal-product-color-tomato"
-                                                        class="color-select" type="radio">
-                                                    <span class="product-color-tomato"></span>
-                                                </label>
-                                                <label for="modal-product-color-green">
-                                                    <input name="modal-product-color" id="modal-product-color-green"
-                                                        class="color-select" type="radio">
-                                                    <span class="product-color-green"></span>
-                                                </label>
-                                                <label for="modal-product-color-light-green">
-                                                    <input name="modal-product-color"
-                                                        id="modal-product-color-light-green" class="color-select"
-                                                        type="radio">
-                                                    <span class="product-color-light-green"></span>
-                                                </label>
-                                                <label for="modal-product-color-blue">
-                                                    <input name="modal-product-color" id="modal-product-color-blue"
-                                                        class="color-select" type="radio">
-                                                    <span class="product-color-blue"></span>
-                                                </label>
-                                                <label for="modal-product-color-light-blue">
-                                                    <input name="modal-product-color"
-                                                        id="modal-product-color-light-blue" class="color-select"
-                                                        type="radio">
-                                                    <span class="product-color-light-blue"></span>
-                                                </label>
-                                            </div>
-                                        </div>
-                                        <!-- Product Variable Single Item -->
-                                        <div class="d-flex align-items-center flex-wrap">
-                                            <div class="variable-single-item ">
-                                                <span>Quantity</span>
-                                                <div class="product-variable-quantity">
-                                                    <input min="1" max="100" value="1" type="number">
-                                                </div>
-                                            </div>
-
-                                            <div class="product-add-to-cart-btn">
-                                                <a href="#" data-bs-toggle="modal" data-bs-target="#modalAddcart">Add To
-                                                    Cart</a>
-                                            </div>
-                                        </div>
-                                    </div> <!-- End Product Variable Area -->
-                                    <div class="modal-product-about-text">
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia iste
-                                            laborum ad impedit pariatur esse optio tempora sint ullam autem deleniti nam
-                                            in quos qui nemo ipsum numquam, reiciendis maiores quidem aperiam, rerum vel
-                                            recusandae</p>
-                                    </div>
-                                    <!-- Start  Product Details Social Area-->
-                                    <div class="modal-product-details-social">
-                                        <span class="title">SHARE THIS PRODUCT</span>
-                                        <ul>
-                                            <li><a href="#" class="facebook"><i class="fa fa-facebook"></i></a></li>
-                                            <li><a href="#" class="twitter"><i class="fa fa-twitter"></i></a></li>
-                                            <li><a href="#" class="pinterest"><i class="fa fa-pinterest"></i></a></li>
-                                            <li><a href="#" class="google-plus"><i class="fa fa-google-plus"></i></a>
-                                            </li>
-                                            <li><a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a></li>
-                                        </ul>
-
-                                    </div> <!-- End  Product Details Social Area-->
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> <!-- End Modal Quickview cart -->
-
     <!-- ::::::::::::::All JS Files here :::::::::::::: -->
     <!-- Global Vendor, plugins JS -->
     <!-- <script src="assets/js/vendor/modernizr-3.11.2.min.js"></script>
@@ -962,6 +749,7 @@ include 'db.php';
     <!-- Main JS -->
     <script src="assets/js/main.js"></script>
 </body>
+
 
 
 </html>
