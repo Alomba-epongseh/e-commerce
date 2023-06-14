@@ -15415,6 +15415,10 @@ input {
     height: auto;
     transition: all 0.5s ease;
 }
+.image-link img{
+    width: 200px;
+    height: 200px;
+}
 .product-default-single-item .image-link img:nth-child(2) {
     position: absolute;
     left: 0;
