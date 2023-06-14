@@ -15,7 +15,6 @@ function getPro(){
     while ($row_pro = mysqli_fetch_array($run_pro)) {
         $pro_id  = $row_pro['id'];
         $pro_name  = $row_pro['name'];
-        $pro_code  = $row_pro['code'];
         $pro_image  = $row_pro['image'];
         $pro_price = $row_pro['price'];
 
@@ -70,6 +69,77 @@ function getPro(){
         ";
      };
 };
+
+//function to search item or product
+
+function search(){
+
+    if(isset($_GET['search'])){
+    
+    global $conn;
+    
+    $search_query = $_GET['user_query'];
+    $get_pro = "SELECT * FROM product where keywords like '%$search_query%'";
+    $run_pro = mysqli_query($conn, $get_pro);
+    
+    while ($row_pro = mysqli_fetch_array($run_pro)) {
+        $pro_id  = $row_pro['id'];
+        $pro_name  = $row_pro['name'];
+        $pro_image  = $row_pro['image'];
+        $pro_price = $row_pro['price'];
+    
+        echo "
+        <div class='product-default-single-item product-color--golden'
+        data-aos='fade-up' data-aos-delay='0'>
+        <div class='image-box'>
+            <a href='product-details-default.php' class='image-link'>
+                <img src='admin_area/product_images/$pro_image'
+                    alt='no image'>
+            </a>
+            <div class='action-link'>
+                <div class='action-link-left'>
+                    <a href='#?pro_id = $pro_id' data-bs-toggle='modal'
+                        data-bs-target='#modalAddcart'>Add to Cart</a>
+                </div>
+                <div class='action-link-right'>
+                    <a href='#' data-bs-toggle='modal'
+                        data-bs-target='#modalQuickview'><i
+                            class='icon-magnifier'></i></a>
+                    <a href='wishlist.php'><i
+                            class='icon-heart'></i></a>
+                    <a href='compare.php'><i
+                            class='icon-shuffle'></i></a>
+                </div>
+            </div>
+        </div>
+        <div class='content'>
+            <div class='content-left'>
+                <h6 class='title'><a
+                        href='product-details-default.php?pro_id = $pro_id'>$pro_name</a></h6>
+                <ul class='review-star'>
+                    <li class='fill'><i class='ion-android-star'></i>
+                    </li>
+                    <li class='fill'><i class='ion-android-star'></i>
+                    </li>
+                    <li class='fill'><i class='ion-android-star'></i>
+                    </li>
+                    <li class='fill'><i class='ion-android-star'></i>
+                    </li>
+                    <li class='empty'><i class='ion-android-star'></i>
+                    </li>
+                </ul>
+            </div>
+            <div class='content-right'>
+                <span class='price'>Price: $ $pro_price</span>
+            </div>
+    
+        </div>
+    </div>
+        
+        ";
+     };
+    };
+    };
 
 
 //function to get product details for a particular product from database and submit to website on click 
