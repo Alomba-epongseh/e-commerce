@@ -56,9 +56,9 @@
                         <div class="header-top-right">
                             <div
                                 class="header-top-user-link header-top-user-link-color--white header-top-user-link-hover-color--green">
-                                <a href="wishlist.html">Wishlist</a>
-                                <a href="cart.html">Cart</a>
-                                <a href="checkout.html">Checkout</a>
+                                <a href="wishlist.php">Wishlist</a>
+                                <a href="cart.php">Cart</a>
+                                <a href="checkout.php">Checkout</a>
                             </div>
                         </div>
                     </div>
@@ -73,7 +73,7 @@
                             <!-- Start Header Logo -->
                             <div class="header-logo">
                                 <div class="logo">
-                                    <a href="index-2.html"><img src="assets/images/vanillalogo.jpg" alt=""></a>
+                                    <a href="index-2.php"><img src="assets/images/vanillalogo.jpg" alt=""></a>
                                 </div>
                             </div>
                             <!-- End Header Logo -->
@@ -83,34 +83,34 @@
                                 <nav>
                                     <ul>
                                         <li class="has-dropdown">
-                                            <a class="active main-menu-link" href="index-2.html">Home </a>
+                                            <a class="active main-menu-link" href="index-2.php">Home </a>
                                         </li>
                                         <li class="dropdown has-dropdown has-megaitem">
                                             <a href="#">Shop <i
                                                 class="fa fa-angle-down"></i></a>
                                             <!-- Sub Menu -->
                                                 <ul class="sub-menu">
-                                                    <li><a href="shop-full-width.html" >Product</a></li>
-                                                    <li><a href="product-details-default.html" >Product Details</a></li>
+                                                    <li><a href="shop-full-width.php" >Product</a></li>
+                                                    <li><a href="product-details-default.php" >Product Details</a></li>
                                                 </ul>
                                         </li>
                                         <li class="has-dropdown">
                                             <a href="#">Pages <i class="fa fa-angle-down"></i></a>
                                             <!-- Sub Menu -->
                                             <ul class="sub-menu">
-                                                <li><a href="my-account.html">My Account</a></li>
-                                                <li><a href="faq.html">Frequently Questions</a></li>
-                                                <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                                                <li><a href="my-account.php">My Account</a></li>
+                                                <li><a href="faq.php">Frequently Questions</a></li>
+                                                <li><a href="privacy-policy.php">Privacy Policy</a></li>
                                             </ul>
                                         </li>
-                                        <li><a href="blog-full-width.html">Blog</a></li>
+                                        <li><a href="blog-full-width.php">Blog</a></li>
                                         <li>
-                                            <a href="about-us.html">About Us</a>
+                                            <a href="about-us.php">About Us</a>
                                         </li>
                                         <li>
-                                            <a href="contact-us.html">Contact Us</a>
+                                            <a href="contact-us.php">Contact Us</a>
                                         </li>
-                                        <li><a href="login.html">Login</a></li>
+                                        <li><a href="login.php">Login</a></li>
                                     </ul>
                                 </nav>
                             </div>
@@ -154,7 +154,7 @@
                     <div class="mobile-header-left">
                         <ul class="mobile-menu-logo">
                             <li>
-                                <a href="index.html">
+                                <a href="index.php">
                                     <div class="logo">
                                         <img src="assets/images/vanillalogo.jpg" alt="">
                                     </div>
@@ -212,27 +212,27 @@
                 <div class="offcanvas-menu">
                     <ul>
                         <li>
-                            <a href="index-2.html"><span>Home</span></a>
+                            <a href="index-2.php"><span>Home</span></a>
                         </li>
                         <li>
                             <a href="#"><span>Shop</span></a>
                             <ul class="mobile-sub-menu">
-                                <li><a href="shop-full-width.html">Products</a></li>
-                                <li><a href="product-details-default.html" >Product Details</a></li>
+                                <li><a href="shop-full-width.php">Products</a></li>
+                                <li><a href="product-details-default.php" >Product Details</a></li>
                             </ul>
                         </li>
                         <li>
                             <a href="#"><span>Pages</span></a>
                             <ul class="mobile-sub-menu">
-                                <li><a href="my-account.html">My Account</a></li>
-                                <li><a href="faq.html">Frequently Questions</a></li>
-                                <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                                <li><a href="my-account.php">My Account</a></li>
+                                <li><a href="faq.php">Frequently Questions</a></li>
+                                <li><a href="privacy-policy.php">Privacy Policy</a></li>
                             </ul>
                         </li>
-                        <li><a href="blog-full-width.html">Blog</a></li>
-                        <li><a href="about-us.html">About Us</a></li>
-                        <li><a href="contact-us.html">Contact Us</a></li>
-                        <li><a href="login.html">Login</a></li>
+                        <li><a href="blog-full-width.php">Blog</a></li>
+                        <li><a href="about-us.php">About Us</a></li>
+                        <li><a href="contact-us.php">Contact Us</a></li>
+                        <li><a href="login.php">Login</a></li>
                     </ul>
                 </div> <!-- End Mobile Menu Nav -->
             </div> <!-- End Mobile Menu -->
@@ -240,7 +240,7 @@
             <!-- Start Mobile contact Info -->
             <div class="mobile-contact-info">
                 <div class="logo">
-                    <a href="index.html"><img src="assets/images/vanillalogo.jpg" alt=""></a>
+                    <a href="index.php"><img src="assets/images/vanillalogo.jpg" alt=""></a>
                 </div>
 
                 <address class="address">
@@ -257,9 +257,9 @@
                 </ul>
 
                 <ul class="user-link">
-                    <li><a href="wishlist.html">Wishlist</a></li>
-                    <li><a href="cart.html">Cart</a></li>
-                    <li><a href="checkout.html">Checkout</a></li>
+                    <li><a href="wishlist.php">Wishlist</a></li>
+                    <li><a href="cart.php">Cart</a></li>
+                    <li><a href="checkout.php">Checkout</a></li>
                 </ul>
             </div>
             <!-- End Mobile contact Info -->
@@ -277,7 +277,7 @@
         <!-- Start Mobile contact Info -->
         <div class="mobile-contact-info">
             <div class="logo">
-                <a href="index-2.html"><img src="assets/images/vanillalogo.jpg" alt=""></a>
+                <a href="index-2.php"><img src="assets/images/vanillalogo.jpg" alt=""></a>
             </div>
 
             <address class="address">
@@ -294,9 +294,9 @@
             </ul>
 
             <ul class="user-link">
-                <li><a href="wishlist.html">Wishlist</a></li>
-                <li><a href="cart.html">Cart</a></li>
-                <li><a href="checkout.html">Checkout</a></li>
+                <li><a href="wishlist.php">Wishlist</a></li>
+                <li><a href="cart.php">Cart</a></li>
+                <li><a href="checkout.php">Checkout</a></li>
             </ul>
         </div>
         <!-- End Mobile contact Info -->
@@ -373,8 +373,8 @@
                 <span class="offcanvas-cart-total-price-value">$170.00</span>
             </div>
             <ul class="offcanvas-cart-action-button">
-                <li><a href="cart.html" class="btn btn-block btn-green">View Cart</a></li>
-                <li><a href="compare.html" class=" btn btn-block btn-green mt-5">Checkout</a></li>
+                <li><a href="cart.php" class="btn btn-block btn-green">View Cart</a></li>
+                <li><a href="compare.php" class=" btn btn-block btn-green mt-5">Checkout</a></li>
             </ul>
         </div> <!-- End  Offcanvas Addcart Wrapper -->
 
@@ -486,7 +486,7 @@
                                     <div class="hero-slider-content">
                                         <h4 class="subtitle">Premium Facial Skincare</h4>
                                         <h1 class="title">A Natural &<br> Organic Skincare</h1>
-                                        <a href="product-details-default.html" class="btn btn-lg btn-outline-green">shop
+                                        <a href="product-details-default.php" class="btn btn-lg btn-outline-green">shop
                                             now </a>
                                     </div>
                                 </div>
@@ -508,7 +508,7 @@
                                     <div class="hero-slider-content">
                                         <h4 class="subtitle">Made of Fresh Ingredients </h4>
                                         <h1 class="title"> A Natural & <br> Trusted Brand</h1>
-                                        <a href="product-details-default.html" class="btn btn-lg btn-outline-green">shop
+                                        <a href="product-details-default.php" class="btn btn-lg btn-outline-green">shop
                                             now </a>
                                     </div>
                                 </div>
@@ -591,7 +591,7 @@
                         <!-- Start Banner Single Item -->
                         <div class="banner-single-item banner-style-5 img-responsive" data-aos="fade-up"
                             data-aos-delay="0">
-                            <a href="product-details-default.html" class="image banner-animation">
+                            <a href="product-details-default.php" class="image banner-animation">
                                 <img src="assets/images/banner/banner-style-5-img-1.jpg" alt="">
                             </a>
                         </div>
@@ -601,7 +601,7 @@
                         <!-- Start Banner Single Item -->
                         <div class="banner-single-item banner-style-5 img-responsive" data-aos="fade-up"
                             data-aos-delay="200">
-                            <a href="product-details-default.html" class="image banner-animation">
+                            <a href="product-details-default.php" class="image banner-animation">
                                 <img src="assets/images/banner/banner-style-5-img-2.jpg" alt="">
                             </a>
                         </div>
@@ -611,7 +611,7 @@
                         <!-- Start Banner Single Item -->
                         <div class="banner-single-item banner-style-5 img-responsive" data-aos="fade-up"
                             data-aos-delay="400">
-                            <a href="product-details-default.html" class="image banner-animation">
+                            <a href="product-details-default.php" class="image banner-animation">
                                 <img src="assets/images/banner/banner-style-5-img-3.jpg" alt="">
                             </a>
                         </div>
@@ -654,7 +654,7 @@
                                     <!-- Start Product Default Single Item -->
                                     <?php
                                         include "function.php";
-                                        getPro();
+                                        getPro()
                                     ?>
 
                                     <!-- End Product Default Single Item -->
@@ -689,7 +689,7 @@
                             <p>On a mission to create all-natural skin care that delivers tangible results, Herbivore
                                 ensures every ingredient within their formulas has a specific purpose, resulting in
                                 highly active.</p>
-                            <a href="product-details-default.html"
+                            <a href="product-details-default.php"
                                 class="btn btn-lg btn-outline-green icon-space-left"><span
                                     class="d-flex align-items-center">Browse <i
                                         class="ion-ios-arrow-thin-right"></i></span></a>
@@ -774,7 +774,7 @@
                 <div class="image">
                     <img class="img-fluid" src="assets/images/banner/banner-style-4-img-5.jpg" alt="">
                 </div>
-                <a href="product-details-default.html" class="content">
+                <a href="product-details-default.php" class="content">
                     <div class="inner">
                         <h4 class="title">Bar Stool</h4>
                         <h6 class="sub-title">20 products</h6>
@@ -789,7 +789,7 @@
                 <div class="image">
                     <img class="img-fluid" src="assets/images/banner/banner-style-4-img-6.jpg" alt="">
                 </div>
-                <a href="product-details-default.html" class="content">
+                <a href="product-details-default.php" class="content">
                     <div class="inner">
                         <h4 class="title">Armchairs</h4>
                         <h6 class="sub-title">20 products</h6>
@@ -804,7 +804,7 @@
                 <div class="image">
                     <img class="img-fluid" src="assets/images/banner/banner-style-4-img-7.jpg" alt="">
                 </div>
-                <a href="product-details-default.html" class="content">
+                <a href="product-details-default.php" class="content">
                     <div class="inner">
                         <h4 class="title">lighting</h4>
                         <h6 class="sub-title">20 products</h6>
@@ -819,7 +819,7 @@
                 <div class="image">
                     <img class="img-fluid" src="assets/images/banner/banner-style-4-img-8.jpg" alt="">
                 </div>
-                <a href="product-details-default.html" class="content">
+                <a href="product-details-default.php" class="content">
                     <div class="inner">
                         <h4>Easy chairs</h4>
                         <h6>20 products</h6>
@@ -862,13 +862,13 @@
                                     <!-- Start Product ListView Single Item -->
                                     <div class="product-listview-single-item product-color--green swiper-slide">
                                         <div class="image-box">
-                                            <a href="product-details-default.html" class="image-link">
+                                            <a href="product-details-default.php" class="image-link">
                                                 <img src="assets/images/product/default/home-2/default-1.jpg" alt="">
                                                 <img src="assets/images/product/default/home-2/default-2.jpg" alt="">
                                             </a>
                                         </div>
                                         <div class="content">
-                                            <h6 class="title"><a href="product-details-default.html">Consequuntur
+                                            <h6 class="title"><a href="product-details-default.php">Consequuntur
                                                     magni</a></h6>
                                             <ul class="review-star">
                                                 <li class="fill"><i class="ion-android-star"></i></li>
@@ -884,13 +884,13 @@
                                     <!-- Start Product ListView Single Item -->
                                     <div class="product-listview-single-item product-color--green swiper-slide">
                                         <div class="image-box">
-                                            <a href="product-details-default.html" class="image-link">
+                                            <a href="product-details-default.php" class="image-link">
                                                 <img src="assets/images/product/default/home-2/default-3.jpg" alt="">
                                                 <img src="assets/images/product/default/home-2/default-4.jpg" alt="">
                                             </a>
                                         </div>
                                         <div class="content">
-                                            <h6 class="title"><a href="product-details-default.html">Pellentesque
+                                            <h6 class="title"><a href="product-details-default.php">Pellentesque
                                                     posuere</a></h6>
                                             <ul class="review-star">
                                                 <li class="fill"><i class="ion-android-star"></i></li>
@@ -906,13 +906,13 @@
                                     <!-- Start Product ListView Single Item -->
                                     <div class="product-listview-single-item product-color--green swiper-slide">
                                         <div class="image-box">
-                                            <a href="product-details-default.html" class="image-link">
+                                            <a href="product-details-default.php" class="image-link">
                                                 <img src="assets/images/product/default/home-2/default-5.jpg" alt="">
                                                 <img src="assets/images/product/default/home-2/default-6.jpg" alt="">
                                             </a>
                                         </div>
                                         <div class="content">
-                                            <h6 class="title"><a href="product-details-default.html">Kaoreet lobortis
+                                            <h6 class="title"><a href="product-details-default.php">Kaoreet lobortis
                                                     sagit</a></h6>
                                             <ul class="review-star">
                                                 <li class="fill"><i class="ion-android-star"></i></li>
@@ -928,13 +928,13 @@
                                     <!-- Start Product ListView Single Item -->
                                     <div class="product-listview-single-item product-color--green swiper-slide">
                                         <div class="image-box">
-                                            <a href="product-details-default.html" class="image-link">
+                                            <a href="product-details-default.php" class="image-link">
                                                 <img src="assets/images/product/default/home-2/default-7.jpg" alt="">
                                                 <img src="assets/images/product/default/home-2/default-8.jpg" alt="">
                                             </a>
                                         </div>
                                         <div class="content">
-                                            <h6 class="title"><a href="product-details-default.html">Phasellus vel
+                                            <h6 class="title"><a href="product-details-default.php">Phasellus vel
                                                     hendreri</a></h6>
                                             <ul class="review-star">
                                                 <li class="fill"><i class="ion-android-star"></i></li>
@@ -950,13 +950,13 @@
                                     <!-- Start Product ListView Single Item -->
                                     <div class="product-listview-single-item product-color--green swiper-slide">
                                         <div class="image-box">
-                                            <a href="product-details-default.html" class="image-link">
+                                            <a href="product-details-default.php" class="image-link">
                                                 <img src="assets/images/product/default/home-2/default-9.jpg" alt="">
                                                 <img src="assets/images/product/default/home-2/default-10.jpg" alt="">
                                             </a>
                                         </div>
                                         <div class="content">
-                                            <h6 class="title"><a href="product-details-default.html">Duis pulvinar
+                                            <h6 class="title"><a href="product-details-default.php">Duis pulvinar
                                                     obortis</a></h6>
                                             <ul class="review-star">
                                                 <li class="fill"><i class="ion-android-star"></i></li>
@@ -972,13 +972,13 @@
                                     <!-- Start Product ListView Single Item -->
                                     <div class="product-listview-single-item product-color--green swiper-slide">
                                         <div class="image-box">
-                                            <a href="product-details-default.html" class="image-link">
+                                            <a href="product-details-default.php" class="image-link">
                                                 <img src="assets/images/product/default/home-2/default-11.jpg" alt="">
                                                 <img src="assets/images/product/default/home-2/default-12.jpg" alt="">
                                             </a>
                                         </div>
                                         <div class="content">
-                                            <h6 class="title"><a href="product-details-default.html">Cras neque
+                                            <h6 class="title"><a href="product-details-default.php">Cras neque
                                                     metus</a></h6>
                                             <ul class="review-star">
                                                 <li class="fill"><i class="ion-android-star"></i></li>
@@ -994,13 +994,13 @@
                                     <!-- Start Product ListView Single Item -->
                                     <div class="product-listview-single-item product-color--green swiper-slide">
                                         <div class="image-box">
-                                            <a href="product-details-default.html" class="image-link">
+                                            <a href="product-details-default.php" class="image-link">
                                                 <img src="assets/images/product/default/home-2/default-13.jpg" alt="">
                                                 <img src="assets/images/product/default/home-2/default-14.jpg" alt="">
                                             </a>
                                         </div>
                                         <div class="content">
-                                            <h6 class="title"><a href="product-details-default.html">Officiis debitis
+                                            <h6 class="title"><a href="product-details-default.php">Officiis debitis
                                                     varius</a></h6>
                                             <ul class="review-star">
                                                 <li class="fill"><i class="ion-android-star"></i></li>
@@ -1016,13 +1016,13 @@
                                     <!-- Start Product ListView Single Item -->
                                     <div class="product-listview-single-item product-color--green swiper-slide">
                                         <div class="image-box">
-                                            <a href="product-details-default.html" class="image-link">
+                                            <a href="product-details-default.php" class="image-link">
                                                 <img src="assets/images/product/default/home-2/default-15.jpg" alt="">
                                                 <img src="assets/images/product/default/home-2/default-16.jpg" alt="">
                                             </a>
                                         </div>
                                         <div class="content">
-                                            <h6 class="title"><a href="product-details-default.html">Ornare sed
+                                            <h6 class="title"><a href="product-details-default.php">Ornare sed
                                                     consequat</a></h6>
                                             <ul class="review-star">
                                                 <li class="fill"><i class="ion-android-star"></i></li>
@@ -1038,13 +1038,13 @@
                                     <!-- Start Product ListView Single Item -->
                                     <div class="product-listview-single-item product-color--green swiper-slide">
                                         <div class="image-box">
-                                            <a href="product-details-default.html" class="image-link">
+                                            <a href="product-details-default.php" class="image-link">
                                                 <img src="assets/images/product/default/home-2/default-17.jpg" alt="">
                                                 <img src="assets/images/product/default/home-2/default-18.jpg" alt="">
                                             </a>
                                         </div>
                                         <div class="content">
-                                            <h6 class="title"><a href="product-details-default.html">Convallis quam
+                                            <h6 class="title"><a href="product-details-default.php">Convallis quam
                                                     sit</a></h6>
                                             <ul class="review-star">
                                                 <li class="fill"><i class="ion-android-star"></i></li>
@@ -1060,13 +1060,13 @@
                                     <!-- Start Product ListView Single Item -->
                                     <div class="product-listview-single-item product-color--green swiper-slide">
                                         <div class="image-box">
-                                            <a href="product-details-default.html" class="image-link">
+                                            <a href="product-details-default.php" class="image-link">
                                                 <img src="assets/images/product/default/home-2/default-2.jpg" alt="">
                                                 <img src="assets/images/product/default/home-2/default-1.jpg" alt="">
                                             </a>
                                         </div>
                                         <div class="content">
-                                            <h6 class="title"><a href="product-details-default.html">Donec eu libero
+                                            <h6 class="title"><a href="product-details-default.php">Donec eu libero
                                                     ac</a></h6>
                                             <ul class="review-star">
                                                 <li class="fill"><i class="ion-android-star"></i></li>
@@ -1082,13 +1082,13 @@
                                     <!-- Start Product ListView Single Item -->
                                     <div class="product-listview-single-item product-color--green swiper-slide">
                                         <div class="image-box">
-                                            <a href="product-details-default.html" class="image-link">
+                                            <a href="product-details-default.php" class="image-link">
                                                 <img src="assets/images/product/default/home-2/default-4.jpg" alt="">
                                                 <img src="assets/images/product/default/home-2/default-3.jpg" alt="">
                                             </a>
                                         </div>
                                         <div class="content">
-                                            <h6 class="title"><a href="product-details-default.html">Dolorum fuga
+                                            <h6 class="title"><a href="product-details-default.php">Dolorum fuga
                                                     eget</a></h6>
                                             <ul class="review-star">
                                                 <li class="fill"><i class="ion-android-star"></i></li>
@@ -1104,13 +1104,13 @@
                                     <!-- Start Product ListView Single Item -->
                                     <div class="product-listview-single-item product-color--green swiper-slide">
                                         <div class="image-box">
-                                            <a href="product-details-default.html" class="image-link">
+                                            <a href="product-details-default.php" class="image-link">
                                                 <img src="assets/images/product/default/home-2/default-6.jpg" alt="">
                                                 <img src="assets/images/product/default/home-2/default-5.jpg" alt="">
                                             </a>
                                         </div>
                                         <div class="content">
-                                            <h6 class="title"><a href="product-details-default.html">Nostrum
+                                            <h6 class="title"><a href="product-details-default.php">Nostrum
                                                     exercitation</a></h6>
                                             <ul class="review-star">
                                                 <li class="fill"><i class="ion-android-star"></i></li>
@@ -1126,13 +1126,13 @@
                                     <!-- Start Product ListView Single Item -->
                                     <div class="product-listview-single-item product-color--green swiper-slide">
                                         <div class="image-box">
-                                            <a href="product-details-default.html" class="image-link">
+                                            <a href="product-details-default.php" class="image-link">
                                                 <img src="assets/images/product/default/home-2/default-8.jpg" alt="">
                                                 <img src="assets/images/product/default/home-2/default-7.jpg" alt="">
                                             </a>
                                         </div>
                                         <div class="content">
-                                            <h6 class="title"><a href="product-details-default.html">Epicuri per
+                                            <h6 class="title"><a href="product-details-default.php">Epicuri per
                                                     lobortis</a></h6>
                                             <ul class="review-star">
                                                 <li class="fill"><i class="ion-android-star"></i></li>
@@ -1148,13 +1148,13 @@
                                     <!-- Start Product ListView Single Item -->
                                     <div class="product-listview-single-item product-color--green swiper-slide">
                                         <div class="image-box">
-                                            <a href="product-details-default.html" class="image-link">
+                                            <a href="product-details-default.php" class="image-link">
                                                 <img src="assets/images/product/default/home-2/default-10.jpg" alt="">
                                                 <img src="assets/images/product/default/home-2/default-9.jpg" alt="">
                                             </a>
                                         </div>
                                         <div class="content">
-                                            <h6 class="title"><a href="product-details-default.html">Condimentum
+                                            <h6 class="title"><a href="product-details-default.php">Condimentum
                                                     posuere</a></h6>
                                             <ul class="review-star">
                                                 <li class="fill"><i class="ion-android-star"></i></li>
@@ -1170,13 +1170,13 @@
                                     <!-- Start Product ListView Single Item -->
                                     <div class="product-listview-single-item product-color--green swiper-slide">
                                         <div class="image-box">
-                                            <a href="product-details-default.html" class="image-link">
+                                            <a href="product-details-default.php" class="image-link">
                                                 <img src="assets/images/product/default/home-2/default-12.jpg" alt="">
                                                 <img src="assets/images/product/default/home-2/default-11.jpg" alt="">
                                             </a>
                                         </div>
                                         <div class="content">
-                                            <h6 class="title"><a href="product-details-default.html">Laudantium enim
+                                            <h6 class="title"><a href="product-details-default.php">Laudantium enim
                                                     fringi</a></h6>
                                             <ul class="review-star">
                                                 <li class="fill"><i class="ion-android-star"></i></li>
@@ -1218,7 +1218,7 @@
                                         <h5 class="sub-title">SALE 15% OFF YOUR 1ST PURCHASE</h5>
                                         <h2 class="title">HONO ORGANIC SKIN CARE</h2>
 
-                                        <a href="product-details-default.html"
+                                        <a href="product-details-default.php"
                                             class="btn btn-lg btn-green icon-space-left"><span
                                                 class="d-flex align-items-center">Shop Now <i
                                                     class="ion-ios-arrow-thin-right"></i></span></a>
@@ -1250,7 +1250,7 @@
                                 <ul class="footer-nav">
                                     <li><a href="#">Delivery Information</a></li>
                                     <li><a href="#">Terms & Conditions</a></li>
-                                    <li><a href="contact-us.html">Contact</a></li>
+                                    <li><a href="contact-us.php">Contact</a></li>
                                     <li><a href="#">Returns</a></li>
                                 </ul>
                             </div>
@@ -1262,10 +1262,10 @@
                                 data-aos-delay="200">
                                 <h5 class="title">MY ACCOUNT</h5>
                                 <ul class="footer-nav">
-                                    <li><a href="my-account.html">My account</a></li>
-                                    <li><a href="wishlist.html">Wishlist</a></li>
-                                    <li><a href="privacy-policy.html">Privacy Policy</a></li>
-                                    <li><a href="faq.html">Frequently Questions</a></li>
+                                    <li><a href="my-account.php">My account</a></li>
+                                    <li><a href="wishlist.php">Wishlist</a></li>
+                                    <li><a href="privacy-policy.php">Privacy Policy</a></li>
+                                    <li><a href="faq.php">Frequently Questions</a></li>
                                     <!--<li><a href="#">Order History</a></li>-->
                                 </ul>
                             </div>
@@ -1333,7 +1333,7 @@
                         class="row justify-content-between align-items-center align-items-center flex-column flex-md-row mb-n6">
                         <div class="col-auto mb-6">
                             <div class="footer-copyright">
-                                <p class="copyright-text">&copy; 2023 <a href="index-2.html">vanilla</a>. Made with <i
+                                <p class="copyright-text">&copy; 2023 <a href="index-2.php">vanilla</a>. Made with <i
                                         class="fa fa-heart text-danger"></i> by <a href="https://github.com/Alomba-epongseh/e-commerce"
                                         target="_blank">vanilla</a> </p>
 
@@ -1387,8 +1387,8 @@
                                         <div class="modal-add-cart-info"><i class="fa fa-check-square"></i>Added to cart
                                             successfully!</div>
                                         <div class="modal-add-cart-product-cart-buttons">
-                                            <a href="cart.html">View Cart</a>
-                                            <a href="checkout.html">Checkout</a>
+                                            <a href="cart.php">View Cart</a>
+                                            <a href="checkout.php">Checkout</a>
                                         </div>
                                     </div>
                                 </div>
