@@ -3,7 +3,7 @@ function openconn(){
     $dbhost = "localhost";
     $dbuser = "Vanilla";
     $dbpass = "Vanibelle";
-    $db = "vanilla's shop";
+    $db = "vanillashop";
 
     $conn = new mysqli($dbhost, $dbuser, $dbpass, $db);
 
