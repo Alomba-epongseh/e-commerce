@@ -146,7 +146,6 @@ function getPro(){
      };
 };
 
-//function to search item or product
 
 function search(){
 
