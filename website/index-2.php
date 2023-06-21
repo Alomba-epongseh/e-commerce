@@ -1609,5 +1609,10 @@
 
 </html>
 
-<?php include "function.php";
-    cart();?>
+<!--calling cart function-->
+<?php
+
+cart();
+
+?>
+

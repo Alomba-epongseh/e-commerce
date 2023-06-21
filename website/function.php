@@ -37,7 +37,9 @@ function getBlog(){
                 </ul>
                 <h6 class='title'><a href='blogdetails.php'> $posttitle</a></h6>
                 <p>$shortdes</p>
-                <a href='blogdetails.php' class='read-more-btn icon-space-left'>Read More <span class='icon'><i class='ion-ios-arrow-thin-right'></i></span></a>
+
+            
+                <a href='blogdetails.php?blog_id=$blogid' class='read-more-btn icon-space-left'>Read More <span class='icon'><i class='ion-ios-arrow-thin-right'></i></span></a>
             </div>
         </div>
         
@@ -49,7 +51,9 @@ function getBlog(){
 //blog details from database
 function blogdetails(){
     global $conn;
-    $get_blog = "SELECT * FROM blog order by RAND() LIMIT 0,8";
+    if(isset($_GET['blog_id'])){
+        $blog_id = $_GET['blog_id'];
+    $get_blog = "SELECT * FROM blog where blogid = $blog_id";
     $run_blog = mysqli_query($conn, $get_blog);
                     
     while ($row_pro = mysqli_fetch_array($run_blog)) {
@@ -78,8 +82,9 @@ function blogdetails(){
                     </div> <!-- End Blog Single Content Area -->";
                         }
 }
+}
 
-
+// ========== PRODUCT PROCEDURES=======//
 
 //function to get product from database and submit  to website
 function getPro(){
@@ -89,7 +94,7 @@ function getPro(){
     $run_pro = mysqli_query($conn, $get_pro);
 
     while ($row_pro = mysqli_fetch_array($run_pro)) {
-        $pro_id  = $row_pro['id'];
+        $pro_id  = $row_pro['prodid'];
         $pro_name  = $row_pro['name'];
         $pro_image  = $row_pro['image'];
         $pro_price = $row_pro['price'];
@@ -98,14 +103,13 @@ function getPro(){
         <div class='product-default-single-item product-color--golden'
         data-aos='fade-up' data-aos-delay='0'>
         <div class='image-box'>
-            <a href='product-details-default.php' class='image-link'>
+            <a href='productdetails.php?prod_id=$pro_id' class='image-link'>
                 <img src='admin_area/product_images/$pro_image'
-                    alt='no image'>
+                    alt=''>
             </a>
             <div class='action-link'>
                 <div class='action-link-left'>
-                    <a href='index-2.php?add_cart = $pro_id' data-bs-toggle='modal'
-                        data-bs-target='#modalAddcart'>Add to Cart</a>
+                    <a href='index-2.php?add_to_cart=$pro_id' >Add to Cart</a>
                 </div>
                 <div class='action-link-right'>
                     <a href='#' data-bs-toggle='modal'
@@ -121,7 +125,7 @@ function getPro(){
         <div class='content'>
             <div class='content-left'>
                 <h6 class='title'><a
-                        href='product-details-default.php?pro_id = $pro_id'>$pro_name</a></h6>
+                        href='productdetails.php?prod_id=$pro_id'>$pro_name</a></h6>
                 <ul class='review-star'>
                     <li class='fill'><i class='ion-android-star'></i>
                     </li>
@@ -147,88 +151,18 @@ function getPro(){
 };
 
 
-function search(){
-
-    if(isset($_GET['search'])){
-    
-    global $conn;
-    
-    $search_query = $_GET['user_query'];
-    $get_pro = "SELECT * FROM product where keywords like '%$search_query%'";
-    $run_pro = mysqli_query($conn, $get_pro);
-    
-    while ($row_pro = mysqli_fetch_array($run_pro)) {
-        $pro_id  = $row_pro['id'];
-        $pro_name  = $row_pro['name'];
-        $pro_image  = $row_pro['image'];
-        $pro_price = $row_pro['price'];
-    
-        echo "
-        <div class='product-default-single-item product-color--golden'
-        data-aos='fade-up' data-aos-delay='0'>
-        <div class='image-box'>
-            <a href='product-details-default.php' class='image-link'>
-                <img src='admin_area/product_images/$pro_image'
-                    alt='no image'>
-            </a>
-            <div class='action-link'>
-                <div class='action-link-left'>
-                    <a href='index-2.php?add_cart = $pro_id' data-bs-toggle='modal'
-                        data-bs-target='#modalAddcart'>Add to Cart</a>
-                </div>
-                <div class='action-link-right'>
-                    <a href='#' data-bs-toggle='modal'
-                        data-bs-target='#modalQuickview'><i
-                            class='icon-magnifier'></i></a>
-                    <a href='wishlist.php'><i
-                            class='icon-heart'></i></a>
-                    <a href='compare.php'><i
-                            class='icon-shuffle'></i></a>
-                </div>
-            </div>
-        </div>
-        <div class='content'>
-            <div class='content-left'>
-                <h6 class='title'><a
-                        href='product-details-default.php?pro_id = $pro_id'>$pro_name</a></h6>
-                <ul class='review-star'>
-                    <li class='fill'><i class='ion-android-star'></i>
-                    </li>
-                    <li class='fill'><i class='ion-android-star'></i>
-                    </li>
-                    <li class='fill'><i class='ion-android-star'></i>
-                    </li>
-                    <li class='fill'><i class='ion-android-star'></i>
-                    </li>
-                    <li class='empty'><i class='ion-android-star'></i>
-                    </li>
-                </ul>
-            </div>
-            <div class='content-right'>
-                <span class='price'>Price: $ $pro_price</span>
-            </div>
-    
-        </div>
-    </div>
-        
-        ";
-     };
-    };
-    };
-
-
 //function to get product details for a particular product from database and submit to website on click 
 function proDet(){
 
     global $conn;
 
-    if (isset($_GET['pro_id'])) {
-    $product_id = $_GET['pro_id'];
-    $get_pro = "SELECT * FROM product where id = $product_id";
+    if (isset($_GET['prod_id'])) {
+    $product_id = $_GET['prod_id'];
+    $get_pro = "SELECT * FROM product where prodid = $product_id";
     $run_pro = mysqli_query($conn, $get_pro);
 
     while ($row_pro = mysqli_fetch_array($run_pro)) {
-        $pro_id  = $row_pro['id'];
+        $pro_id  = $row_pro['prodid'];
         $pro_name  = $row_pro['name'];
         $pro_image  = $row_pro['image'];
         $pro_price = $row_pro['price'];
@@ -240,7 +174,7 @@ function proDet(){
                             data-aos-delay='200'>
                             <!-- Start  Product Details Text Area-->
                             <div class='product-details-text'>
-                                <h4 class='title'><a href='product-details-default.php?pro_id = $pro_id'> $pro_name </a></h4>
+                                <h4 class='title'><a href='#'> $pro_name </a></h4>
                                 <div class='d-flex align-items-center'>
                                     <ul class='review-star'>
                                         <li class='fill'><i class='ion-android-star'></i></li>
@@ -272,8 +206,7 @@ function proDet(){
                                     </div>
     
                                     <div class='product-add-to-cart-btn'>
-                                        <a href='#' class='btn btn-block btn-lg btn-black-default-hover'
-                                            data-bs-toggle='modal' data-bs-target='#modalAddcart'>+ Add To Cart</a>
+                                        <a href='index-2.php?add_to_cart=$pro_id' class='btn btn-block btn-lg btn-black-default-hover'>+ Add To Cart</a>
                                     </div>
                                 </div>
                                 <!-- Start  Product Details Meta Area-->
@@ -304,3 +237,176 @@ function proDet(){
 }
 
 
+
+
+
+
+function proDetails(){
+
+    global $conn;
+    
+    if (isset($_GET['prod_id'])) {
+        $prod_id = $_GET['prod_id'];
+    $get_pro = "SELECT * FROM product where prodid = $prod_id";
+    $run_pro = mysqli_query($conn, $get_pro);
+    
+    while ($row_pro = mysqli_fetch_array($run_pro)) {
+        $pro_id  = $row_pro['prodid'];
+        $pro_name  = $row_pro['name'];
+        $pro_image  = $row_pro['image'];
+        $pro_price = $row_pro['price'];
+        $pro_desc = $row_pro['description'];
+    
+        echo "
+        <div class='row'>
+            <div class='col-xl-5 col-lg-6'>
+                <div class='product-details-gallery-area' data-aos='fade-up' data-aos-delay='0'>
+                    <!-- Start Large Image -->
+                    <div class='product-large-image product-large-image-horaizontal swiper-container'>
+                        <div class='swiper-wrapper'>
+                            <div class='product-image-large-image swiper-slide zoom-image-hover img-responsive'>
+                                <img src='assets/images/product/$pro_image' alt=' No Image'>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Large Image -->
+                </div>
+            </div>
+            
+            <div class='col-xl-7 col-lg-6'>
+                <div class='product-details-content-area product-details--golden' data-aos='fade-up' data-aos-delay='200'>
+                    <!-- Start  Product Details Text Area-->
+                    <div class='product-details-text'>
+                        <h4 class='title'>$pro_name</h4>
+                        <div class='d-flex align-items-center'>
+                            <ul class='review-star'>
+                                <li class='fill'><i class='ion-android-star'></i></li>
+                                <li class='fill'><i class='ion-android-star'></i></li>
+                                <li class='fill'><i class='ion-android-star'></i></li>
+                                <li class='fill'><i class='ion-android-star'></i></li>
+                                <li class='empty'><i class='ion-android-star'></i></li>
+                            </ul>
+                            <a href='#' class='customer-review ml-2'>(customer review )</a>
+                        </div>
+                        <div class='price'>$ $pro_price</div>
+                        <p>$pro_desc</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        ";
+     };
+    };
+    }
+
+
+// ========== SEARCH PROCEDURES=======//
+
+//function to search item or product
+
+function search(){
+
+    if(isset($_GET['search'])){
+    
+    global $conn;
+    
+    $search_query = $_GET['user_query'];
+    $get_pro = "SELECT * FROM product where keywords like '%$search_query%'";
+    $run_pro = mysqli_query($conn, $get_pro);
+    
+    while ($row_pro = mysqli_fetch_array($run_pro)) {
+        $pro_id  = $row_pro['id'];
+        $pro_name  = $row_pro['name'];
+        $pro_image  = $row_pro['image'];
+        $pro_price = $row_pro['price'];
+    
+        echo "
+        <div class='product-default-single-item product-color--golden'
+        data-aos='fade-up' data-aos-delay='0'>
+        <div class='image-box'>
+            <a href='productdetails.php' class='image-link'>
+                <img src='admin_area/product_images/$pro_image'
+                    alt='no image'>
+            </a>
+            <div class='action-link'>
+                <div class='action-link-left'>
+                    <a href='index-2.php?add_to_cart=$pro_id'>Add to Cart</a>
+                </div>
+                <div class='action-link-right'>
+                    <a href='#' data-bs-toggle='modal'
+                        data-bs-target='#modalQuickview'><i
+                            class='icon-magnifier'></i></a>
+                    <a href='wishlist.php'><i
+                            class='icon-heart'></i></a>
+                    <a href='compare.php'><i
+                            class='icon-shuffle'></i></a>
+                </div>
+            </div>
+        </div>
+        <div class='content'>
+            <div class='content-left'>
+                <h6 class='title'><a
+                        href='productdetails.php?pro_id = $pro_id'>$pro_name</a></h6>
+                <ul class='review-star'>
+                    <li class='fill'><i class='ion-android-star'></i>
+                    </li>
+                    <li class='fill'><i class='ion-android-star'></i>
+                    </li>
+                    <li class='fill'><i class='ion-android-star'></i>
+                    </li>
+                    <li class='fill'><i class='ion-android-star'></i>
+                    </li>
+                    <li class='empty'><i class='ion-android-star'></i>
+                    </li>
+                </ul>
+            </div>
+            <div class='content-right'>
+                <span class='price'>Price: $ $pro_price</span>
+            </div>
+    
+        </div>
+    </div>
+        
+        ";
+     };
+    };
+    };
+
+
+
+// ========== CART PROCEDURES=======//
+
+//getting visitors ip address
+function getIp() {
+    $ip = $_SERVER['REMOTE_ADDR'];
+ 
+    if (!empty($_SERVER['HTTP_CLIENT_IP'])) {
+        $ip = $_SERVER['HTTP_CLIENT_IP'];
+    } elseif (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {
+        $ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
+    }
+ 
+    return $ip;
+}
+
+
+//cart function
+function cart(){
+    if(isset($_GET['add_to_cart'])){
+        global $conn;
+        $ip_address = getIp();
+        $get_product_ip = $_GET['add_to_cart'];
+        $select_query = 'SELECT * FROM `cart` WHERE ip_add = $ip_address AND prodid = $get_product_ip';
+        $result_query = mysqli_query($conn, $select_query);
+        $num_of_rows = mysqli_num_rows($result_query);
+        if($num_of_rows>0){
+            echo '<sript>alert(Data already found in cart)</script>';
+            echo "<sript>window.open('index-2.php','_self')</script>";
+        }
+        else{
+            $insert_query = "INSERT INTO `cart` (prodid, ip_add, quantity) VALUES ('$get_product_ip', '$ip_address', 0)";
+            echo '<sript>alert(Data inserted successfully)</script>';
+            echo "<sript>window.open('index-2.php','_self')</script>";
+        };
+    };
+}
