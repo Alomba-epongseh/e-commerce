@@ -2,7 +2,7 @@
 <html lang="zxx">
 
 
-<meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -471,60 +471,85 @@
         <div class="container">
             <!-- recipt -->
             <div class="recipt-sec padding-30 mb-xl-30">
-                <h3>Your Order</h3>
+                
                 <div class="table-responsive">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th class="remove-item"></th>
-                                <th>Product Name</th>
-                                <th>Price</th>
-                                <th>Quantity</th>
-                                <th>Total</th>
-                            </tr>
-                        </thead>
-                        <tbody>
+                    <form action="#" method="post" enctype="multipart/form-data" >
+                    
+                        
+                        <!--display dynamic data for cart-->
                             <?php
-							include_once "function2.php";
-                  $ip = getIp();
-                  $clientEmail = logged_in();
-                  //Select items from cart base on client's IP OR Email
-                  $cus_cart = "SELECT * FROM cart WHERE (ip_add='$ip' OR clientEmail='$clientEmail' )";
-                  $run_cus_cart = mysqli_query($conn, $cus_cart);
-                  confirm_query($run_cus_cart);
-                  //Loop through cart seen results and collect respective product ID's
-                  while ($rowcart = mysqli_fetch_assoc($run_cus_cart)) {
-                    // Assign product ID's from client's CART to a variable ($prod_id)
-                    $prod_id = $rowcart['p_id'];
-                    // Select items from products table base on $prod_id 
-                    $pro_details = "SELECT * FROM product WHERE id='$prod_id'";
-                    $run_pro_details = mysqli_query($conn, $pro_details);
-                    confirm_query($run_pro_details);
-                    // Loop to give product's name and photo from products table
-                      while ($rowprod = mysqli_fetch_assoc($run_pro_details)) {
-                        //Edit the HTML in this section based on the template you are working with
-                ?>
-                            <tr>
-                                <td class="remove">
+                            include "function.php";
+
+							global $conn;
+                            $ip_address = getIp();
+                            $total_price = 0;
+                            $cart_query = "SELECT * FROM cartdetails WHERE ip_address='$ip_address'";
+                            $result_query = mysqli_query($conn, $cart_query);
+                            $result_count = mysqli_num_rows($result_query);
+                            if($result_count>0){
+                                echo "
+                                <h3>Your Order</h3>
+                                <table>
+                                <thead>
+                                <tr>
+                                    <th>Image</th>
+                                    <th>Product Name</th>
+                                    <th>Price</th>
+                                    <th>Quantity</th>
+                                    <th>Delete</th>
+                                    <th colspan='2'>Operations</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                ";
+                            while($row=mysqli_fetch_array($result_query)){
+                                $product_id = $row['prodid'];
+                                $select_product = "SELECT * FROM product WHERE prodid='$product_id'";
+                                $result_product = mysqli_query($conn, $select_product);
+                                while($row_product_price=mysqli_fetch_array($result_product)){
+                                    $product_price = array($row_product_price['price']);
+                                    $price_table = $row_product_price['price'];
+                                    $product_title = $row_product_price['name'];
+                                    $product_image = $row_product_price['image'];
+                                    $product_values = array_sum($product_price);
+                                    $total_price=$total_price+$product_values;
                                     
-                                    <button type="button" class="close remove-from-cart"><a href="/cart?delfcart=<?php echo $rowprod['id']; ?>">&times;</a></button>
-                                </td>
-                                <td data-title="Product">
-                                    <div class="cart-product">
-                                        <img src="<?= productimg($rowprod['image']) ?>" alt="<?= $rowprod['name'];?>">
-                                        <div class="cart-product-body">
-                                            <h6> <a href="#"><?= $rowprod['name'];?></a> </h6>
-                                            
-                                        </div>
-                                    </div>
-                                </td>
-                                <td data-title="Price"> <strong>$<?php echo $rowcart['unitPrice']; ?></strong> </td>
-                                <td class="quantity" data-title="Quantity">
-                                    <?= $rowcart['quantity'];?>
-                                </td>
                                 
+                        ?>
+                            <tr>
+                            
+                                <td class='product_thumb'><a href='product-details-default.html'>
+                                    <img src='assets/images/product/default/home-1/$product_image' alt='no image' style='width: 100px; height: 100px;'></a>
+                                </td>
+                                <td class='product_name'><a href='productdetails.php'><?php echo $product_title?></a></td>
+                                <td class='product-price'><?php echo '$' .$price_table ?></td>
+                                <td class='product_quantity'><input min="1" max="100" value="1" type="number" name='quantity'></td>
+                                <?php
+                                    //updating the quantity on the cart 
+                                    $ip_address = getIp();
+                                    if (isset($_POST['update_cart'])) {
+                                        $quantity = $_POST['quantity'];
+                                        $update_cart = "UPDATE `cartdetails` SET quantity=$quantity WHERE ip_address='$ip_address'";
+                                        $result_product_quantity = mysqli_query($conn, $update_cart);
+                                        $total_price = $total_price*$quantity;
+                                    };
+                                ?>
+                                <td class='product-check'><input type="checkbox" name="removeitem[]" value="<?php echo $product_id ?>"></input></td>
+                                <td class='product_update'><i class='fa fa-trash-o'></i><input type='submit' value='Remove' name='remove_cart'> </td>
+                                <td class='product_remove'><input type='submit' value='Update' name='update_cart'> </td>
+                                <!--removing data from cart-->
+                                <?php remove_cart_data(); ?>
                             </tr>
-                            <?php } } ?>
+                            <?php
+                            }
+                        }
+                    }else {
+                        echo "<h2 style='text-align: center; color: red; font-size: 50px; padding: 10px; margin: 20px;'>CART IS EMPTY</h2>";
+                    }
+
+                        
+                        ?>
+
                         </tbody>
                     </table>
                 </div>
@@ -532,13 +557,21 @@
             <div class="row">
                 <div class="col-md-6 offset-md-6">
                     <div class="recipt-sec padding-30 mb-0">
+                        <?php
+                            $ip_address = getIp();
+                            $total_price = 0;
+                            $cart_query = "SELECT * FROM cartdetails WHERE ip_address='$ip_address'";
+                            $result_query = mysqli_query($conn, $cart_query);
+                            $result_count = mysqli_num_rows($result_query);
+                            if($result_count>0){
+                        echo "
                         <h3>Cart Total</h3>
-                        <div class="table-responsive">
+                        <div class='table-responsive'>
                             <table>
                                 <tbody>
                                     <tr>
                                         <th>Subtotal</th>
-                                        <td><?php total_price_items_cart(); ?></td>
+                                        <td>$total_price</td>
                                     </tr>
                                     <tr>
                                         <th>Shipping</th>
@@ -546,22 +579,29 @@
                                     </tr>
                                     <tr>
                                         <th>Total</th>
-                                        <td> <b><?php total_price_items_cart(); ?></b> </td>
+                                        <td> <b>5800</b> </td>
                                     </tr>
 
                                 </tbody>
                             </table>
 
-                            <div class="card-footer padding-15"> 
-                                <a href="/checkout" class="btn-first green-btn text-custom-white full-width fw-500">Proceed to Checkout
+                            <div class='card-footer padding-15'> 
+                                <a href='/checkout' class='btn-first green-btn text-custom-white full-width fw-500'>Proceed to Checkout
                                 </a>
                             </div>
 
 
                         </div>
+                        ";
+                            }else {
+                                echo "<a href='index-2.php' style='text-align: right; background-color: gray; color: pink; font-size: 20px; padding: 10px;'>Continue Shopping
+                                </a>";
+                            }
+                        ?>
                     </div>
                 </div>
             </div>
+            </form>
         </div>
     </section>
     <!-- tracking map -->
