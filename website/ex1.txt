@@ -1,6 +1,8 @@
-                <div> 
-                    <img href='$pro_image'>;
-                    <h2>$pro_name</h2>;
-                    <p>$pro_price</p>;
-                    <h5>$pro_desc</h5>;
-                </div>
+ <?php cart_item() ?> 
+
+ <?php total_cart_price() ?>
+
+$total_sub_price=$total_sub_price*$quantity
+
+
+ 

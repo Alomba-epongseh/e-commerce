@@ -66,7 +66,7 @@
                                             <!-- Sub Menu -->
                                                 <ul class="sub-menu">
                                                     <li><a href="shop-full-width.php" >Product</a></li>
-                                                    <li><a href="product-details-default.php" >Product Details</a></li>
+                                                    <li><a href="productdetails" >Product Details</a></li>
                                                 </ul>
                                         </li>
                                         <li class="has-dropdown">
@@ -133,7 +133,7 @@
                             <nav aria-label="breadcrumb">
                                 <ul>
                                     <li><a href="index-2.php">Home</a></li>
-                                    <li><a href="product-details-default.php">Shop</a></li>
+                                    <li><a href="productdetails">Shop</a></li>
                                     <li class="active" aria-current="page">Product</li>
                                 </ul>
                             </nav>
@@ -219,7 +219,7 @@
                             <a href="#"><span>Shop</span></a>
                             <ul class="mobile-sub-menu">
                                 <li><a href="shop-full-width.php">Products</a></li>
-                                <li><a href="product-details-default.php" >Product Details</a></li>
+                                <li><a href="productdetails" >Product Details</a></li>
                             </ul>
                         </li>
                         <li>
