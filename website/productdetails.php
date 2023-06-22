@@ -471,61 +471,8 @@
         <div class="container">
             <!-- php trial code -->
             <?php
-                include "db.php";
-                $conn = openconn();
-
-                if (isset($_GET['prod_id'])) {
-                    $prod_id = $_GET['prod_id'];
-                $get_pro = "SELECT * FROM product where prodid = $prod_id";
-                $run_pro = mysqli_query($conn, $get_pro);
-                
-                while ($row_pro = mysqli_fetch_array($run_pro)) {
-                    $pro_id  = $row_pro['prodid'];
-                    $pro_name  = $row_pro['name'];
-                    $pro_image  = $row_pro['image'];
-                    $pro_price = $row_pro['price'];
-                    $pro_desc = $row_pro['description'];
-                ?>
-                    
-                    <div class='row'>
-                        <div class='col-xl-5 col-lg-6'>
-                            <div class='product-details-gallery-area' data-aos='fade-up' data-aos-delay='0'>
-                                <!-- Start Large Image -->
-                                <div class='product-large-image product-large-image-horaizontal swiper-container'>
-                                    <div class='swiper-wrapper'>
-                                        <div class='product-image-large-image swiper-slide zoom-image-hover img-responsive'>
-                                        <img src='assets/images/product/<?php $pro_image ?>' alt=' No Image'>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- End Large Image -->
-                            </div>
-                        </div>
-                        
-                        <div class='col-xl-7 col-lg-6'>
-                            <div class='product-details-content-area product-details--golden' data-aos='fade-up' data-aos-delay='200'>
-                                <!-- Start  Product Details Text Area-->
-                                <div class='product-details-text'>
-                                <h4 class='title'><?php $pro_name ?></h4>
-                                    <div class='d-flex align-items-center'>
-                                        <ul class='review-star'>
-                                            <li class='fill'><i class='ion-android-star'></i></li>
-                                            <li class='fill'><i class='ion-android-star'></i></li>
-                                            <li class='fill'><i class='ion-android-star'></i></li>
-                                            <li class='fill'><i class='ion-android-star'></i></li>
-                                            <li class='empty'><i class='ion-android-star'></i></li>
-                                        </ul>
-                                        <a href='#' class='customer-review ml-2'>(customer review )</a>
-                                    </div>
-                                    <div class='price'>$ <?php $pro_price ?></div>
-                                    <p><?php $pro_desc ?></p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <?php     
-                 };
-                };
+                include "function.php";
+                proDetails();
             ?>
         </div>
     </div> <!-- End Product Details Section -->

@@ -127,7 +127,7 @@
                                 <li>
                                     <a href="#offcanvas-add-cart" class="offcanvas-toggle">
                                         <i class="icon-bag"></i>
-                                        <span class="item-count">3</span>
+                                        <span class="item-count">  </span>
                                     </a>
                                 </li>
                                 <li>
@@ -1616,3 +1616,6 @@ cart();
 
 ?>
 
+
+ <?php cart_item() ?> 
+ <?php total_cart_price() ?>
