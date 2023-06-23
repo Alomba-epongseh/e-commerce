@@ -17276,7 +17276,7 @@ table {
 }
 .form_group input[type=text],
 .form_group input[type=password] {
-    width: 350px !important;
+    width: 50px !important;
 }
 .form_group .btn {
     margin-right: 20px;

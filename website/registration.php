@@ -1,4 +1,7 @@
+<?php 
 
+include "function.php";
+?>
 
 <!DOCTYPE html>
 <html lang="zxx">
@@ -136,7 +139,7 @@
                                 <ul>
                                     <li><a href="index-2.php">Home</a></li>
                                     <li><a href="shop-grid-sidebar-left.php">Sidebar</a></li>
-                                    <li class="active" aria-current="page">Checkout</li>
+                                    <li class="active" aria-current="page">Registration</li>
                                 </ul>
                             </nav>
                         </div>
@@ -472,16 +475,102 @@
 
     <!-- ...:::: Start Checkout Section:::... -->
     <div class="checkout-section">
-        <div class="container">
-            <div class="row">
-                <?php
-                    if (!isset($_SESSION['username'])) {
-                        include_once "login-user.php";
-                    }else{
-                        include_once "payment.php";
-                    }
-                ?>
-            </div>
+        <div class="container" >
+            <div class="row" style="display: flex; justify-content: center; align-items:center; ">
+            <!-- Start User Details Checkout Form -->
+            <div class="checkout_form" data-aos="fade-up" data-aos-delay="400">
+                <div class="row">
+                    <div class="col-lg-8 col-md-8" style="padding:50px; background-color: lightgray">
+                        <form action="" method="post" enctype="multipart/form-data">
+                            <h3>User Account Details</h3>
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="default-form-box">
+                                        <label>First Name <span>*</span></label>
+                                        <input type="text" name="firstname" required>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="default-form-box">
+                                        <label>Last Name <span>*</span></label>
+                                        <input type="text" name="lastname" required>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="default-form-box">
+                                        <label>User Name <span>*</span></label>
+                                        <input type="text" name="user_name" required>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="default-form-box">
+                                        <label> Account password <span>*</span></label>
+                                        <input placeholder="password" type="password" name="userpassword" required>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="default-form-box">
+                                        <label> Confirm password <span>*</span></label>
+                                        <input placeholder="Confirm password" type="password" name="comfirmpassword" required>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="default-form-box">
+                                        <label>Company Name</label>
+                                        <input type="text" name="companyname" >
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="default-form-box">
+                                        <label for="country">country <span>*</span></label>
+                                        <input type="text"name="country" required>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="default-form-box">
+                                        <label>Street address <span>*</span></label>
+                                        <input placeholder="House number and street name" type="text" name="streetaddress" required>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="default-form-box">
+                                        <label>Town / City <span>*</span></label>
+                                        <input type="text" name="town" required>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="default-form-box">
+                                        <label>Phone<span>*</span></label>
+                                        <input type="text" name="phonenumber" required>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="default-form-box">
+                                        <label> Email Address <span>*</span></label>
+                                        <input type="text" name="useremail" required>
+                                    </div>
+                                </div>
+                                <div class="col-12 mt-3">
+                                    <div class="order-notes">
+                                        <label for="order_note">Order Notes</label>
+                                        <textarea id="order_note"
+                                            placeholder="Notes about your order, e.g. special notes for delivery." name="note"></textarea>
+                                    </div>
+                                </div>
+                                <div class="order_button pt-3">
+                                    <button class="btn btn-md btn-black-default-hover" type="submit" name="user_register" >Submit</button>
+                                </div>
+                            </div>
+                        </form>
+                        <!--php for user registration-->
+                        <?php 
+                            user_registration();
+                            
+                        ?>
+                    </div>
+                    
+                </div>
+            </div> <!-- Start User Details Checkout Form -->
         </div>
     </div><!-- ...:::: End Checkout Section:::... -->
 
