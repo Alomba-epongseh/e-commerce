@@ -496,8 +496,8 @@
                                     <th>Product Name</th>
                                     <th>Price</th>
                                     <th>Quantity</th>
-                                    <th>Delete</th>
-                                    <th colspan='2'>Operations</th>
+                                    <th>Delete</th> 
+                                    <th>Operations</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -536,7 +536,7 @@
                                 ?>
                                 <td class='product-check'><input type="checkbox" name="removeitem[]" value="<?php echo $product_id ?>"></input></td>
                                 <td class='product_update'><i class='fa fa-trash-o'></i><input type='submit' value='Remove' name='remove_cart'> </td>
-                                <td class='product_remove'><input type='submit' value='Update' name='update_cart'> </td>
+                                
                                 <!--removing data from cart-->
                                 <?php remove_cart_data(); ?>
                             </tr>
@@ -565,6 +565,11 @@
                             $result_count = mysqli_num_rows($result_query);
                             if($result_count>0){
                         echo "
+                        <div style='display: flex; justify-content: space-around;'>
+                        <a href='index-2.php' ><input value='Continue Shopping' style='text-align: center; font-size: 20px; padding: 8px; margin: 10px; background-color: lightgray;'> </a>
+                        <a class='product_remove' ><input type='submit' value='Update' name='update_cart' style='text-align: center; font-size: 20px; padding: 8px; margin: 10px; background-color: lightgray;'> </a>
+                        </div>
+                        
                         <h3>Cart Total</h3>
                         <div class='table-responsive'>
                             <table>
@@ -586,7 +591,7 @@
                             </table>
 
                             <div class='card-footer padding-15'> 
-                                <a href='/checkout' class='btn-first green-btn text-custom-white full-width fw-500'>Proceed to Checkout
+                                <a href='checkout.php' class='btn-first green-btn text-custom-white full-width fw-500'>Proceed to Checkout
                                 </a>
                             </div>
 

@@ -1,13 +1,18 @@
+<?php 
+
+include "function.php";
+?>
+
 <!DOCTYPE html>
 <html lang="zxx">
 
 
-<meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>HONO - Multi Purpose HTML Template</title>
+    <title>Vanilla's Shop</title>
 
     <!-- ::::::::::::::Favicon icon::::::::::::::-->
     <link rel="shortcut icon" href="assets/images/favicon.ico" type="image/png">
@@ -128,7 +133,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-12">
-                        <h3 class="breadcrumb-title">Login</h3>
+                        <h3 class="breadcrumb-title">Checkout</h3>
                         <div class="breadcrumb-nav breadcrumb-nav-color--black breadcrumb-nav-hover-color--golden">
                             <nav aria-label="breadcrumb">
                                 <ul>
@@ -485,17 +490,17 @@
                             <div class="checkout_info">
                                 <p>If you have shopped with us before, please enter your details in the boxes below. If
                                     you are a new customer please proceed to the Billing &amp; Shipping section.</p>
-                                <form action="#">
+                                <form action="#" method="post" enctype="multipart/form-data">
                                     <div class="form_group default-form-box">
                                         <label>Username or email <span>*</span></label>
-                                        <input type="text">
+                                        <input type="text" name="user_email" required>
                                     </div>
                                     <div class="form_group default-form-box">
                                         <label>Password <span>*</span></label>
-                                        <input type="password">
+                                        <input type="password" name="user_password" required >
                                     </div>
                                     <div class="form_group group_3 default-form-box">
-                                        <button class="btn btn-md btn-black-default-hover" type="submit">Login</button>
+                                        <button class="btn btn-md btn-black-default-hover" type="submit" name="user_login" >Login</button>
                                         <label class="checkbox-default">
                                             <input type="checkbox">
                                             <span>Remember me</span>
@@ -503,27 +508,13 @@
                                     </div>
                                     <a href="#">Lost your password?</a>
                                 </form>
+                                <!--php for user registration-->
+                                <?php 
+                                    login();   
+                                ?>
                             </div>
                         </div>
-                    </div>
-                    <div class="user-actions accordion" data-aos="fade-up" data-aos-delay="200">
-                        <h3>
-                            <i class="fa fa-file-o" aria-hidden="true"></i>
-                            Returning customer?
-                            <a class="Returning" href="#" data-bs-toggle="collapse" data-bs-target="#checkout_coupon"
-                                aria-expanded="true">Click here to enter your code</a>
-
-                        </h3>
-                        <div id="checkout_coupon" class="collapse checkout_coupon" data-parent="#checkout_coupon">
-                            <div class="checkout_info">
-                                <form action="#">
-                                    <input placeholder="Coupon code" type="text">
-                                    <button class="btn btn-md btn-black-default-hover" type="submit">Apply
-                                        coupon</button>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
+                    </div> 
                 </div>
                 <!-- User Quick Action Form -->
             </div>
@@ -531,186 +522,97 @@
             <div class="checkout_form" data-aos="fade-up" data-aos-delay="400">
                 <div class="row">
                     <div class="col-lg-6 col-md-6">
-                        <form action="#">
+                        <form action="" method="post" enctype="multipart/form-data">
                             <h3>Billing Details</h3>
                             <div class="row">
                                 <div class="col-lg-6">
                                     <div class="default-form-box">
                                         <label>First Name <span>*</span></label>
-                                        <input type="text">
+                                        <input type="text" name="firstname" required>
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="default-form-box">
                                         <label>Last Name <span>*</span></label>
-                                        <input type="text">
+                                        <input type="text" name="lastname" required>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="default-form-box">
+                                        <label>User Name <span>*</span></label>
+                                        <input type="text" name="user_name" required>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="default-form-box">
+                                        <label> Account password <span>*</span></label>
+                                        <input placeholder="password" type="password" name="userpassword" required>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="default-form-box">
+                                        <label> Confirm password <span>*</span></label>
+                                        <input placeholder="Confirm password" type="password" name="comfirmpassword" required>
                                     </div>
                                 </div>
                                 <div class="col-12">
                                     <div class="default-form-box">
                                         <label>Company Name</label>
-                                        <input type="text">
+                                        <input type="text" name="companyname" >
                                     </div>
                                 </div>
                                 <div class="col-12">
                                     <div class="default-form-box">
                                         <label for="country">country <span>*</span></label>
-                                        <select class="country_option nice-select wide" name="country" id="country">
-                                            <option value="2">Bangladesh</option>
-                                            <option value="3">Algeria</option>
-                                            <option value="4">Afghanistan</option>
-                                            <option value="5">Ghana</option>
-                                            <option value="6">Albania</option>
-                                            <option value="7">Bahrain</option>
-                                            <option value="8">Colombia</option>
-                                            <option value="9">Dominican Republic</option>
-                                        </select>
+                                        <input type="text"name="country" required>
                                     </div>
                                 </div>
                                 <div class="col-12">
                                     <div class="default-form-box">
                                         <label>Street address <span>*</span></label>
-                                        <input placeholder="House number and street name" type="text">
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <div class="default-form-box">
-                                        <input placeholder="Apartment, suite, unit etc. (optional)" type="text">
+                                        <input placeholder="House number and street name" type="text" name="streetaddress" required>
                                     </div>
                                 </div>
                                 <div class="col-12">
                                     <div class="default-form-box">
                                         <label>Town / City <span>*</span></label>
-                                        <input type="text">
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <div class="default-form-box">
-                                        <label>State / County <span>*</span></label>
-                                        <input type="text">
+                                        <input type="text" name="town" required>
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="default-form-box">
                                         <label>Phone<span>*</span></label>
-                                        <input type="text">
+                                        <input type="text" name="phonenumber" required>
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="default-form-box">
                                         <label> Email Address <span>*</span></label>
-                                        <input type="text">
+                                        <input type="text" name="useremail" required>
                                     </div>
                                 </div>
-                                <div class="col-12">
-                                    <label class="checkbox-default" for="newAccount" data-bs-toggle="collapse"
-                                        data-bs-target="#newAccountPassword">
-                                        <input type="checkbox" id="newAccount">
-                                        <span>Create an account?</span>
-                                    </label>
-                                    <div id="newAccountPassword" class="collapse mt-3"
-                                        data-parent="#newAccountPassword">
-                                        <div class="card-body1 default-form-box">
-                                            <label> Account password <span>*</span></label>
-                                            <input placeholder="password" type="password">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <label class="checkbox-default" for="newShipping" data-bs-toggle="collapse"
-                                        data-bs-target="#anotherShipping">
-                                        <input type="checkbox" id="newShipping">
-                                        <span>Ship to a different address?</span>
-                                    </label>
-
-                                    <div id="anotherShipping" class="collapse mt-3" data-parent="#anotherShipping">
-                                        <div class="row">
-                                            <div class="col-lg-6">
-                                                <div class="default-form-box">
-                                                    <label>First Name <span>*</span></label>
-                                                    <input type="text">
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-6">
-                                                <div class="default-form-box">
-                                                    <label>Last Name <span>*</span></label>
-                                                    <input type="text">
-                                                </div>
-                                            </div>
-                                            <div class="col-12">
-                                                <div class="default-form-box">
-                                                    <label>Company Name</label>
-                                                    <input type="text">
-                                                </div>
-                                            </div>
-                                            <div class="col-12">
-                                                <div class="select_form_select default-form-box">
-                                                    <label for="countru_name">country <span>*</span></label>
-                                                    <select class="niceselect_option wide" name="cuntry"
-                                                        id="countru_name">
-                                                        <option value="2">Bangladesh</option>
-                                                        <option value="3">Algeria</option>
-                                                        <option value="4">Afghanistan</option>
-                                                        <option value="5">Ghana</option>
-                                                        <option value="6">Albania</option>
-                                                        <option value="7">Bahrain</option>
-                                                        <option value="8">Colombia</option>
-                                                        <option value="9">Dominican Republic</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-
-                                            <div class="col-12">
-                                                <div class="default-form-box">
-                                                    <label>Street address <span>*</span></label>
-                                                    <input placeholder="House number and street name" type="text">
-                                                </div>
-                                            </div>
-                                            <div class="col-12">
-                                                <div class="default-form-box">
-                                                    <input placeholder="Apartment, suite, unit etc. (optional)"
-                                                        type="text">
-                                                </div>
-                                            </div>
-                                            <div class="col-12">
-                                                <div class="default-form-box">
-                                                    <label>Town / City <span>*</span></label>
-                                                    <input type="text">
-                                                </div>
-                                            </div>
-                                            <div class="col-12">
-                                                <div class="default-form-box">
-                                                    <label>State / County <span>*</span></label>
-                                                    <input type="text">
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-6">
-                                                <div class="default-form-box">
-                                                    <label>Phone<span>*</span></label>
-                                                    <input type="text">
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-6">
-                                                <div class="default-form-box">
-                                                    <label> Email Address <span>*</span></label>
-                                                    <input type="text">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                
+                                
                                 <div class="col-12 mt-3">
                                     <div class="order-notes">
                                         <label for="order_note">Order Notes</label>
                                         <textarea id="order_note"
-                                            placeholder="Notes about your order, e.g. special notes for delivery."></textarea>
+                                            placeholder="Notes about your order, e.g. special notes for delivery." name="note"></textarea>
                                     </div>
+                                </div>
+                                <div class="order_button pt-3">
+                                    <button class="btn btn-md btn-black-default-hover" type="submit" name="user_register" >Submit</button>
                                 </div>
                             </div>
                         </form>
+                        <!--php for user registration-->
+                        <?php 
+                            user_registration();
+                            
+                        ?>
                     </div>
                     <div class="col-lg-6 col-md-6">
-                        <form action="#">
+                        <form action="#" method="post" enctype="multipart/form-data">
                             <h3>Your order</h3>
                             <div class="order_table table-responsive">
                                 <table>

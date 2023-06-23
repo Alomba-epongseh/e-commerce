@@ -415,3 +415,98 @@ function cart_item(){
         }
     }
     
+    // ========== CHECKOUT PROCEDURES=======//
+
+    //registering new user function
+
+function user_registration(){
+    global $conn;
+    if (isset($_POST['user_register'])) {
+        $firstname = $_POST['firstname'];
+        $lastname = $_POST['lastname'];
+        $username = $_POST['user_name'];
+        $userpassword = $_POST['userpassword'];
+        $hash_password=password_hash($userpassword,PASSWORD_DEFAULT);
+        $comfirmpassword = $_POST['comfirmpassword'];
+        $hash_comfirm_password=password_hash($comfirmpassword,PASSWORD_DEFAULT);
+        $companyname = $_POST['companyname'];
+        $country = $_POST['country'];
+        $streetaddress = $_POST['streetaddress'];
+        $town = $_POST['town'];
+        $phonenumber = $_POST['phonenumber'];
+        $useremail = $_POST['useremail'];
+        $note = $_POST['note'];
+        $useripaddress = getIp();
+
+        //select query used(checking if username already exiist in system)
+        $select_query = "SELECT * FROM user_table WHERE username='$username' OR email='$useremail' ";
+        $result = mysqli_query($conn, $select_query);
+        $row_count = mysqli_num_rows($result);
+        if ($row_count>0) {
+            echo "<script>alert('Username or email already exist')</script>";
+        } //checking if passwords match
+        elseif ($userpassword!=$comfirmpassword) {
+            echo "<script>alert('Passwords do not match')</script>";
+        }
+        else{
+        //insert query
+        $user_register = "INSERT INTO `user_table` (first_name, last_name, username, user_password, comfirm_password, company, country, street_address, town, phone_number, email, order_notes, user_ipaddress) VALUES ('$firstname', '$lastname', '$username', '$hash_password', '$hash_comfirm_password', '$companyname', '$country', '$streetaddress', '$town', '$phonenumber', '$useremail', '$note', '$useripaddress')";
+        $user_result = mysqli_query($conn, $user_register);
+        if($user_result){
+            echo "<script>alert('User Registered Successfully')</script>";
+            echo "<script>window.open('checkout.php','_self')</script>";
+        }
+        }
+        //selecting cart items 
+        $select_cart_items = "SELECT * FROM cartdetails WHERE ip_address='$useripaddress' ";
+        $result_cart = mysqli_query($conn, $select_cart_items);
+        $row_count = mysqli_num_rows($result_cart);
+        if ($row_count>0) {
+            $_SESSION['username']=$username;
+            echo "<script>alert('You have items in your cart')</script>";
+            echo "<script>window.open('checkout.php','_self')</script>";
+        }else {
+            echo "<script>window.open('index-2.php','_self')</script>";
+        }
+    }
+}
+
+//selecting cart items
+function login(){
+    global $conn;
+    if (isset($_POST['user_login'])) {
+        $user_email=$_POST['user_email'];
+        $user_password=$_POST['user_password'];
+
+        $select_query = "SELECT * FROM `user_table` WHERE username='$user_email' ";
+        $result_query = mysqli_query($conn, $select_query);
+        $row_count = mysqli_num_rows($result_query);
+        $row_data=mysqli_fetch_assoc($result_query); //fetching data from the database for the inputted username
+        $user_ip=getIp();
+
+        //cart items
+        $select_cart_query = "SELECT * FROM cartdetails WHERE ip_address='$user_ip' ";
+        $result_cart_query = mysqli_query($conn, $select_cart_query);
+        $row_count_cart = mysqli_num_rows($result_cart_query);
+
+        if ($row_count>0) {
+            // checking if the inpytted password matches the encryted password in the database.
+            if (password_verify($user_password,$row_data['password'])) {
+                //checking if user has contain in cart
+                if ($row_count==1 and $row_count_cart==0) {
+                    echo "<script>alert('Successful Login')</script>";
+                    echo "<script>window.open('profile.php','_self')</script>";
+                }else{
+                    echo "<script>alert('Successful Login')</script>";
+                    echo "<script>window.open('payment.php','_self')</script>";
+                }
+                
+            }else {
+                echo "<script>alert('Invalid Credentials')</script>";
+            }
+            
+        }else {
+            echo "<script>alert('Invalid Credentials')</script>";
+        }
+    }
+}
