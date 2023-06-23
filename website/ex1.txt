@@ -4,5 +4,69 @@
 
 $total_sub_price=$total_sub_price*$quantity
 
+echo "<a class='product_remove'><input type='submit' value='Update' name='update_cart'> </a>";
+style='text-align: center; color: red; font-size: 30px; padding: 10px; margin: 10px; background-color: gray;'
 
- 
+
+$select_query = "SELECT * FROM user_table WHERE username='$username' ";
+        $result = mysqli_query($conn, $select_query);
+        $row_count = mysqli_num_rows($result);
+        if ($row_count>0) {
+            echo "<script>alert('Username already exist')</script>";
+        }else{
+
+
+<!-- ...:::: Start Checkout Section:::... -->
+    <div class="checkout-section">
+        <div class="container" >
+            <div class="row" style="display: flex; justify-content: center; align-items:center;">
+                <!-- User Quick Action Form -->
+                <div class="col-lg-8 col-md-8" style="padding:50px; background-color: lightgray">
+                    <div class="user-actions accordion" data-aos="fade-up" data-aos-delay="0">
+                        <h3>
+                            <i class="fa fa-file-o" aria-hidden="true"></i>
+                            Returning customer?
+                            <a class="Returning" href="#" data-bs-toggle="collapse" data-bs-target="#checkout_login"
+                                aria-expanded="true">Click here to login</a>
+                        </h3>
+                        <div id="checkout_login" class="collapse" data-parent="#checkout_login">
+                            <div class="checkout_info">
+                                <form action="#" method="post" enctype="multipart/form-data">
+                                    <div class="col-12">
+                                        <div class="default-form-box">
+                                            <label>Username <span>*</span></label>
+                                            <input type="text" name="user_email" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="default-form-box">
+                                            <label> Password <span>*</span></label>
+                                            <input type="password" name="user_password" required>
+                                        </div>
+                                    </div>
+                                    <div class="form_group group_3 default-form-box">
+                                        <label class="checkbox-default">
+                                            <input type="checkbox">
+                                            <span>Remember me</span><br>
+                                        </label><br>
+                                    </div>
+                                    <div class="form_group group_3 default-form-box">
+                                        <button class="btn btn-md btn-black-default-hover" type="submit" name="user_login" >Login</button>
+                                        <a href="#">Lost your password?</a>
+                                    </div>
+                                    <div class="form_group group_3 default-form-box">
+                                        <p>Don't have an account??  <a href="registration.php" style="color:red">Register Here</a> </p>
+                                    </div>
+                                </form>
+                                <!--php for user registration-->
+                                <?php 
+                                    login();   
+                                ?>
+                            </div>
+                        </div>
+                    </div> 
+                </div>
+                <!-- User Quick Action Form -->
+            </div>
+        </div>
+    </div><!-- ...:::: End Checkout Section:::... -->
