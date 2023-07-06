@@ -1,3 +1,9 @@
+<?php 
+//include "../website/db.php";
+//$conn = openconn();
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,7 +34,7 @@
     <!--navbar---->
     <div class="container-fluid p-0">
         <!----First child---->
-    <nav class="navbar navbar-expand-lg navbar-light  bg-info">
+    <nav class="navbar navbar-expand-lg navbar-light  bg-secondary">
             <div class="container-fluid">
                 <img src="../images/favicon.png" alt="" class="logo">
 
@@ -50,22 +56,20 @@
         </div>
         <!--Third child--->
         <div class="row">
-            <div class="col-md-12 bg-secondary p-1 d-flex align-items-center" >
+            <div class="col-md-12 bg-primary p-1 d-flex align-items-center" >
                 <div class="px-5">
                     <a href="#"><img src="../images/spaghetti.jpg" alt="" class="admin_image"></a>
                     <p class="text-light text-center">Admin Name</p>
                 </div>
                 <div class="button text-center">
-                    <button class="my-3"><a href="insert_product.php" class="nav-link text-light bg-info my-1">Insert products</a></button>
-                    <button><a href="" class="nav-link text-light bg-info my-1">View Products</a></button>
-                    <button><a href="index.php?insert_category" class="nav-link text-light bg-info my-1">Insert Categories</a></button>
-                    <button><a href="" class="nav-link text-light bg-info my-1">View categories</a></button>
-                    <button><a href="index.php?insert_brand" class="nav-link text-light bg-info my-1" class="nav-link text-light bg-info my-1">Insert Brands</a></button>
-                    <button><a href="" class="nav-link text-light bg-info my-1">View Brands</a></button>
-                    <button><a href="" class="nav-link text-light bg-info my-1">All orders</a></button>
-                    <button><a href="" class="nav-link text-light bg-info my-1">All payments</a></button>
-                    <button><a href="" class="nav-link text-light bg-info my-1">List Users</a></button>
-                    <button><a href="" class="nav-link text-light bg-info my-1">Logout</a></button>
+                    <button class="my-3"><a href="insert_product.php" class="nav-link text-light bg-secondary my-1">Insert products</a></button>
+                    <button><a href="" class="nav-link text-light bg-secondary my-1">View Products</a></button>
+                    <button><a href="index.php?insert_category" class="nav-link text-light bg-secondary my-1">Insert Blog</a></button>
+                    <button><a href="" class="nav-link text-light bg-secondary my-1">View Blog</a></button>
+                    <button><a href="" class="nav-link text-light bg-secondary my-1">All orders</a></button>
+                    <button><a href="" class="nav-link text-light bg-secondary my-1">All payments</a></button>
+                    <button><a href="" class="nav-link text-light bg-secondary my-1">List Users</a></button>
+                    <button><a href="" class="nav-link text-light bg-secondary my-1">Logout</a></button>
                 </div>
             </div>
         </div>
@@ -74,7 +78,7 @@
         <div class="container my-5">
             <?php
             if(isset($_GET['insert_category'])){
-                include('insert_categories.php');
+                include('insert_blog.php');
             }
             ?>
         </div>
@@ -88,9 +92,9 @@
         </div>
 
         <!---last child---->
-  <div class="bg-info p-3 text-center">
+  <div class="bg-secondary p-3 text-center">
     <p>
-        All rights reserved -Designed by Bro_Clinton-2023
+        All rights reserved -Designed by VANILLA-2023
     </p>
 
 </div>

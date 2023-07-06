@@ -85,7 +85,15 @@
                                         <li>
                                             <a href="contact-us.php">Contact Us</a>
                                         </li>
-                                        <li><a href="login.php">Login</a></li>
+                                        <!-- Displaying login if the user isn-t logged in and logout if the userr is already logged-in -->
+                        <?php
+                            if (!isset($_SESSION['username'])) {
+                                echo "<li><a href='login.php'>Login</a></li>";
+                            }else{
+                                echo "<li><a href='logout.php'>Logout</a></li>";
+                            }
+                        ?>
+
                                     </ul>
                                 </nav>
                             </div>
@@ -233,7 +241,15 @@
                         <li><a href="blog-full-width.php">Blog</a></li>
                         <li><a href="about-us.php">About Us</a></li>
                         <li><a href="contact-us.php">Contact Us</a></li>
-                        <li><a href="login.php">Login</a></li>
+                        <!-- Displaying login if the user isn-t logged in and logout if the userr is already logged-in -->
+                        <?php
+                            if (!isset($_SESSION['username'])) {
+                                echo "<li><a href='login.php'>Login</a></li>";
+                            }else{
+                                echo "<li><a href='logout.php'>Logout</a></li>";
+                            }
+                        ?>
+
                     </ul>
                 </div> <!-- End Mobile Menu Nav -->
             </div> <!-- End Mobile Menu -->
@@ -479,14 +495,14 @@
                             <li><a href="#dashboard" data-bs-toggle="tab"
                                     class="nav-link btn btn-block btn-md btn-black-default-hover active">Dashboard</a>
                             </li>
-                            <li> <a href="#orders" data-bs-toggle="tab"
+                            <li> <a href="#orders?my_orders" data-bs-toggle="tab"
                                     class="nav-link btn btn-block btn-md btn-black-default-hover">Orders</a></li>
-                            <li><a href="#downloads" data-bs-toggle="tab"
-                                    class="nav-link btn btn-block btn-md btn-black-default-hover">Downloads</a></li>
-                            <li><a href="#address" data-bs-toggle="tab"
-                                    class="nav-link btn btn-block btn-md btn-black-default-hover">Addresses</a></li>
-                            <li><a href="#account-details" data-bs-toggle="tab"
-                                    class="nav-link btn btn-block btn-md btn-black-default-hover">Account details</a>
+                            <li><a href="#pending_order?pending_order" data-bs-toggle="tab"
+                                    class="nav-link btn btn-block btn-md btn-black-default-hover">Pending Orders</a></li>
+                            <li><a href="#edit_account?edit_account" data-bs-toggle="tab"
+                                    class="nav-link btn btn-block btn-md btn-black-default-hover">Edit Account</a></li>
+                            <li><a href="#delete_account?delete_account" data-bs-toggle="tab"
+                                    class="nav-link btn btn-block btn-md btn-black-default-hover">Delete Account</a>
                             </li>
                             <li><a href="logout.php"
                                     class="nav-link btn btn-block btn-md btn-black-default-hover">logout</a></li>
@@ -534,14 +550,14 @@
                                 </table>
                             </div>
                         </div>
-                        <div class="tab-pane fade" id="downloads">
-                            <h4>Downloads</h4>
+                        <div class="tab-pane fade" id="pending_order">
+                            <h4>Pending Order</h4>
                             <div class="table_page table-responsive">
                                 <table>
                                     <thead>
                                         <tr>
                                             <th>Product</th>
-                                            <th>Downloads</th>
+                                            <th>Pending Order</th>
                                             <th>Expires</th>
                                             <th>Download</th>
                                         </tr>
@@ -563,7 +579,7 @@
                                 </table>
                             </div>
                         </div>
-                        <div class="tab-pane" id="address">
+                        <div class="tab-pane" id="edit_account">
                             <p>The following addresses will be used on the checkout page by default.</p>
                             <h5 class="billing-address">Billing address</h5>
                             <a href="#" class="view">Edit</a>
@@ -572,7 +588,7 @@
                                 Address: Your address goes here.
                             </address>
                         </div>
-                        <div class="tab-pane fade" id="account-details">
+                        <div class="tab-pane fade" id="delete_account">
                             <h3>Account details </h3>
                             <div class="login">
                                 <div class="login_form_container">

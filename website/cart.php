@@ -85,7 +85,15 @@
                                         <li>
                                             <a href="contact-us.php">Contact Us</a>
                                         </li>
-                                        <li><a href="login.php">Login</a></li>
+                                        <!-- Displaying login if the user isn-t logged in and logout if the userr is already logged-in -->
+                        <?php
+                            if (!isset($_SESSION['username'])) {
+                                echo "<li><a href='login.php'>Login</a></li>";
+                            }else{
+                                echo "<li><a href='logout.php'>Logout</a></li>";
+                            }
+                        ?>
+
                                     </ul>
                                 </nav>
                             </div>
@@ -233,7 +241,15 @@
                         <li><a href="blog-full-width.php">Blog</a></li>
                         <li><a href="about-us.php">About Us</a></li>
                         <li><a href="contact-us.php">Contact Us</a></li>
-                        <li><a href="login.php">Login</a></li>
+                        <!-- Displaying login if the user isn-t logged in and logout if the userr is already logged-in -->
+                        <?php
+                            if (!isset($_SESSION['username'])) {
+                                echo "<li><a href='login.php'>Login</a></li>";
+                            }else{
+                                echo "<li><a href='logout.php'>Logout</a></li>";
+                            }
+                        ?>
+
                     </ul>
                 </div> <!-- End Mobile Menu Nav -->
             </div> <!-- End Mobile Menu -->
@@ -497,7 +513,7 @@
                                     <th>Price</th>
                                     <th>Quantity</th>
                                     <th>Delete</th> 
-                                    <th>Operations</th>
+                                    <th colspan='2'>Operations</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -509,8 +525,8 @@
                                 while($row_product_price=mysqli_fetch_array($result_product)){
                                     $product_price = array($row_product_price['price']);
                                     $price_table = $row_product_price['price'];
-                                    $product_title = $row_product_price['name'];
-                                    $product_image = $row_product_price['image'];
+                                    $product_title = $row_product_price['prodname'];
+                                    $product_image = $row_product_price['image1'];
                                     $product_values = array_sum($product_price);
                                     $total_price=$total_price+$product_values;
                                     
@@ -536,6 +552,7 @@
                                 ?>
                                 <td class='product-check'><input type="checkbox" name="removeitem[]" value="<?php echo $product_id ?>"></input></td>
                                 <td class='product_update'><i class='fa fa-trash-o'></i><input type='submit' value='Remove' name='remove_cart'> </td>
+                                <td><a class='product_remove' ><input type='submit' value='Update' name='update_cart' ></a></td>
                                 
                                 <!--removing data from cart-->
                                 <?php remove_cart_data(); ?>
@@ -567,7 +584,7 @@
                         echo "
                         <div style='display: flex; justify-content: space-around;'>
                         <a href='index-2.php' ><input value='Continue Shopping' style='text-align: center; font-size: 20px; padding: 8px; margin: 10px; background-color: lightgray;'> </a>
-                        <a class='product_remove' ><input type='submit' value='Update' name='update_cart' style='text-align: center; font-size: 20px; padding: 8px; margin: 10px; background-color: lightgray;'> </a>
+                        
                         </div>
                         
                         <h3>Cart Total</h3>

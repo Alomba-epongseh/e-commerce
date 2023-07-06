@@ -93,7 +93,15 @@
                                         <li>
                                             <a href="contact-us.php">Contact Us</a>
                                         </li>
-                                        <li><a href="login.php">Login</a></li>
+                                        <!-- Displaying login if the user isn-t logged in and logout if the userr is already logged-in -->
+                        <?php
+                            if (!isset($_SESSION['username'])) {
+                                echo "<li><a href='login.php'>Login</a></li>";
+                            }else{
+                                echo "<li><a href='logout.php'>Logout</a></li>";
+                            }
+                        ?>
+
                                     </ul>
                                 </nav>
                             </div>
@@ -239,7 +247,15 @@
                         <li><a href="blog-full-width.php">Blog</a></li>
                         <li><a href="about-us.php">About Us</a></li>
                         <li><a href="contact-us.php">Contact Us</a></li>
-                        <li><a href="login.php">Login</a></li>
+                        <!-- Displaying login if the user isn-t logged in and logout if the userr is already logged-in -->
+                        <?php
+                            if (!isset($_SESSION['username'])) {
+                                echo "<li><a href='login.php'>Login</a></li>";
+                            }else{
+                                echo "<li><a href='logout.php'>Logout</a></li>";
+                            }
+                        ?>
+
                     </ul>
                 </div> <!-- End Mobile Menu Nav -->
             </div> <!-- End Mobile Menu -->

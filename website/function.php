@@ -1,6 +1,6 @@
 <?php
 
-include 'db.php';
+include_once 'db.php';
 
 $conn = openconn();
 
@@ -95,8 +95,8 @@ function getPro(){
 
     while ($row_pro = mysqli_fetch_array($run_pro)) {
         $pro_id  = $row_pro['prodid'];
-        $pro_name  = $row_pro['name'];
-        $pro_image  = $row_pro['image'];
+        $pro_name  = $row_pro['prodname'];
+        $pro_image  = $row_pro['image1'];
         $pro_price = $row_pro['price'];
 
         echo "
@@ -163,10 +163,10 @@ function proDetails(){
     
     while ($row_pro = mysqli_fetch_array($run_pro)) {
         $pro_id  = $row_pro['prodid'];
-        $pro_name  = $row_pro['name'];
-        $pro_image  = $row_pro['image'];
+        $pro_name  = $row_pro['prodname'];
+        $pro_image  = $row_pro['image1'];
         $pro_price = $row_pro['price'];
-        $pro_desc = $row_pro['description'];
+        $pro_desc = $row_pro['proddesc'];
     
         echo "
         <div class='row'>
@@ -262,9 +262,9 @@ function search(){
     $run_pro = mysqli_query($conn, $get_pro);
     
     while ($row_pro = mysqli_fetch_array($run_pro)) {
-        $pro_id  = $row_pro['id'];
-        $pro_name  = $row_pro['name'];
-        $pro_image  = $row_pro['image'];
+        $pro_id  = $row_pro['prodid'];
+        $pro_name  = $row_pro['prodname'];
+        $pro_image  = $row_pro['image1'];
         $pro_price = $row_pro['price'];
     
         echo "
@@ -448,14 +448,14 @@ function user_registration(){
         elseif ($userpassword!=$comfirmpassword) {
             echo "<script>alert('Passwords do not match')</script>";
         }
-        else{
-        //insert query
-        $user_register = "INSERT INTO `user_table` (first_name, last_name, username, user_password, comfirm_password, company, country, street_address, town, phone_number, email, order_notes, user_ipaddress) VALUES ('$firstname', '$lastname', '$username', '$hash_password', '$hash_comfirm_password', '$companyname', '$country', '$streetaddress', '$town', '$phonenumber', '$useremail', '$note', '$useripaddress')";
-        $user_result = mysqli_query($conn, $user_register);
-        if($user_result){
-            echo "<script>alert('User Registered Successfully')</script>";
-            echo "<script>window.open('checkout.php','_self')</script>";
-        }
+        elseif ($row_count<0) {
+            //insert query
+            $user_register = "INSERT INTO `user_table` (first_name, last_name, username, user_password, comfirm_password, company, country, street_address, town, phone_number, email, order_notes, user_ipaddress) VALUES ('$firstname', '$lastname', '$username', '$hash_password', '$hash_comfirm_password', '$companyname', '$country', '$streetaddress', '$town', '$phonenumber', '$useremail', '$note', '$useripaddress')";
+            $user_result = mysqli_query($conn, $user_register);
+            if($user_result){
+                echo "<script>alert('User Registered Successfully')</script>";
+                echo "<script>window.open('checkout.php','_self')</script>";
+            }
         }
         //selecting cart items 
         $select_cart_items = "SELECT * FROM cartdetails WHERE ip_address='$useripaddress' ";
@@ -509,4 +509,36 @@ function login(){
             echo "<script>alert('Invalid Credentials')</script>";
         }
     }
+}
+
+
+
+//getting user order details
+function get_user_order_details(){
+    global $conn;
+    $username=$_SESSION['username'];
+    $get_details="SELECT * FROM `user_table` where username='$username'";
+    $result_query = mysqli_query($conn, $get_details);
+    while ($row_query=mysqli_fetch_array($result_query)) {
+       $user_id=$row_query['user_id'];
+       if (!isset($_GET['edit_account'])) {
+            if (!isset($_GET['my_orders'])) {
+                if (!isset($_GET['delete_account'])) {
+                    //selecting from table user
+                    $get_order="SELECT * FROM `user_order` where user_id=$user_id and order_status='pending'";
+                    $result_get_order=mysqli_query($conn,$get_order);
+                    $row_count=mysqli_num_rows($result_get_order);
+                    if ($row_count>0) {
+                         echo "<h2 class='text-center mt-2'> You have <span class='text-danger'>$row_count</span> orders</h2>;
+                                <p><a href='profile.php?my_orders' class='text-dark'>Order Details</a></p>";
+                    }else{
+                        echo "<h2 class='text-center'> You have zero pending orders</h2>;
+                                <p><a href='index-2.php' class='text-dark'>Explores Site</a></p>";
+                    }
+                   
+                }
+            }
+        }
+    }
+
 }
