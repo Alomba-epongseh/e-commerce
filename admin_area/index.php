@@ -1,6 +1,7 @@
 <?php 
 include "../website/db.php";
 $conn = openconn();
+session_start();
 ?>
 
 
@@ -41,7 +42,17 @@ $conn = openconn();
                 <nav class="navbar navbar-expand-lg">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a href="" class="nav-link">Welcome Guest</a>
+                           <!--displaying username---->
+                        <?php
+                            if (!isset($_SESSION['username'])) {
+                                echo "<li class='nav-item'>
+                                <a href='' class='nav-link'>Welcome Guest</a>
+                            </li>";
+                            }else {
+                                echo "<li class='nav-item'>
+                                <a href='' class='nav-link'>Welcome ".$_SESSION['username']."</a></li>";
+                            }
+                        ?>
                         </li>
                     </ul>
                      
@@ -58,18 +69,17 @@ $conn = openconn();
         <div class="row">
             <div class="col-md-12 bg-primary p-1 d-flex align-items-center" >
                 <div class="px-5">
-                    <a href="#"><img src="../images/spaghetti.jpg" alt="" class="admin_image"></a>
-                    <p class="text-light text-center">Admin Name</p>
+                    <h3 class="text-light text-center fw-bold"><?php echo $_SESSION['username'] ?></h3>
                 </div>
                 <div class="button text-center">
                     <button class="my-3"><a href="index.php?insert_product" class="nav-link text-light bg-secondary my-1">Insert products</a></button>
                     <button><a href="index.php?view_products" class="nav-link text-light bg-secondary my-1">View Products</a></button>
                     <button><a href="index.php?insert_blog" class="nav-link text-light bg-secondary my-1">Insert Blog</a></button>
                     <button><a href="index.php?view_blog" class="nav-link text-light bg-secondary my-1">View Blog</a></button>
-                    <button><a href="" class="nav-link text-light bg-secondary my-1">All orders</a></button>
-                    <button><a href="" class="nav-link text-light bg-secondary my-1">All payments</a></button>
-                    <button><a href="" class="nav-link text-light bg-secondary my-1">List Users</a></button>
-                    <button><a href="" class="nav-link text-light bg-secondary my-1">Logout</a></button>
+                    <button><a href="index.php?list_orders" class="nav-link text-light bg-secondary my-1">All orders</a></button>
+                    <button><a href="index.php?all_payments" class="nav-link text-light bg-secondary my-1">All payments</a></button>
+                    <button><a href="index.php?list_users" class="nav-link text-light bg-secondary my-1">List Users</a></button>
+                    <button><a href="admin_logout.php" class="nav-link text-light bg-secondary my-1">Logout</a></button>
                 </div>
             </div>
         </div>
@@ -95,6 +105,30 @@ $conn = openconn();
             if(isset($_GET['view_blog'])){
                 include('view_blog.php');
             }
+            if(isset($_GET['edit_blog'])){
+                include('edit_blog.php');
+            }
+            if(isset($_GET['delete_blog'])){
+                include('delete_blog.php');
+            }
+            if(isset($_GET['list_orders'])){
+                include('list_orders.php');
+            }
+            if(isset($_GET['delete_order'])){
+                include('delete_order.php');
+            }
+            if(isset($_GET['all_payments'])){
+                include('all_payments.php');
+            }
+            if(isset($_GET['delete_payment'])){
+                include('delete_payment.php');
+            }
+            if(isset($_GET['list_users'])){
+                include('list_users.php');
+            }
+            if(isset($_GET['delete_user'])){
+                include('delete_user.php');
+            }
             ?>
         </div>
         
@@ -111,6 +145,8 @@ $conn = openconn();
     
 <!---bootstrap js link--->
 <script src="bootstrap-5.3.0-dist/js/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
 
 </body>
 </html>

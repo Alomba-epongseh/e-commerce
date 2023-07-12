@@ -100,7 +100,7 @@ if (isset($_GET['edit_product'])) {
         move_uploaded_file($tmp_image3,"images/product_images/$product_image3");
 
 
-        //updating data in `user_table` database
+        //updating data in `product` database
         $update_query="UPDATE `product` SET prodname='$product_name',proddesc='$product_desc',keywords='$product_keywords',image1='$product_image1',image2='$product_image2',image3='$product_image3',price='$product_price' WHERE prodid=$product_id" ;
         $result_query=mysqli_query($conn,$update_query);
         if ($result_query) {

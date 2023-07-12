@@ -57,13 +57,27 @@ include_once "function1.php";
                         ?>
                     </td>            
                     <td><a href='index.php?edit_product=<?php echo $product_id ?>' class='text-primary'>Edit</i></a></td>
-
-                    <td><a href='index.php?delete_product=<?php echo $product_id ?>' class='text-danger'>Delete</a></td>
+                    <td><a href='index.php?delete_product=<?php echo $product_id ?>' class='text-danger' type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Delete</a></td>
+                    
                 </tr>
             <?php }?>
             
             
         </tbody>
     </table>
+    <!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Are you sure you want to delete this</h5>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><a href="index.php?view_products" class='text-decoration-none text-light'>No</a></button>
+        <button type="button" class="btn btn-danger"><a href='index.php?delete_product=<?php echo $product_id ?>' class='text-decoration-none text-light'>Yes</a></button>
+      </div>
+    </div>
+  </div>
+</div>
 </body>
 </html>
