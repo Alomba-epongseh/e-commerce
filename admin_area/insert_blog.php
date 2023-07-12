@@ -1,5 +1,5 @@
 <?php
-include "../website/db.php";
+include "db_connect.php";
 $conn = openconn();
 
 if(isset($_POST['insert_blog'])){

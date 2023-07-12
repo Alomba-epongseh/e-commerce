@@ -1,6 +1,6 @@
 <?php 
-//include "../website/db.php";
-//$conn = openconn();
+include "../website/db.php";
+$conn = openconn();
 ?>
 
 
@@ -62,10 +62,10 @@
                     <p class="text-light text-center">Admin Name</p>
                 </div>
                 <div class="button text-center">
-                    <button class="my-3"><a href="insert_product.php" class="nav-link text-light bg-secondary my-1">Insert products</a></button>
-                    <button><a href="" class="nav-link text-light bg-secondary my-1">View Products</a></button>
-                    <button><a href="index.php?insert_category" class="nav-link text-light bg-secondary my-1">Insert Blog</a></button>
-                    <button><a href="" class="nav-link text-light bg-secondary my-1">View Blog</a></button>
+                    <button class="my-3"><a href="index.php?insert_product" class="nav-link text-light bg-secondary my-1">Insert products</a></button>
+                    <button><a href="index.php?view_products" class="nav-link text-light bg-secondary my-1">View Products</a></button>
+                    <button><a href="index.php?insert_blog" class="nav-link text-light bg-secondary my-1">Insert Blog</a></button>
+                    <button><a href="index.php?view_blog" class="nav-link text-light bg-secondary my-1">View Blog</a></button>
                     <button><a href="" class="nav-link text-light bg-secondary my-1">All orders</a></button>
                     <button><a href="" class="nav-link text-light bg-secondary my-1">All payments</a></button>
                     <button><a href="" class="nav-link text-light bg-secondary my-1">List Users</a></button>
@@ -77,19 +77,27 @@
         <!-----Fourth child---->
         <div class="container my-5">
             <?php
-            if(isset($_GET['insert_category'])){
+            if(isset($_GET['insert_product'])){
+                include('insert_product.php');
+            }
+            if(isset($_GET['insert_blog'])){
                 include('insert_blog.php');
             }
-            ?>
-        </div>
-        <!----Fifth child-------->
-        <div class="container">
-            <?php
-            if(isset($_GET['insert_brand'])){
-                include('insert_brands.php');
+            if(isset($_GET['view_products'])){
+                include('view_products.php');
+            }
+            if(isset($_GET['edit_product'])){
+                include('edit_product.php');
+            }
+            if(isset($_GET['delete_product'])){
+                include('delete_product.php');
+            }
+            if(isset($_GET['view_blog'])){
+                include('view_blog.php');
             }
             ?>
         </div>
+        
 
         <!---last child---->
   <div class="bg-secondary p-3 text-center">

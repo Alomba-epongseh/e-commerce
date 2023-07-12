@@ -39,7 +39,7 @@
     <div class="container-fluid">
         <div class="checkout_form">
             <div class="col-lg-8 col-md-8" style="padding:50px; background-color: lightgray">
-                <form action="" method="post" enctype="multipart/form-data">
+                <form action="registration.php" method="post" enctype="multipart/form-data">
                     <h3>User Account Details</h3>
                     <div class="row">
                         <div class="col-lg-6">
@@ -115,14 +115,17 @@
                             </div>
                         </div>
                         <div class="order_button pt-3">
-                            <button class="btn btn-md btn-black-default-hover" type="submit" name="user_register" >Submit</button>
+                            <button class="btn btn-md btn-black-default-hover" type="submit" name="insert-post" >Submit</button>
                         </div>
                     </div>
                 </form>
                 <!--php for user registration-->
                 <?php 
+                    session_start(); 
                     include_once "function.php";
-                    user_registration();                
+                    user_registration();  
+                    
+                   
                 ?>
             </div>                
         </div>

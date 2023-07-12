@@ -70,7 +70,14 @@
                                         <li>
                                             <a href="contact-us.php">Contact Us</a>
                                         </li>
-                                        <li><a href="login.php">Login</a></li>
+                                        <!-- Displaying login if the user isn-t logged in and logout if the userr is already logged-in -->
+                        <?php
+                            if (!isset($_SESSION['username'])) {
+                                echo "<li><a href='login-user.php'>Login</a></li>";
+                            }else{
+                                echo "<li><a href='profile.php'>My Account</a></li>";
+                            }
+                        ?>
                                     </ul>
                                 </nav>
                             </div>

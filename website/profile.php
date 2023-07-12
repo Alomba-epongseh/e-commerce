@@ -2,6 +2,7 @@
 include "function.php";
 //$conn = openconn();
 ?>
+<?php session_start() ?>
 
 
 <!DOCTYPE html>
@@ -71,7 +72,7 @@ include "function.php";
                     <p class="text-dark text-center fw-bolder fs-4">PROFILE</p>
                 </div>
             </div>
-        </div>
+        </div>  
         <div class="row">
             <div class="col-md-2 d-flex bg-primary p-1 align-items-left">
                 <div>
@@ -100,7 +101,8 @@ include "function.php";
                     }
                     if (isset($_GET['my_orders'])) {
                         include_once "my_orders.php";
-                    }elseif (isset($_GET['delete_account'])) {
+                    }
+                    if (isset($_GET['delete_account'])) {
                         include_once "delete_account.php";
                     }
                 ?>

@@ -69,7 +69,7 @@ function blogdetails(){
 
             <div class='blog-single-wrapper'>
                         <div class='blog-single-img' data-aos='fade-up' data-aos-delay='0'>
-                            <img class='img-fluid' src='assets/images/blog/$image' alt=''>
+                            <img class='img-fluid' src='../admin_area/images/blog_images/$image' alt=''>
                         </div>
                         <ul class='post-meta' data-aos='fade-up' data-aos-delay='200'>
                             <li>POSTED BY : <a href='#' class='author'>$postedby</a></li>
@@ -101,11 +101,11 @@ function getPro(){
 
         echo "
         <div class='product-default-single-item product-color--golden'
-        data-aos='fade-up' data-aos-delay='0'>
+        data-aos='fade-up' data-aos-delay='0' style='width:250px; margin-left:20px'>
         <div class='image-box'>
-            <a href='productdetails.php?prod_id=$pro_id' class='image-link'>
-                <img src='admin_area/product_images/$pro_image'
-                    alt=''>
+            <a href='productdetails.php?prod_id=$pro_id' class='image-link px-auto'>
+                <img src='../admin_area/images/product_images/$pro_image'
+                    alt='Wrong path' style='width:250px; height:150px;'>
             </a>
             <div class='action-link'>
                 <div class='action-link-left'>
@@ -176,7 +176,8 @@ function proDetails(){
                     <div class='product-large-image product-large-image-horaizontal swiper-container'>
                         <div class='swiper-wrapper'>
                             <div class='product-image-large-image swiper-slide zoom-image-hover img-responsive'>
-                                <img src='assets/images/product/$pro_image' alt=' No Image'>
+                                <img src='../admin_area/images/product_images/$pro_image'
+                                alt='Wrong path'>
                             </div>
                         </div>
                     </div>
@@ -421,14 +422,14 @@ function cart_item(){
 
 function user_registration(){
     global $conn;
-    if (isset($_POST['user_register'])) {
+    if (isset($_POST['insert-post'])) {
         $firstname = $_POST['firstname'];
         $lastname = $_POST['lastname'];
         $username = $_POST['user_name'];
         $userpassword = $_POST['userpassword'];
-        $hash_password=password_hash($userpassword,PASSWORD_DEFAULT);
+        $hash_password = password_hash($userpassword,PASSWORD_DEFAULT);
         $comfirmpassword = $_POST['comfirmpassword'];
-        $hash_comfirm_password=password_hash($comfirmpassword,PASSWORD_DEFAULT);
+        //$hash_comfirm_password=password_hash($comfirmpassword,PASSWORD_DEFAULT);
         $companyname = $_POST['companyname'];
         $country = $_POST['country'];
         $streetaddress = $_POST['streetaddress'];
@@ -437,37 +438,31 @@ function user_registration(){
         $useremail = $_POST['useremail'];
         $note = $_POST['note'];
         $useripaddress = getIp();
-
         //select query used(checking if username already exiist in system)
         $select_query = "SELECT * FROM user_table WHERE username='$username' OR email='$useremail' ";
         $result = mysqli_query($conn, $select_query);
         $row_count = mysqli_num_rows($result);
         if ($row_count>0) {
             echo "<script>alert('Username or email already exist')</script>";
-        } //checking if passwords match
-        elseif ($userpassword!=$comfirmpassword) {
-            echo "<script>alert('Passwords do not match')</script>";
-        }
-        elseif ($row_count<0) {
-            //insert query
-            $user_register = "INSERT INTO `user_table` (first_name, last_name, username, user_password, comfirm_password, company, country, street_address, town, phone_number, email, order_notes, user_ipaddress) VALUES ('$firstname', '$lastname', '$username', '$hash_password', '$hash_comfirm_password', '$companyname', '$country', '$streetaddress', '$town', '$phonenumber', '$useremail', '$note', '$useripaddress')";
-            $user_result = mysqli_query($conn, $user_register);
-            if($user_result){
-                echo "<script>alert('User Registered Successfully')</script>";
-                echo "<script>window.open('checkout.php','_self')</script>";
-            }
-        }
-        //selecting cart items 
-        $select_cart_items = "SELECT * FROM cartdetails WHERE ip_address='$useripaddress' ";
-        $result_cart = mysqli_query($conn, $select_cart_items);
-        $row_count = mysqli_num_rows($result_cart);
-        if ($row_count>0) {
-            $_SESSION['username']=$username;
-            echo "<script>alert('You have items in your cart')</script>";
-            echo "<script>window.open('checkout.php','_self')</script>";
         }else {
-            echo "<script>window.open('index-2.php','_self')</script>";
+            //checking if passwords match
+        if ($userpassword!=$comfirmpassword) {
+            echo "<script>alert('Passwords do not match')</script>";
+        }else{
+
+        //insert query
+        $user_query= "INSERT INTO `user_table` (first_name,last_name,username,user_password,confirm_password,company,country,street_address,town,phone_number,email,order_notes,user_ipaddress) VALUES('$firstname','$lastname','$username','$hash_password','$comfirmpassword','$companyname','$country','$streetaddress','$town',$phonenumber,'$useremail','$note','$useripaddress')";
+        echo $user_query;
+        //$result_query = mysqli_query($conn, $user_query);
+        $user_result=mysqli_query($conn,$user_query);
+        if ($user_result) {
+           echo "<script>alert('User registered')</script>";
+           echo "<script>window.open('login-user.php','_self')</script>";
         }
+        }
+        }
+
+        
     }
 }
 
@@ -477,6 +472,8 @@ function login(){
     if (isset($_POST['user_login'])) {
         $user_email=$_POST['user_email'];
         $user_password=$_POST['user_password'];
+        session_start();
+        $_SESSION['username'] = $user_email;
 
         $select_query = "SELECT * FROM `user_table` WHERE username='$user_email' ";
         $result_query = mysqli_query($conn, $select_query);
@@ -490,8 +487,8 @@ function login(){
         $row_count_cart = mysqli_num_rows($result_cart_query);
 
         if ($row_count>0) {
-            // checking if the inpytted password matches the encryted password in the database.
-            if (password_verify($user_password,$row_data['password'])) {
+            // checking if the inputted password matches the encryted password in the database.
+            if (password_verify($user_password,$row_data['user_password'])) {
                 //checking if user has contain in cart
                 if ($row_count==1 and $row_count_cart==0) {
                     echo "<script>alert('Successful Login')</script>";
@@ -532,7 +529,7 @@ function get_user_order_details(){
                          echo "<h2 class='text-center mt-2'> You have <span class='text-danger'>$row_count</span> orders</h2>;
                                 <p><a href='profile.php?my_orders' class='text-dark'>Order Details</a></p>";
                     }else{
-                        echo "<h2 class='text-center'> You have zero pending orders</h2>;
+                        echo "<h2 class='text-center'> You have zero pending orders</h2>
                                 <p><a href='index-2.php' class='text-dark'>Explores Site</a></p>";
                     }
                    

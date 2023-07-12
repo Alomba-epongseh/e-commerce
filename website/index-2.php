@@ -95,9 +95,9 @@
                         <!-- Displaying login if the user isn-t logged in and logout if the userr is already logged-in -->
                         <?php
                             if (!isset($_SESSION['username'])) {
-                                echo "<li><a href='login.php'>Login</a></li>";
+                                echo "<li><a href='login-user.php'>Login</a></li>";
                             }else{
-                                echo "<li><a href='logout.php'>Logout</a></li>";
+                                echo "<li><a href='profile.php'>My Account</a></li>";
                             }
                         ?>
 
@@ -494,8 +494,8 @@
                 </div>
                 <a href="product-details-default.php" class="content">
                     <div class="inner">
-                        <h4 class="title">Bar Stool</h4>
-                        <h6 class="sub-title">20 products</h6>
+                        <h4 class="title">Foundations</h4>
+                        
                     </div>
                     <span class="round-btn"><i class="ion-ios-arrow-thin-right"></i></span>
                 </a>
@@ -509,8 +509,8 @@
                 </div>
                 <a href="product-details-default.php" class="content">
                     <div class="inner">
-                        <h4 class="title">Armchairs</h4>
-                        <h6 class="sub-title">20 products</h6>
+                        <h4 class="title">Lightening</h4>
+                        
                     </div>
                     <span class="round-btn"><i class="ion-ios-arrow-thin-right"></i></span>
                 </a>
@@ -524,8 +524,8 @@
                 </div>
                 <a href="product-details-default.php" class="content">
                     <div class="inner">
-                        <h4 class="title">lighting</h4>
-                        <h6 class="sub-title">20 products</h6>
+                        <h4 class="title">Conditioning</h4>
+                        
                     </div>
                     <span class="round-btn"><i class="ion-ios-arrow-thin-right"></i></span>
                 </a>
@@ -539,8 +539,8 @@
                 </div>
                 <a href="product-details-default.php" class="content">
                     <div class="inner">
-                        <h4>Easy chairs</h4>
-                        <h6>20 products</h6>
+                        <h4>Lipsticks</h4>
+                        
                     </div>
                     <span class="round-btn"><i class="ion-ios-arrow-thin-right"></i></span>
                 </a>
@@ -559,8 +559,8 @@
                     <div class="col-12">
                         <div class="section-content-gap">
                             <div class="secton-content">
-                                <h3 class="section-title">Best Sellers</h3>
-                                <p>Add our best sellers to your weekly lineup.</p>
+                                <h3 class="section-title">Our Products</h3>
+                                <p>Add our beauty products to your weekly lineup.</p>
                             </div>
                         </div>
                     </div>
@@ -577,336 +577,43 @@
                             <div class="swiper-container product-listview-slider-4grid-3rows">
                                 <!-- Additional required wrapper -->
                                 <div class="swiper-wrapper">
-                                    <!-- Start Product ListView Single Item -->
-                                    <div class="product-listview-single-item product-color--green swiper-slide">
-                                        <div class="image-box">
-                                            <a href="product-details-default.php" class="image-link">
-                                                <img src="assets/images/product/default/home-2/default-1.jpg" alt="">
-                                                <img src="assets/images/product/default/home-2/default-2.jpg" alt="">
-                                            </a>
-                                        </div>
-                                        <div class="content">
-                                            <h6 class="title"><a href="product-details-default.php">Consequuntur
-                                                    magni</a></h6>
-                                            <ul class="review-star">
-                                                <li class="fill"><i class="ion-android-star"></i></li>
-                                                <li class="fill"><i class="ion-android-star"></i></li>
-                                                <li class="fill"><i class="ion-android-star"></i></li>
-                                                <li class="fill"><i class="ion-android-star"></i></li>
-                                                <li class="empty"><i class="ion-android-star"></i></li>
-                                            </ul>
-                                            <span class="price"> <del>$89.00</del> $80.00</span>
-                                        </div>
-                                    </div>
-                                    <!-- End Product ListView Single Item -->
-                                    <!-- Start Product ListView Single Item -->
-                                    <div class="product-listview-single-item product-color--green swiper-slide">
-                                        <div class="image-box">
-                                            <a href="product-details-default.php" class="image-link">
-                                                <img src="assets/images/product/default/home-2/default-3.jpg" alt="">
-                                                <img src="assets/images/product/default/home-2/default-4.jpg" alt="">
-                                            </a>
-                                        </div>
-                                        <div class="content">
-                                            <h6 class="title"><a href="product-details-default.php">Pellentesque
-                                                    posuere</a></h6>
-                                            <ul class="review-star">
-                                                <li class="fill"><i class="ion-android-star"></i></li>
-                                                <li class="fill"><i class="ion-android-star"></i></li>
-                                                <li class="fill"><i class="ion-android-star"></i></li>
-                                                <li class="fill"><i class="ion-android-star"></i></li>
-                                                <li class="empty"><i class="ion-android-star"></i></li>
-                                            </ul>
-                                            <span class="price">$45.00</span>
-                                        </div>
-                                    </div>
-                                    <!-- End Product ListView Single Item -->
-                                    <!-- Start Product ListView Single Item -->
-                                    <div class="product-listview-single-item product-color--green swiper-slide">
-                                        <div class="image-box">
-                                            <a href="product-details-default.php" class="image-link">
-                                                <img src="assets/images/product/default/home-2/default-5.jpg" alt="">
-                                                <img src="assets/images/product/default/home-2/default-6.jpg" alt="">
-                                            </a>
-                                        </div>
-                                        <div class="content">
-                                            <h6 class="title"><a href="product-details-default.php">Kaoreet lobortis
-                                                    sagit</a></h6>
-                                            <ul class="review-star">
-                                                <li class="fill"><i class="ion-android-star"></i></li>
-                                                <li class="fill"><i class="ion-android-star"></i></li>
-                                                <li class="fill"><i class="ion-android-star"></i></li>
-                                                <li class="fill"><i class="ion-android-star"></i></li>
-                                                <li class="empty"><i class="ion-android-star"></i></li>
-                                            </ul>
-                                            <span class="price">$95.00</span>
-                                        </div>
-                                    </div>
-                                    <!-- End Product ListView Single Item -->
-                                    <!-- Start Product ListView Single Item -->
-                                    <div class="product-listview-single-item product-color--green swiper-slide">
-                                        <div class="image-box">
-                                            <a href="product-details-default.php" class="image-link">
-                                                <img src="assets/images/product/default/home-2/default-7.jpg" alt="">
-                                                <img src="assets/images/product/default/home-2/default-8.jpg" alt="">
-                                            </a>
-                                        </div>
-                                        <div class="content">
-                                            <h6 class="title"><a href="product-details-default.php">Phasellus vel
-                                                    hendreri</a></h6>
-                                            <ul class="review-star">
-                                                <li class="fill"><i class="ion-android-star"></i></li>
-                                                <li class="fill"><i class="ion-android-star"></i></li>
-                                                <li class="fill"><i class="ion-android-star"></i></li>
-                                                <li class="fill"><i class="ion-android-star"></i></li>
-                                                <li class="empty"><i class="ion-android-star"></i></li>
-                                            </ul>
-                                            <span class="price">$55.00</span>
-                                        </div>
-                                    </div>
-                                    <!-- End Product ListView Single Item -->
-                                    <!-- Start Product ListView Single Item -->
-                                    <div class="product-listview-single-item product-color--green swiper-slide">
-                                        <div class="image-box">
-                                            <a href="product-details-default.php" class="image-link">
-                                                <img src="assets/images/product/default/home-2/default-9.jpg" alt="">
-                                                <img src="assets/images/product/default/home-2/default-10.jpg" alt="">
-                                            </a>
-                                        </div>
-                                        <div class="content">
-                                            <h6 class="title"><a href="product-details-default.php">Duis pulvinar
-                                                    obortis</a></h6>
-                                            <ul class="review-star">
-                                                <li class="fill"><i class="ion-android-star"></i></li>
-                                                <li class="fill"><i class="ion-android-star"></i></li>
-                                                <li class="fill"><i class="ion-android-star"></i></li>
-                                                <li class="fill"><i class="ion-android-star"></i></li>
-                                                <li class="empty"><i class="ion-android-star"></i></li>
-                                            </ul>
-                                            <span class="price"><del>$84.00</del> $79.00</span>
-                                        </div>
-                                    </div>
-                                    <!-- End Product ListView Single Item -->
-                                    <!-- Start Product ListView Single Item -->
-                                    <div class="product-listview-single-item product-color--green swiper-slide">
-                                        <div class="image-box">
-                                            <a href="product-details-default.php" class="image-link">
-                                                <img src="assets/images/product/default/home-2/default-11.jpg" alt="">
-                                                <img src="assets/images/product/default/home-2/default-12.jpg" alt="">
-                                            </a>
-                                        </div>
-                                        <div class="content">
-                                            <h6 class="title"><a href="product-details-default.php">Cras neque
-                                                    metus</a></h6>
-                                            <ul class="review-star">
-                                                <li class="fill"><i class="ion-android-star"></i></li>
-                                                <li class="fill"><i class="ion-android-star"></i></li>
-                                                <li class="fill"><i class="ion-android-star"></i></li>
-                                                <li class="fill"><i class="ion-android-star"></i></li>
-                                                <li class="empty"><i class="ion-android-star"></i></li>
-                                            </ul>
-                                            <span class="price"><del>$70.00</del> $60.00</span>
-                                        </div>
-                                    </div>
-                                    <!-- End Product ListView Single Item -->
-                                    <!-- Start Product ListView Single Item -->
-                                    <div class="product-listview-single-item product-color--green swiper-slide">
-                                        <div class="image-box">
-                                            <a href="product-details-default.php" class="image-link">
-                                                <img src="assets/images/product/default/home-2/default-13.jpg" alt="">
-                                                <img src="assets/images/product/default/home-2/default-14.jpg" alt="">
-                                            </a>
-                                        </div>
-                                        <div class="content">
-                                            <h6 class="title"><a href="product-details-default.php">Officiis debitis
-                                                    varius</a></h6>
-                                            <ul class="review-star">
-                                                <li class="fill"><i class="ion-android-star"></i></li>
-                                                <li class="fill"><i class="ion-android-star"></i></li>
-                                                <li class="fill"><i class="ion-android-star"></i></li>
-                                                <li class="fill"><i class="ion-android-star"></i></li>
-                                                <li class="empty"><i class="ion-android-star"></i></li>
-                                            </ul>
-                                            <span class="price">$90.00</span>
-                                        </div>
-                                    </div>
-                                    <!-- End Product ListView Single Item -->
-                                    <!-- Start Product ListView Single Item -->
-                                    <div class="product-listview-single-item product-color--green swiper-slide">
-                                        <div class="image-box">
-                                            <a href="product-details-default.php" class="image-link">
-                                                <img src="assets/images/product/default/home-2/default-15.jpg" alt="">
-                                                <img src="assets/images/product/default/home-2/default-16.jpg" alt="">
-                                            </a>
-                                        </div>
-                                        <div class="content">
-                                            <h6 class="title"><a href="product-details-default.php">Ornare sed
-                                                    consequat</a></h6>
-                                            <ul class="review-star">
-                                                <li class="fill"><i class="ion-android-star"></i></li>
-                                                <li class="fill"><i class="ion-android-star"></i></li>
-                                                <li class="fill"><i class="ion-android-star"></i></li>
-                                                <li class="fill"><i class="ion-android-star"></i></li>
-                                                <li class="empty"><i class="ion-android-star"></i></li>
-                                            </ul>
-                                            <span class="price">$110.00</span>
-                                        </div>
-                                    </div>
-                                    <!-- End Product ListView Single Item -->
-                                    <!-- Start Product ListView Single Item -->
-                                    <div class="product-listview-single-item product-color--green swiper-slide">
-                                        <div class="image-box">
-                                            <a href="product-details-default.php" class="image-link">
-                                                <img src="assets/images/product/default/home-2/default-17.jpg" alt="">
-                                                <img src="assets/images/product/default/home-2/default-18.jpg" alt="">
-                                            </a>
-                                        </div>
-                                        <div class="content">
-                                            <h6 class="title"><a href="product-details-default.php">Convallis quam
-                                                    sit</a></h6>
-                                            <ul class="review-star">
-                                                <li class="fill"><i class="ion-android-star"></i></li>
-                                                <li class="fill"><i class="ion-android-star"></i></li>
-                                                <li class="fill"><i class="ion-android-star"></i></li>
-                                                <li class="fill"><i class="ion-android-star"></i></li>
-                                                <li class="empty"><i class="ion-android-star"></i></li>
-                                            </ul>
-                                            <span class="price">$45.00 - $95.00</span>
-                                        </div>
-                                    </div>
-                                    <!-- End Product ListView Single Item -->
-                                    <!-- Start Product ListView Single Item -->
-                                    <div class="product-listview-single-item product-color--green swiper-slide">
-                                        <div class="image-box">
-                                            <a href="product-details-default.php" class="image-link">
-                                                <img src="assets/images/product/default/home-2/default-2.jpg" alt="">
-                                                <img src="assets/images/product/default/home-2/default-1.jpg" alt="">
-                                            </a>
-                                        </div>
-                                        <div class="content">
-                                            <h6 class="title"><a href="product-details-default.php">Donec eu libero
-                                                    ac</a></h6>
-                                            <ul class="review-star">
-                                                <li class="fill"><i class="ion-android-star"></i></li>
-                                                <li class="fill"><i class="ion-android-star"></i></li>
-                                                <li class="fill"><i class="ion-android-star"></i></li>
-                                                <li class="fill"><i class="ion-android-star"></i></li>
-                                                <li class="empty"><i class="ion-android-star"></i></li>
-                                            </ul>
-                                            <span class="price">$74.00</span>
-                                        </div>
-                                    </div>
-                                    <!-- End Product ListView Single Item -->
-                                    <!-- Start Product ListView Single Item -->
-                                    <div class="product-listview-single-item product-color--green swiper-slide">
-                                        <div class="image-box">
-                                            <a href="product-details-default.php" class="image-link">
-                                                <img src="assets/images/product/default/home-2/default-4.jpg" alt="">
-                                                <img src="assets/images/product/default/home-2/default-3.jpg" alt="">
-                                            </a>
-                                        </div>
-                                        <div class="content">
-                                            <h6 class="title"><a href="product-details-default.php">Dolorum fuga
-                                                    eget</a></h6>
-                                            <ul class="review-star">
-                                                <li class="fill"><i class="ion-android-star"></i></li>
-                                                <li class="fill"><i class="ion-android-star"></i></li>
-                                                <li class="fill"><i class="ion-android-star"></i></li>
-                                                <li class="fill"><i class="ion-android-star"></i></li>
-                                                <li class="empty"><i class="ion-android-star"></i></li>
-                                            </ul>
-                                            <span class="price">$71.00</span>
-                                        </div>
-                                    </div>
-                                    <!-- End Product ListView Single Item -->
-                                    <!-- Start Product ListView Single Item -->
-                                    <div class="product-listview-single-item product-color--green swiper-slide">
-                                        <div class="image-box">
-                                            <a href="product-details-default.php" class="image-link">
-                                                <img src="assets/images/product/default/home-2/default-6.jpg" alt="">
-                                                <img src="assets/images/product/default/home-2/default-5.jpg" alt="">
-                                            </a>
-                                        </div>
-                                        <div class="content">
-                                            <h6 class="title"><a href="product-details-default.php">Nostrum
-                                                    exercitation</a></h6>
-                                            <ul class="review-star">
-                                                <li class="fill"><i class="ion-android-star"></i></li>
-                                                <li class="fill"><i class="ion-android-star"></i></li>
-                                                <li class="fill"><i class="ion-android-star"></i></li>
-                                                <li class="fill"><i class="ion-android-star"></i></li>
-                                                <li class="empty"><i class="ion-android-star"></i></li>
-                                            </ul>
-                                            <span class="price">$86.00</span>
-                                        </div>
-                                    </div>
-                                    <!-- End Product ListView Single Item -->
-                                    <!-- Start Product ListView Single Item -->
-                                    <div class="product-listview-single-item product-color--green swiper-slide">
-                                        <div class="image-box">
-                                            <a href="product-details-default.php" class="image-link">
-                                                <img src="assets/images/product/default/home-2/default-8.jpg" alt="">
-                                                <img src="assets/images/product/default/home-2/default-7.jpg" alt="">
-                                            </a>
-                                        </div>
-                                        <div class="content">
-                                            <h6 class="title"><a href="product-details-default.php">Epicuri per
-                                                    lobortis</a></h6>
-                                            <ul class="review-star">
-                                                <li class="fill"><i class="ion-android-star"></i></li>
-                                                <li class="fill"><i class="ion-android-star"></i></li>
-                                                <li class="fill"><i class="ion-android-star"></i></li>
-                                                <li class="fill"><i class="ion-android-star"></i></li>
-                                                <li class="empty"><i class="ion-android-star"></i></li>
-                                            </ul>
-                                            <span class="price">$68.00</span>
-                                        </div>
-                                    </div>
-                                    <!-- End Product ListView Single Item -->
-                                    <!-- Start Product ListView Single Item -->
-                                    <div class="product-listview-single-item product-color--green swiper-slide">
-                                        <div class="image-box">
-                                            <a href="product-details-default.php" class="image-link">
-                                                <img src="assets/images/product/default/home-2/default-10.jpg" alt="">
-                                                <img src="assets/images/product/default/home-2/default-9.jpg" alt="">
-                                            </a>
-                                        </div>
-                                        <div class="content">
-                                            <h6 class="title"><a href="product-details-default.php">Condimentum
-                                                    posuere</a></h6>
-                                            <ul class="review-star">
-                                                <li class="fill"><i class="ion-android-star"></i></li>
-                                                <li class="fill"><i class="ion-android-star"></i></li>
-                                                <li class="fill"><i class="ion-android-star"></i></li>
-                                                <li class="fill"><i class="ion-android-star"></i></li>
-                                                <li class="empty"><i class="ion-android-star"></i></li>
-                                            </ul>
-                                            <span class="price">$115.00</span>
-                                        </div>
-                                    </div>
-                                    <!-- End Product ListView Single Item -->
-                                    <!-- Start Product ListView Single Item -->
-                                    <div class="product-listview-single-item product-color--green swiper-slide">
-                                        <div class="image-box">
-                                            <a href="product-details-default.php" class="image-link">
-                                                <img src="assets/images/product/default/home-2/default-12.jpg" alt="">
-                                                <img src="assets/images/product/default/home-2/default-11.jpg" alt="">
-                                            </a>
-                                        </div>
-                                        <div class="content">
-                                            <h6 class="title"><a href="product-details-default.php">Laudantium enim
-                                                    fringi</a></h6>
-                                            <ul class="review-star">
-                                                <li class="fill"><i class="ion-android-star"></i></li>
-                                                <li class="fill"><i class="ion-android-star"></i></li>
-                                                <li class="fill"><i class="ion-android-star"></i></li>
-                                                <li class="fill"><i class="ion-android-star"></i></li>
-                                                <li class="empty"><i class="ion-android-star"></i></li>
-                                            </ul>
-                                            <span class="price">$86.00</span>
-                                        </div>
-                                    </div>
-                                    <!-- End Product ListView Single Item -->
+                                    <!-- Displaying Products from database -->
+                                    <?php
+
+                                        $get_pro = "SELECT * FROM product order by RAND() LIMIT 0,50";
+                                        $run_pro = mysqli_query($conn, $get_pro);
+
+                                        while ($row_pro = mysqli_fetch_array($run_pro)) {
+                                            $pro_id  = $row_pro['prodid'];
+                                            $pro_name  = $row_pro['prodname'];
+                                            $pro_image  = $row_pro['image1'];
+                                            $pro_price = $row_pro['price'];
+
+                                            echo "
+                                                <div class='product-listview-single-item product-color--green swiper-slide'>
+                                                    <div class='image-box'>
+                                                        <a href='product-details-default.php' class='image-link'>
+                                                            <img img src='../admin_area/images/product_images/$pro_image'
+                                                            alt='Wrong path' style='width:90px; height:90px;'>
+                                                        </a>
+                                                    </div>
+                                                    <div class='content'>
+                                                        <h6 class='title'><a href='product-details-default.php'>$pro_name</a></h6>
+                                                        <ul class='review-star'>
+                                                            <li class='fill'><i class='ion-android-star'></i></li>
+                                                            <li class='fill'><i class='ion-android-star'></i></li>
+                                                            <li class='fill'><i class='ion-android-star'></i></li>
+                                                            <li class='fill'><i class='ion-android-star'></i></li>
+                                                            <li class='empty'><i class='ion-android-star'></i></li>
+                                                        </ul>
+                                                        <span class='price'> $pro_price</span>
+                                                    </div>
+                                                </div>
+    
+                                            ";
+                                        }
+
+                                    ?>
                                 </div>
                             </div>
                             <!-- If we need navigation buttons -->

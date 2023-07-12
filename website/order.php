@@ -15,6 +15,7 @@ $status='pending';
 $count_products=mysqli_num_rows($cart_result_price);
 while ($row_price=mysqli_num_rows($cart_result_price)) {
     $product_id=$row_price['prodid'];
+    //echo var_dump($product_id);
     $select_product="SELECT * FROM `product` WHERE prodid='$product_id'";
     $result_product = mysqli_query($conn,$select_product);
     while ($row_product_price=mysqli_num_rows($result_product)) {
