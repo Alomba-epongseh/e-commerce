@@ -507,7 +507,7 @@
                                 <h3>Your Order</h3>
                                 <table>
                                 <thead>
-                                <tr>
+                                <tr class='text-center'>
                                     <th>Image</th>
                                     <th>Product Name</th>
                                     <th>Price</th>
@@ -534,8 +534,8 @@
                         ?>
                             <tr>
                             
-                                <td class='product_thumb'><a href='product-details-default.html'>
-                                    <img src='assets/images/product/default/home-1/$product_image' alt='no image' style='width: 100px; height: 100px;'></a>
+                                <td class='product_thumb py-2'><a href='product-details-default.html'>
+                                    <img src='../admin_area/images/product_images/<?php echo $product_image?>' alt='no image' style='width: 80px; height: 60px;'></a>
                                 </td>
                                 <td class='product_name'><a href='productdetails.php'><?php echo $product_title?></a></td>
                                 <td class='product-price'><?php echo '$' .$price_table ?></td>
@@ -582,38 +582,13 @@
                             $result_count = mysqli_num_rows($result_query);
                             if($result_count>0){
                         echo "
-                        <div style='display: flex; justify-content: space-around;'>
-                        <a href='index-2.php' ><input value='Continue Shopping' style='text-align: center; font-size: 20px; padding: 8px; margin: 10px; background-color: lightgray;'> </a>
+                        <h4 style='text-align: left ;'>Subtotal: $total_price</h4>
+                        <div style='display: flex; justify-content: space-around; margin-top: 20px'>
+                            <a href='index-2.php' ><input value='Continue Shopping' style='text-align: center; font-size: 15px; background-color: lightgray;' class='btn btn-info mb-3'> </a>
+                            <a href='checkout.php' ><input value='Checkout' style='text-align: center; font-size: 15px; background-color: lightgray;' class='btn btn-info mb-3'> </a>
                         
                         </div>
                         
-                        <h3>Cart Total</h3>
-                        <div class='table-responsive'>
-                            <table>
-                                <tbody>
-                                    <tr>
-                                        <th>Subtotal</th>
-                                        <td>$total_price</td>
-                                    </tr>
-                                    <tr>
-                                        <th>Shipping</th>
-                                        <td>Will be given after your order has been approved </td>
-                                    </tr>
-                                    <tr>
-                                        <th>Total</th>
-                                        <td> <b>5800</b> </td>
-                                    </tr>
-
-                                </tbody>
-                            </table>
-
-                            <div class='card-footer padding-15'> 
-                                <a href='checkout.php' class='btn-first green-btn text-custom-white full-width fw-500'>Proceed to Checkout
-                                </a>
-                            </div>
-
-
-                        </div>
                         ";
                             }else {
                                 echo "<a href='index-2.php' style='text-align: right; background-color: gray; color: pink; font-size: 20px; padding: 10px;'>Continue Shopping
@@ -827,20 +802,20 @@
 </html>
 
 <?php
-    if (isset($_GET['delfcart'])) {
-        $delfcart = $_GET['delfcart'];
-        global $conn;
-        $ip = getIp();
+    // if (isset($_GET['delfcart'])) {
+    //     $delfcart = $_GET['delfcart'];
+    //     global $conn;
+    //     $ip = getIp();
         
-        $querycart = "DELETE from cart where p_id = '$delfcart' and ip_add = '$ip' limit 1";
-        $run_querycart = mysqli_query($conn, $querycart);
-        confirm_query($run_querycart);
+    //     $querycart = "DELETE from cart where p_id = '$delfcart' and ip_add = '$ip' limit 1";
+    //     $run_querycart = mysqli_query($conn, $querycart);
+    //     confirm_query($run_querycart);
 
-        $_SESSION['cart_item'] = "Item Removed";
+    //     $_SESSION['cart_item'] = "Item Removed";
 
-        $currentPage = basename($_SERVER['PHP_SELF']);
+    //     $currentPage = basename($_SERVER['PHP_SELF']);
 
-        echo "<script> window.open('/cart','_self')</script>";
+    //     echo "<script> window.open('/cart','_self')</script>";
 
-    }
+    // }
 ?>
