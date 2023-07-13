@@ -1,9 +1,0 @@
- <?php cart_item() ?> 
-
- <?php total_cart_price() ?>
-
-$total_sub_price=$total_sub_price*$quantity
-
-<a class='product_remove'><input type='submit' value='Update' name='update_cart'> </a>';
-style='text-align: center; color: red; font-size: 30px; padding: 10px; margin: 10px; background-color: gray;'
-       
