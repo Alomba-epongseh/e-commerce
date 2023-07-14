@@ -158,8 +158,8 @@ function proDetails(){
     
     if (isset($_GET['prod_id'])) {
         $prod_id = $_GET['prod_id'];
-    $get_pro = "SELECT * FROM product where prodid = $prod_id";
-    $run_pro = mysqli_query($conn, $get_pro);
+        $get_pro = "SELECT * FROM product where prodid = $prod_id";
+        $run_pro = mysqli_query($conn, $get_pro);
     
     while ($row_pro = mysqli_fetch_array($run_pro)) {
         $pro_id  = $row_pro['prodid'];
