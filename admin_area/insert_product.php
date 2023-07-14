@@ -1,6 +1,6 @@
 <?php
-include "../website/db.php";
-$conn = openconn();
+//include "../website/db.php";
+//$conn = openconn();
 
 if(isset($_POST['insert_product'])){
 
@@ -20,15 +20,18 @@ if(isset($_POST['insert_product'])){
     $product_image1=$_FILES['product_image1']['name'];
     $product_image2=$_FILES['product_image2']['name'];
     $product_image3=$_FILES['product_image3']['name'];
+    $product_image4=$_FILES['product_image4']['name'];
+
 
     //accessing image tmp name
     $temp_image1=$_FILES['product_image1']['tmp_name'];
     $temp_image2=$_FILES['product_image2']['tmp_name'];
     $temp_image3=$_FILES['product_image3']['tmp_name'];
+    $temp_image4=$_FILES['product_image4']['tmp_name'];
 
     //checking empty condition
     if($product_title=='' or $product_description=='' or $product_keywords=='' or $product_image1==''or 
-     $product_image2=='' or  $product_image3=='' or $product_price==''){
+     $product_image2=='' or  $product_image3=='' or  $product_image4=='' or $product_price==''){
         echo"<script>alert('Please fill all the available fields')</script>";
         exit();
 
@@ -37,14 +40,15 @@ if(isset($_POST['insert_product'])){
         move_uploaded_file($temp_image1, "images\product_images/$product_image1");
         move_uploaded_file($temp_image2, "images\product_images/$product_image2");
         move_uploaded_file($temp_image3, "images\product_images/$product_image3");
+        move_uploaded_file($temp_image4, "images\product_images/$product_image4");
 
  
         //insert query
-        $insert_product="INSERT INTO `product` (proddesc, image1, keywords, prodname, price, image2, image3) VALUES ('$product_description','$product_image1','$product_keywords','$product_title','$product_price','$product_image2','$product_image3')";
+        $insert_product="INSERT INTO `product` (proddesc, image1, keywords, prodname, price, image2, image3,image4) VALUES ('$product_description','$product_image1','$product_keywords','$product_title','$product_price','$product_image2','$product_image3','$product_image4')";
         $result_product=mysqli_query($conn,$insert_product);
         if ($result_product) {
           echo "<script>alert('Products inserted successfully')</script>";
-          echo "<script>window.open('insert_product.php','_self')</script>";
+          echo "<script>window.open('index.php','_self')</script>";
         }
       }
 }
@@ -120,6 +124,13 @@ if(isset($_POST['insert_product'])){
             <div class="form-outline mb-4">
                 <label for="product_image3" class="form-label">Product image3</label>
                 <input type="file" name="product_image3" id="product_image3"class="form-control"
+                  required="required">
+            </div>
+
+            <!---Image 4------>
+            <div class="form-outline mb-4">
+                <label for="product_image3" class="form-label">Product image4</label>
+                <input type="file" name="product_image4" id="product_image4"class="form-control"
                   required="required">
             </div>
 

@@ -543,16 +543,18 @@
                                 <?php
                                     //updating the quantity on the cart 
                                     $ip_address = getIp();
-                                    if (isset($_POST['update_cart'])) {
-                                        $quantity = $_POST['quantity'];
-                                        $update_cart = "UPDATE `cartdetails` SET quantity=$quantity WHERE ip_address='$ip_address'";
-                                        $result_product_quantity = mysqli_query($conn, $update_cart);
-                                        $total_price = $total_price*$quantity;
-                                    };
+                                    //if (isset($_GET['product_id'])) {
+                                        if (isset($_POST['update_cart'])) {
+                                            $quantity = $_POST['quantity'];
+                                            $update_cart = "UPDATE `cartdetails` SET quantity=$quantity WHERE ip_address='$ip_address'";
+                                            $result_product_quantity = mysqli_query($conn, $update_cart);
+                                            $total_price = $total_price*$quantity;
+                                        };
+                                    //}
                                 ?>
                                 <td class='product-check'><input type="checkbox" name="removeitem[]" value="<?php echo $product_id ?>"></input></td>
-                                <td class='product_update'><i class='fa fa-trash-o'></i><input type='submit' value='Remove' name='remove_cart'> </td>
-                                <td><a class='product_remove' ><input type='submit' value='Update' name='update_cart' ></a></td>
+                                <td class='product_remove'><i class='fa fa-trash-o'></i><input type='submit' value='Remove' name='remove_cart'> </td>
+                                <td><a href='cart.php?product_id=<?php echo $product_id ?>' class='product_update' ><input type='submit' value='Update' name='update_cart' ></a></td>
                                 
                                 <!--removing data from cart-->
                                 <?php remove_cart_data(); ?>
@@ -576,7 +578,7 @@
                     <div class="recipt-sec padding-30 mb-0">
                         <?php
                             $ip_address = getIp();
-                            $total_price = 0;
+                            //$total_price = 0;
                             $cart_query = "SELECT * FROM cartdetails WHERE ip_address='$ip_address'";
                             $result_query = mysqli_query($conn, $cart_query);
                             $result_count = mysqli_num_rows($result_query);

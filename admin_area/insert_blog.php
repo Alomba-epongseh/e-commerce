@@ -1,6 +1,6 @@
 <?php
-include "db_connect.php";
-$conn = openconn();
+// include "db_connect.php";
+// $conn = openconn();
 
 if(isset($_POST['insert_blog'])){
 
@@ -35,7 +35,7 @@ if(isset($_POST['insert_blog'])){
         $run_blog = mysqli_query($conn, $insert_blogs);
        if($run_blog){
         echo"<script>alert('Successfully inserted the blogs')</script>";
-        echo "<script>window.open('insert_blog.php','_self')</script>";
+        echo "<script>window.open('index.php','_self')</script>";
        }
 
      }

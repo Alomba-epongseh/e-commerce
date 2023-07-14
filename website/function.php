@@ -165,6 +165,9 @@ function proDetails(){
         $pro_id  = $row_pro['prodid'];
         $pro_name  = $row_pro['prodname'];
         $pro_image  = $row_pro['image1'];
+        $pro_image2  = $row_pro['image2'];
+        $pro_image3  = $row_pro['image3'];
+        $pro_image4  = $row_pro['image4'];
         $pro_price = $row_pro['price'];
         $pro_desc = $row_pro['proddesc'];
     
@@ -182,6 +185,26 @@ function proDetails(){
                         </div>
                     </div>
                     <!-- End Large Image -->
+                    <div class='product-image-thumb product-image-thumb-horizontal swiper-container pos-relative mt-5'>
+                        <div class='swiper-wrapper'>
+                            <div class='product-image-thumb-single swiper-slide' >
+                                <img class='img-fluid' src='../admin_area/images/product_images/$pro_image'
+                                    alt='wrong path' style='height:80px; width:80px;' >
+                            </div>
+                            <div class='product-image-thumb-single swiper-slide'>
+                                <img class='img-fluid' src='../admin_area/images/product_images/$pro_image2'
+                                   alt='wrong path' style='height:80px; width:80px;' >
+                            </div>
+                            <div class='product-image-thumb-single swiper-slide'>
+                                <img class='img-fluid' src='../admin_area/images/product_images/$pro_image3'
+                                    alt='wrong path' style='height:80px; width:80px;' >
+                           </div>
+                           <div class='product-image-thumb-single swiper-slide'>
+                                <img class='img-fluid' src='../admin_area/images/product_images/$pro_image4'
+                                    alt='wrong path' style='height:80px; width:80px;' >
+                           </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             
@@ -205,10 +228,6 @@ function proDetails(){
                 </div> <!-- End  Product Details Text Area-->
                 <div class='product-details-variable'>
                     <h4 class='title'>Available Options</h4>
-                    <!-- Product Variable Single Item -->
-                    <div class='variable-single-item'>
-                        <div class='product-stock'> <span class='product-stock-in'><i class='ion-checkmark-circled'></i></span> 200 IN STOCK</div>
-                    </div>
                     <!-- Product Variable Single Item -->
                     <div class='d-flex align-items-center '>
                         <div class='variable-single-item '>
@@ -241,6 +260,280 @@ function proDetails(){
                 </div> <!-- End  Product Details Social Area-->
             </div>
         </div>
+
+        <!-- Start Product Default Slider Section -->
+    <div class='product-default-slider-section section-top-gap-100 section-fluid'>
+        <!-- Start Section Content Text Area -->
+        <div class='section-title-wrapper' data-aos='fade-up' data-aos-delay='0'>
+            <div class='container'>
+                <div class='row'>
+                    <div class='col-12'>
+                        <div class='section-content-gap'>
+                            <div class='secton-content'>
+                                <h3 class='section-title'>RELATED IMAGES</h3>
+                                <p>Browse the collection of our related images.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Start Section Content Text Area -->
+        <div class='product-wrapper' data-aos='fade-up' data-aos-delay='0'>
+            <div class='container'>
+                <div class='row'>
+                    <div class='col-12'>
+                        <div class='product-slider-default-1row default-slider-nav-arrow'>
+                            <!-- Slider main container -->
+                            <div class='swiper-container product-default-slider-4grid-1row'>
+                                <!-- Additional required wrapper -->
+                                <div class='swiper-wrapper'>
+                                    <!-- End Product Default Single Item -->
+
+                                    <!-- Start Product Default Single Item -->
+                                    <div class='product-default-single-item product-color--golden swiper-slide'>
+                                        <div class='image-box'>
+                                            <a href='productdetails.php' class='image-link'>
+                                                <img src='../admin_area/images/product_images/$pro_image2' alt='' style='width:250px; height:300px'>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <!-- End Product Default Single Item -->
+                                    <!-- Start Product Default Single Item -->
+                                    <div class='product-default-single-item product-color--golden swiper-slide'>
+                                        <div class='image-box'>
+                                            <a href='productdetails.php' class='image-link'>
+                                                <img src='../admin_area/images/product_images/$pro_image3' alt=''style='width:250px; height:300px'>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <!-- End Product Default Single Item -->
+                                    <!-- Start Product Default Single Item -->
+                                    <div class='product-default-single-item product-color--golden swiper-slide'>
+                                        <div class='image-box'>
+                                            <a href='productdetails.php' class='image-link'>
+                                                <img src='../admin_area/images/product_images/$pro_image4' alt=''style='width:250px; height:300px'>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <!-- End Product Default Single Item -->
+                                    <!-- Start Product Default Single Item -->
+                                    <div class='product-default-single-item product-color--golden swiper-slide'>
+                                        <div class='image-box'>
+                                            <a href='productdetails.php' class='image-link'>
+                                                <img src='../admin_area/images/product_images/$pro_image' alt=''style='width:250px; height:300px'>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <!-- End Product Default Single Item -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Product Default Slider Section -->
+
+    <!-- Start Product Content Tab Section -->
+<div class='product-details-content-tab-section section-top-gap-100'>
+    <div class='container'>
+        <div class='row'>
+            <div class='col-12'>
+                <div class='product-details-content-tab-wrapper' data-aos='fade-up' data-aos-delay='0'>
+
+                    <!-- Start Product Details Tab Button -->
+                    <ul class='nav tablist product-details-content-tab-btn d-flex justify-content-center'>
+                        <li><a class='nav-link active' data-bs-toggle='tab' href='#description'>
+                                Description
+                            </a></li>
+                        <li><a class='nav-link' data-bs-toggle='tab' href='#review'>
+                                Reviews (1)
+                            </a></li>
+                    </ul> <!-- End Product Details Tab Button -->
+
+                    <!-- Start Product Details Tab Content -->
+                    <div class='product-details-content-tab'>
+                        <div class='tab-content'>
+                            <!-- Start Product Details Tab Content Singel -->
+                            <div class='tab-pane active show' id='description'>
+                                <div class='single-tab-content-item'>
+                                    <p>$pro_desc</p>
+                                </div>
+                            </div> <!-- End Product Details Tab Content Singel -->
+                            <!-- Start Product Details Tab Content Singel -->
+                            <div class='tab-pane' id='review'>
+                                <div class='single-tab-content-item'>
+                                    <!-- Start - Review Comment -->
+                                    <ul class='comment'>
+                                        <!-- Start - Review Comment list-->
+                                        <li class='comment-list'>
+                                            <div class='comment-wrapper'>
+                                                <div class='comment-img'>
+                                                    <img src='assets/images/user/image-1.png' alt=''>
+                                                </div>
+                                                <div class='comment-content'>
+                                                    <div class='comment-content-top'>
+                                                        <div class='comment-content-left'>
+                                                            <h6 class='comment-name'>Kaedyn Fraser</h6>
+                                                            <ul class='review-star'>
+                                                                <li class='fill'><i class='ion-android-star'></i>
+                                                                </li>
+                                                                <li class='fill'><i class='ion-android-star'></i>
+                                                                </li>
+                                                                <li class='fill'><i class='ion-android-star'></i>
+                                                                </li>
+                                                                <li class='fill'><i class='ion-android-star'></i>
+                                                                </li>
+                                                                <li class='empty'><i class='ion-android-star'></i>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                        <div class='comment-content-right'>
+                                                            <a href='#'><i class='fa fa-reply'></i>Reply</a>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class='para-content'>
+                                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                                            Tempora inventore dolorem a unde modi iste odio amet,
+                                                            fugit fuga aliquam, voluptatem maiores animi dolor nulla
+                                                            magnam ea! Dignissimos aspernatur cumque nam quod sint
+                                                            provident modi alias culpa, inventore deserunt
+                                                            accusantium amet earum soluta consequatur quasi eum eius
+                                                            laboriosam, maiores praesentium explicabo enim dolores
+                                                            quaerat! Voluptas ad ullam quia odio sint sunt. Ipsam
+                                                            officia, saepe repellat. </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- Start - Review Comment Reply-->
+                                            <ul class='comment-reply'>
+                                                <li class='comment-reply-list'>
+                                                    <div class='comment-wrapper'>
+                                                        <div class='comment-img'>
+                                                            <img src='assets/images/user/image-2.png' alt=''>
+                                                        </div>
+                                                        <div class='comment-content'>
+                                                            <div class='comment-content-top'>
+                                                                <div class='comment-content-left'>
+                                                                    <h6 class='comment-name'>Oaklee Odom</h6>
+                                                                </div>
+                                                                <div class='comment-content-right'>
+                                                                    <a href='#'><i class='fa fa-reply'></i>Reply</a>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class='para-content'>
+                                                                <p>Lorem ipsum dolor sit amet, consectetur
+                                                                    adipisicing elit. Tempora inventore dolorem a
+                                                                    unde modi iste odio amet, fugit fuga aliquam,
+                                                                    voluptatem maiores animi dolor nulla magnam ea!
+                                                                    Dignissimos aspernatur cumque nam quod sint
+                                                                    provident modi alias culpa, inventore deserunt
+                                                                    accusantium amet earum soluta consequatur quasi
+                                                                    eum eius laboriosam, maiores praesentium
+                                                                    explicabo enim dolores quaerat! Voluptas ad
+                                                                    ullam quia odio sint sunt. Ipsam officia, saepe
+                                                                    repellat. </p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            </ul> <!-- End - Review Comment Reply-->
+                                        </li> <!-- End - Review Comment list-->
+                                        <!-- Start - Review Comment list-->
+                                        <li class='comment-list'>
+                                            <div class='comment-wrapper'>
+                                                <div class='comment-img'>
+                                                    <img src='assets/images/user/image-3.png' alt=''>
+                                                </div>
+                                                <div class='comment-content'>
+                                                    <div class='comment-content-top'>
+                                                        <div class='comment-content-left'>
+                                                            <h6 class='comment-name'>Jaydin Jones</h6>
+                                                            <ul class='review-star'>
+                                                                <li class='fill'><i class='ion-android-star'></i>
+                                                                </li>
+                                                                <li class='fill'><i class='ion-android-star'></i>
+                                                                </li>
+                                                                <li class='fill'><i class='ion-android-star'></i>
+                                                                </li>
+                                                                <li class='fill'><i class='ion-android-star'></i>
+                                                                </li>
+                                                                <li class='empty'><i class='ion-android-star'></i>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                        <div class='comment-content-right'>
+                                                            <a href='#'><i class='fa fa-reply'></i>Reply</a>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class='para-content'>
+                                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                                            Tempora inventore dolorem a unde modi iste odio amet,
+                                                            fugit fuga aliquam, voluptatem maiores animi dolor nulla
+                                                            magnam ea! Dignissimos aspernatur cumque nam quod sint
+                                                            provident modi alias culpa, inventore deserunt
+                                                            accusantium amet earum soluta consequatur quasi eum eius
+                                                            laboriosam, maiores praesentium explicabo enim dolores
+                                                            quaerat! Voluptas ad ullam quia odio sint sunt. Ipsam
+                                                            officia, saepe repellat. </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li> <!-- End - Review Comment list-->
+                                    </ul> <!-- End - Review Comment -->
+                                    <div class='review-form'>
+                                        <div class='review-form-text-top'>
+                                            <h5>ADD A REVIEW</h5>
+                                            <p>Your email address will not be published. Required fields are marked
+                                                *</p>
+                                        </div>
+
+                                        <form action='#' method='post'>
+                                            <div class='row'>
+                                                <div class='col-md-6'>
+                                                    <div class='default-form-box'>
+                                                        <label for='comment-name'>Your name <span>*</span></label>
+                                                        <input id='comment-name' type='text'
+                                                            placeholder='Enter your name' required>
+                                                    </div>
+                                                </div>
+                                                <div class='col-md-6'>
+                                                    <div class='default-form-box'>
+                                                        <label for='comment-email'>Your Email <span>*</span></label>
+                                                        <input id='comment-email' type='email'
+                                                            placeholder='Enter your email' required>
+                                                    </div>
+                                                </div>
+                                                <div class='col-12'>
+                                                    <div class='default-form-box'>
+                                                        <label for='comment-review-text'>Your review
+                                                            <span>*</span></label>
+                                                        <textarea id='comment-review-text'
+                                                            placeholder='Write a review' required></textarea>
+                                                    </div>
+                                                </div>
+                                                <div class='col-12'>
+                                                    <button class='btn btn-md btn-black-default-hover'
+                                                        type='submit'>Submit</button>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div> <!-- End Product Details Tab Content Singel -->
+                        </div>
+                    </div> <!-- End Product Details Tab Content -->
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div> <!-- End Product Content Tab Section -->
     
         ";
      };

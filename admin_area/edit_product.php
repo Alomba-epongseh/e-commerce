@@ -44,6 +44,13 @@
                     required="required">
             </div>
 
+            <!---Image 4------>
+            <div class="form-outline mb-4">
+                <label for="product_image4" class="form-label">Product image4</label>
+                <input type="file" name="product_image4" id="product_image4" class="form-control"
+                    required="required">
+            </div>
+
             <!---Price------>
             <div class="form-outline mb-4">
                 <label for="product_price" class="form-label">Product Price</label>
@@ -75,6 +82,7 @@ if (isset($_GET['edit_product'])) {
     $image1=$row_fetch['image1'];
     $image2=$row_fetch['image2'];
     $image3=$row_fetch['image3'];
+    $image4=$row_fetch['image4'];
     $price=$row_fetch['price'];
     
 }
@@ -90,18 +98,20 @@ if (isset($_GET['edit_product'])) {
         $product_image1=$_FILES['product_image1']['name'];
         $product_image2=$_FILES['product_image2']['name'];
         $product_image3=$_FILES['product_image3']['name'];
+        $product_image4=$_FILES['product_image4']['name'];
 
         $tmp_image1=$_FILES['product_image1']['tmpname'];
         $tmp_image2=$_FILES['product_image2']['tmpname'];
         $tmp_image3=$_FILES['product_image3']['tmpname'];
+        $tmp_image4=$_FILES['product_image4']['tmpname'];
 
         move_uploaded_file($tmp_image1,"images/product_images/$product_image1");
         move_uploaded_file($tmp_image2,"images/product_images/$product_image2");
         move_uploaded_file($tmp_image3,"images/product_images/$product_image3");
-
+        move_uploaded_file($tmp_image4,"images/product_images/$product_image4");
 
         //updating data in `product` database
-        $update_query="UPDATE `product` SET prodname='$product_name',proddesc='$product_desc',keywords='$product_keywords',image1='$product_image1',image2='$product_image2',image3='$product_image3',price='$product_price' WHERE prodid=$product_id" ;
+        $update_query="UPDATE `product` SET prodname='$product_name',proddesc='$product_desc',keywords='$product_keywords',image1='$product_image1',image2='$product_image2',image3='$product_image3',image4='$product_image4',price='$product_price' WHERE prodid=$product_id" ;
         $result_query=mysqli_query($conn,$update_query);
         if ($result_query) {
             echo "<script>alert(Information updatted successfully)</script>";

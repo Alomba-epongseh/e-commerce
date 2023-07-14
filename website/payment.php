@@ -28,7 +28,7 @@ include 'function.php';
                 <a href="https://www.paypal.com" target="_blank" ><img class="image-fluid" src="assets\images\company-logo\pay1.png"  alt=""></a>
             </div>
             <div class="col-md-6 text-align-center ">
-                <a href="order.php?user_id=<?php echo'$user_id'?>" > <h2>Pay Offline </h2></a>
+                <a href="order.php?user_id=<?php echo $user_id?>" > <h2>Pay Offline </h2></a>
             </div>
         </div>
     </div>
